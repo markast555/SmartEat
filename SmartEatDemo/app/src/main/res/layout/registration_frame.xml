@@ -53,7 +53,6 @@
                 android:layout_height="48dp"
                 android:ems="10"
                 android:focusable="true"
-                android:fontFamily="@font/adlam_display"
                 android:hint="@string/telephone_number"
                 android:inputType="text"
                 android:textColor="#383738" />
@@ -77,7 +76,6 @@
                 android:layout_height="48dp"
                 android:ems="10"
                 android:focusable="true"
-                android:fontFamily="@font/adlam_display"
                 android:hint="@string/login_field"
                 android:inputType="text"
                 android:textColor="#383738" />
@@ -103,7 +101,6 @@
                 android:layout_width="295dp"
                 android:layout_height="48dp"
                 android:ems="10"
-                android:fontFamily="@font/adlam_display"
                 android:hint="@string/password_confirmation"
 
                 android:inputType="textPassword"
@@ -135,7 +132,6 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/adlam_display"
             android:text="@string/registration_text"
             android:textColor="#313131"
             android:textColorLink="#DD5235"
@@ -166,7 +162,6 @@
                 android:layout_width="295dp"
                 android:layout_height="48dp"
                 android:ems="10"
-                android:fontFamily="@font/adlam_display"
                 android:hint="@string/password_field"
 
                 android:inputType="textPassword"
@@ -199,7 +194,6 @@
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/adlam_display"
             android:text="@string/is_account"
             android:textColor="#393738"
             android:textSize="16sp"
@@ -215,7 +209,6 @@
             android:layout_width="312dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="-12dp"
-            android:fontFamily="@font/adlam_display"
             android:text="@string/agreeing_terms"
             android:textColor="#323232"
             android:textSize="12sp"
@@ -241,7 +234,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.949"
-            tools:fontFamily="@font/adlam_display"
             tools:ignore="TouchTargetSizeCheck" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
