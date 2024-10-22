@@ -55,7 +55,7 @@
                 android:focusable="true"
                 android:hint="@string/telephone_number"
                 android:inputType="text"
-                android:textColor="#383738" />
+                android:textColor="@color/dark_text" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -78,7 +78,7 @@
                 android:focusable="true"
                 android:hint="@string/login_field"
                 android:inputType="text"
-                android:textColor="#383738" />
+                android:textColor="@color/dark_text" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -104,7 +104,7 @@
                 android:hint="@string/password_confirmation"
 
                 android:inputType="textPassword"
-                android:textColor="#373737"
+                android:textColor="@color/dark_text"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -133,8 +133,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/registration_text"
-            android:textColor="#313131"
-            android:textColorLink="#DD5235"
+            android:textColor="@color/dark_text"
             android:textSize="34sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -165,7 +164,7 @@
                 android:hint="@string/password_field"
 
                 android:inputType="textPassword"
-                android:textColor="#373737"
+                android:textColor="@color/dark_text"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -181,7 +180,7 @@
             android:layout_height="wrap_content"
             android:backgroundTint="#EEF5E6"
             android:text="@string/continue_text"
-            android:textColor="#313131"
+            android:textColor="@color/dark_text"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -195,7 +194,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/is_account"
-            android:textColor="#393738"
+            android:textColor="@color/dark_text"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -210,7 +209,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="-12dp"
             android:text="@string/agreeing_terms"
-            android:textColor="#323232"
+            android:textColor="@color/dark_text"
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -226,7 +225,7 @@
             android:background="?attr/selectableItemBackground"
             android:onClick="toEntrance"
             android:text="@string/button_u_enter"
-            android:textColor="#313131"
+            android:textColor="@color/dark_text"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
