@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="preloaded_fonts" translatable="false">
+        <item>@font/</item>
+        <item>@font/adlam_display</item>
+        <item>@font/agbalumo</item>
+        <item>@font/angkor</item>
+        <item>@font/bagel_fat_one</item>
+        <item>@font/baloo</item>
+        <item>@font/playfair_display</item>
+        <item>@font/shojumaru</item>
+    </array>
+</resources>
