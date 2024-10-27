@@ -52,7 +52,7 @@
             app:layout_constraintVertical_bias="0.965"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintWidth_percent="0.7">
+            app:layout_constraintWidth_percent="0.82">
 
             <TableRow
                 android:layout_width="match_parent"
@@ -60,7 +60,7 @@
 
                 <TextView
                     android:id="@+id/textViewNoAccount"
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="end"
@@ -74,7 +74,7 @@
 
                 <TextView
                     android:id="@+id/textViewEntranceToRegistration"
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="start"
@@ -93,8 +93,8 @@
 
         <TextView
             android:id="@+id/textViewEntrance"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:gravity="center"
             android:text="@string/entrance_text"
             android:textColor="@color/dark_text"
