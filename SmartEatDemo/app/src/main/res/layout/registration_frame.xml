@@ -203,7 +203,7 @@
             app:layout_constraintVertical_bias="0.95" />
 
         <CheckBox
-            android:id="@+id/checkBoxConditions"
+            android:id="@+id/checkBoxСonditions"
             android:layout_width="312dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="-12dp"
@@ -237,3 +237,4 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
