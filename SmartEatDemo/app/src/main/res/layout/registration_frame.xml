@@ -6,10 +6,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/main"
-    tools:context=".MainActivity">
+    tools:context=".EntranceActivity">
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/logo2"
         android:layout_width="151dp"
         android:layout_height="136dp"
         android:contentDescription="@string/logo_description"
@@ -34,9 +34,9 @@
         <!--        android:background="@drawable/rounded_login_ui"-->
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textInputLayout4"
+            android:id="@+id/textInputPhoneNumber"
             android:layout_width="300dp"
-            android:layout_height="55dp"
+            android:layout_height="60dp"
             android:layout_marginTop="22dp"
             android:layout_marginBottom="188dp"
             app:hintEnabled="true"
@@ -44,22 +44,22 @@
 
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textInputLayout3"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayoutPassword2"
             app:layout_constraintVertical_bias="0.0">
 
             <EditText
-                android:id="@+id/editTextText2"
+                android:id="@+id/editTextPhoneNumber"
                 android:layout_width="295dp"
-                android:layout_height="48dp"
+                android:layout_height="52dp"
                 android:ems="10"
                 android:focusable="true"
                 android:hint="@string/telephone_number"
-                android:inputType="text"
+                android:inputType="phone"
                 android:textColor="@color/dark_text" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textInputLayout"
+            android:id="@+id/textInputLayoutLogin"
             android:layout_width="300dp"
             android:layout_height="55dp"
             app:hintEnabled="true"
@@ -67,11 +67,11 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
 
-            app:layout_constraintTop_toBottomOf="@+id/textView"
+            app:layout_constraintTop_toBottomOf="@+id/textViewRegistration"
             app:layout_constraintVertical_bias="0.037">
 
             <EditText
-                android:id="@+id/editTextText"
+                android:id="@+id/editTextLogin"
                 android:layout_width="295dp"
                 android:layout_height="48dp"
                 android:ems="10"
@@ -82,7 +82,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textInputLayout3"
+            android:id="@+id/textInputLayoutPassword2"
             android:layout_width="300dp"
             android:layout_height="55dp"
 
@@ -92,12 +92,12 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textInputLayout2"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayoutPassword"
             app:layout_constraintVertical_bias="0.0"
             app:passwordToggleEnabled="true">
 
             <EditText
-                android:id="@+id/editTextTextPassword2"
+                android:id="@+id/editTextPassword2"
                 android:layout_width="295dp"
                 android:layout_height="48dp"
                 android:ems="10"
@@ -129,7 +129,7 @@
         <!--            app:layout_constraintVertical_bias="0.058" />-->
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/textViewRegistration"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/registration_text"
@@ -143,7 +143,7 @@
             app:layout_constraintVertical_bias="0.044" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textInputLayout2"
+            android:id="@+id/textInputLayoutPassword"
             android:layout_width="300dp"
             android:layout_height="55dp"
 
@@ -152,12 +152,12 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayoutLogin"
             app:layout_constraintVertical_bias="0.056"
             app:passwordToggleEnabled="true">
 
             <EditText
-                android:id="@+id/editTextTextPassword"
+                android:id="@+id/editTextPassword"
                 android:layout_width="295dp"
                 android:layout_height="48dp"
                 android:ems="10"
@@ -175,7 +175,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/buttonContinue"
             android:layout_width="180dp"
             android:layout_height="wrap_content"
             android:backgroundTint="#EEF5E6"
@@ -184,13 +184,12 @@
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.44"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.872" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/textViewHaveAccount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/is_account"
@@ -204,7 +203,7 @@
             app:layout_constraintVertical_bias="0.95" />
 
         <CheckBox
-            android:id="@+id/checkBox"
+            android:id="@+id/checkBoxСonditions"
             android:layout_width="312dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="-12dp"
@@ -215,11 +214,11 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.593"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textInputLayout4"
+            app:layout_constraintTop_toBottomOf="@+id/textInputPhoneNumber"
             app:layout_constraintVertical_bias="0.103" />
 
         <TextView
-            android:id="@+id/from_registration_to_entrance"
+            android:id="@+id/textViewRegistrationToEntrance"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="?attr/selectableItemBackground"
