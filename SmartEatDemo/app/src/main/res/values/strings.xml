@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">SmartEatDemo</string>
+    <string name="logo_description">img error</string>
+
+    <string name="continue_text">Продолжить</string>
+
+    <!--enter_frame and registration_frame-->
+    <string name="entrance_text">Вход</string>
+    <string name="login_field">Логин</string>
+    <string name="password_field">Пароль</string>
+    <string name="password_forgot"><u>Забыли пароль?</u></string>
+    <string name="button_enter">Войти</string>
+    <string name="button_u_enter"><u>Войти</u></string>
+    <string name="no_account">Нет аккаунта?</string>
+    <string name="registration_text">Регистрация</string>
+    <string name="registration_u_text"><u>Регистрация</u></string>
+
+    <string name="is_account">Есть аккаунт?</string>
+    <string name="password_confirmation">Подтверждение пароля</string>
+    <string name="telephone_number">Номер телефона</string>
+    <string name="agreeing_terms">Я прочитал(-а) и принимаю условия предоставлния услуг</string>
+
+</resources>
