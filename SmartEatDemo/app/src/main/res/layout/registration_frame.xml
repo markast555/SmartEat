@@ -55,6 +55,7 @@
                 android:focusable="true"
                 android:hint="@string/telephone_number"
                 android:inputType="phone"
+                android:digits="0123456789"
                 android:textColor="@color/dark_text" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -203,7 +204,7 @@
             app:layout_constraintVertical_bias="0.95" />
 
         <CheckBox
-            android:id="@+id/checkBoxСonditions"
+            android:id="@+id/checkBoxConditions"
             android:layout_width="312dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="-12dp"
