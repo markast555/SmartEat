@@ -27,6 +27,7 @@
     <color name="black">#FF000000</color>
     <color name="dark_text">#313131</color>
     <color name="main">#8BC34A</color>
+    <color name="red">#FF0000</color>
     <color name="white">#FFFFFFFF</color>
     <string name="agreeing_terms">Я прочитал(-а) и принимаю условия предоставлния услуг</string>
     <string name="app_name">SmartEatDemo</string>

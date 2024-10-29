@@ -14,7 +14,7 @@ import android.util.Log;
 
 import android.widget.EditText;
 
-public class MainActivity extends AppCompatActivity {
+public class EntranceActivity extends AppCompatActivity {
 
     private EditText enterEditTextLogin;
     private EditText enterEditTextPassword;
@@ -30,8 +30,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.entrance_frame);
 
         // Получаем ссылку на EditText
-        enterEditTextLogin = findViewById(R.id.enterEditTextLogin);
-        enterEditTextPassword = findViewById(R.id.enterEditTextPassword);
+        enterEditTextLogin = findViewById(R.id.entranceEditTextLogin);
+        enterEditTextPassword = findViewById(R.id.entranceEditTextPassword);
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -65,3 +65,4 @@ public class MainActivity extends AppCompatActivity {
 
 
 }
+

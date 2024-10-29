@@ -102,12 +102,12 @@ ADDED from D:\SmartEatDemo\SmartEatDemo\app\src\main\AndroidManifest.xml:15:9-17
 		ADDED from D:\SmartEatDemo\SmartEatDemo\app\src\main\AndroidManifest.xml:17:13-37
 	android:name
 		ADDED from D:\SmartEatDemo\SmartEatDemo\app\src\main\AndroidManifest.xml:16:13-49
-activity#com.example.activities.MainActivity
+activity#com.example.activities.EntranceActivity
 ADDED from D:\SmartEatDemo\SmartEatDemo\app\src\main\AndroidManifest.xml:18:9-26:20
 	android:exported
 		ADDED from D:\SmartEatDemo\SmartEatDemo\app\src\main\AndroidManifest.xml:20:13-36
 	android:name
-		ADDED from D:\SmartEatDemo\SmartEatDemo\app\src\main\AndroidManifest.xml:19:13-41
+		ADDED from D:\SmartEatDemo\SmartEatDemo\app\src\main\AndroidManifest.xml:19:13-45
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
 ADDED from D:\SmartEatDemo\SmartEatDemo\app\src\main\AndroidManifest.xml:21:13-25:29
 action#android.intent.action.MAIN
