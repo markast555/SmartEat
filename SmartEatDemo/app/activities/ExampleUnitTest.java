@@ -1,8 +1,9 @@
-package com.example.smarteatdemo;
-
-import org.junit.Test;
+package classes.activities;
 
 import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+
+import org.junit.Test;
 
 /**
  * Example local unit test, which will execute on the development machine (host).

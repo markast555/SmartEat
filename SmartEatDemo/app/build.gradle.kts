@@ -3,12 +3,12 @@ plugins {
 }
 
 android {
-    namespace = "com.example.smarteatdemo"
+    namespace = "com.example.activities"
     compileSdk = 34
 
 
     defaultConfig {
-        applicationId = "com.example.smarteatdemo"
+        applicationId = "com.example.activities"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
@@ -33,12 +33,12 @@ android {
 }
 
 dependencies {
-
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.activity)
     implementation(libs.constraintlayout)
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.ext.junit)
-    androidTestImplementation(libs.espresso.core)
+
+    testImplementation(libs.junit) // Для модульных тестов
+    androidTestImplementation(libs.ext.junit) // Для Android тестов
+    androidTestImplementation(libs.espresso.core) // Для UI тестов
 }

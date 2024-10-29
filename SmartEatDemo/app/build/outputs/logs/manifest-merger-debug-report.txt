@@ -96,18 +96,18 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\ki
 		ADDED from D:\SmartEatDemo\SmartEatDemo\app\src\main\AndroidManifest.xml:13:9-50
 	android:dataExtractionRules
 		ADDED from D:\SmartEatDemo\SmartEatDemo\app\src\main\AndroidManifest.xml:7:9-65
-activity#com.example.smarteatdemo.RegistrationActivity
+activity#com.example.activities.RegistrationActivity
 ADDED from D:\SmartEatDemo\SmartEatDemo\app\src\main\AndroidManifest.xml:15:9-17:40
 	android:exported
 		ADDED from D:\SmartEatDemo\SmartEatDemo\app\src\main\AndroidManifest.xml:17:13-37
 	android:name
 		ADDED from D:\SmartEatDemo\SmartEatDemo\app\src\main\AndroidManifest.xml:16:13-49
-activity#com.example.smarteatdemo.EntranceActivity
+activity#com.example.activities.MainActivity
 ADDED from D:\SmartEatDemo\SmartEatDemo\app\src\main\AndroidManifest.xml:18:9-26:20
 	android:exported
 		ADDED from D:\SmartEatDemo\SmartEatDemo\app\src\main\AndroidManifest.xml:20:13-36
 	android:name
-		ADDED from D:\SmartEatDemo\SmartEatDemo\app\src\main\AndroidManifest.xml:19:13-45
+		ADDED from D:\SmartEatDemo\SmartEatDemo\app\src\main\AndroidManifest.xml:19:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
 ADDED from D:\SmartEatDemo\SmartEatDemo\app\src\main\AndroidManifest.xml:21:13-25:29
 action#android.intent.action.MAIN
@@ -248,7 +248,7 @@ ADDED from [androidx.core:core:1.13.0] C:\Users\kivan\.gradle\caches\transforms-
 		ADDED from [androidx.core:core:1.13.0] C:\Users\kivan\.gradle\caches\transforms-4\f3a9cf4ee370e5d6f7905fa9840b16ac\transformed\core-1.13.0\AndroidManifest.xml:24:9-44
 	android:name
 		ADDED from [androidx.core:core:1.13.0] C:\Users\kivan\.gradle\caches\transforms-4\f3a9cf4ee370e5d6f7905fa9840b16ac\transformed\core-1.13.0\AndroidManifest.xml:23:9-81
-permission#com.example.smarteatdemo.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+permission#com.example.activities.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
 ADDED from [androidx.core:core:1.13.0] C:\Users\kivan\.gradle\caches\transforms-4\f3a9cf4ee370e5d6f7905fa9840b16ac\transformed\core-1.13.0\AndroidManifest.xml:22:5-24:47
 	android:protectionLevel
 		ADDED from [androidx.core:core:1.13.0] C:\Users\kivan\.gradle\caches\transforms-4\f3a9cf4ee370e5d6f7905fa9840b16ac\transformed\core-1.13.0\AndroidManifest.xml:24:9-44
@@ -258,7 +258,7 @@ uses-permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
 ADDED from [androidx.core:core:1.13.0] C:\Users\kivan\.gradle\caches\transforms-4\f3a9cf4ee370e5d6f7905fa9840b16ac\transformed\core-1.13.0\AndroidManifest.xml:26:5-97
 	android:name
 		ADDED from [androidx.core:core:1.13.0] C:\Users\kivan\.gradle\caches\transforms-4\f3a9cf4ee370e5d6f7905fa9840b16ac\transformed\core-1.13.0\AndroidManifest.xml:26:22-94
-uses-permission#com.example.smarteatdemo.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+uses-permission#com.example.activities.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
 ADDED from [androidx.core:core:1.13.0] C:\Users\kivan\.gradle\caches\transforms-4\f3a9cf4ee370e5d6f7905fa9840b16ac\transformed\core-1.13.0\AndroidManifest.xml:26:5-97
 	android:name
 		ADDED from [androidx.core:core:1.13.0] C:\Users\kivan\.gradle\caches\transforms-4\f3a9cf4ee370e5d6f7905fa9840b16ac\transformed\core-1.13.0\AndroidManifest.xml:26:22-94
