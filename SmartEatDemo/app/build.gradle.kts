@@ -38,6 +38,8 @@ dependencies {
     implementation(libs.activity)
     implementation(libs.constraintlayout)
 
+    implementation("org.postgresql:postgresql:42.5.0") // Зависимость для PostgreSQL
+
     testImplementation(libs.junit) // Для модульных тестов
     androidTestImplementation(libs.ext.junit) // Для Android тестов
     androidTestImplementation(libs.espresso.core) // Для UI тестов
