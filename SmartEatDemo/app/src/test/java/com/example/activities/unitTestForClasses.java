@@ -17,7 +17,7 @@ public class unitTestForClasses {
     public void TestSetConnection(){
         String url = "jdbc:postgresql://localhost:5432/postgres";
         String user = "postgres";
-        String password = "19198";
+        String password = "sapass";
 
         UserRepositoryCrud userRepositoryCrud = new UserRepositoryCrud();
 
