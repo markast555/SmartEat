@@ -1,4 +1,4 @@
-com.example.smarteatdemo
+com.example.activities
 anim abc_fade_in
 anim abc_fade_out
 anim abc_grow_fade_in_from_bottom
@@ -3210,7 +3210,7 @@ id bounce
 id bounceBoth
 id bounceEnd
 id bounceStart
-id buttonContinue
+id button
 id buttonEnter
 id buttonPanel
 id cache_measures
@@ -3225,7 +3225,7 @@ id center_vertical
 id chain
 id chain2
 id chains
-id checkBoxСonditions
+id checkBox
 id checkbox
 id checked
 id chronometer
@@ -3287,10 +3287,10 @@ id easeInOut
 id easeOut
 id east
 id edge
-id editTextLogin
-id editTextPassword
-id editTextPassword2
-id editTextPhoneNumber
+id editTextText
+id editTextText2
+id editTextTextPassword
+id editTextTextPassword2
 id edit_query
 id edit_text_id
 id elastic
@@ -3299,6 +3299,8 @@ id end
 id endToStart
 id enterAlways
 id enterAlwaysCollapsed
+id enterEditTextLogin
+id enterEditTextPassword
 id escape
 id exitUntilCollapsed
 id expand_activities_button
@@ -3318,6 +3320,7 @@ id flip
 id floating
 id forever
 id fragment_container_view_tag
+id from_registration_to_entrance
 id frost
 id fullscreen_header
 id ghost_view
@@ -3344,6 +3347,7 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
+id imageView2
 id immediateStop
 id included
 id indeterminate
@@ -3571,21 +3575,22 @@ id tag_window_insets_animation_callback
 id text
 id text2
 id textEnd
+id textInputLayout
+id textInputLayout2
+id textInputLayout3
+id textInputLayout4
 id textInputLayoutLogin
 id textInputLayoutPassword
-id textInputLayoutPassword2
-id textInputPhoneNumber
 id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textTop
+id textView
+id textView2
 id textViewEntrance
 id textViewEntranceToRegistration
 id textViewForgotPassword
-id textViewHaveAccount
 id textViewNoAccount
-id textViewRegistration
-id textViewRegistrationToEntrance
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon

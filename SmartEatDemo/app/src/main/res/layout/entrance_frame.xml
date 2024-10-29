@@ -126,7 +126,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <EditText
-                android:id="@+id/editTextText"
+                android:id="@+id/enterEditTextLogin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
@@ -153,7 +153,7 @@
             app:passwordToggleEnabled="true">
 
             <EditText
-                android:id="@+id/editTextTextPassword"
+                android:id="@+id/enterEditTextPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -185,7 +185,8 @@
             app:layout_constraintHorizontal_bias="0.51"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintWidth_percent="0.5" />
+            app:layout_constraintWidth_percent="0.5"
+            android:onClick="onButtonEnterClick" />
 
         <TextView
             android:id="@+id/textViewForgotPassword"

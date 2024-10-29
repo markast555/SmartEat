@@ -9,7 +9,7 @@
         android:targetSdkVersion="34" />
 
     <permission
-        android:name="com.example.smarteatdemo.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+        android:name="com.example.classes.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
         android:protectionLevel="signature" />
 
     <uses-permission android:name="com.example.smarteatdemo.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
@@ -28,10 +28,10 @@
         android:testOnly="true"
         android:theme="@style/Theme.SmartEatDemo" >
         <activity
-            android:name="com.example.smarteatdemo.RegistrationActivity"
+            android:name="com.example.activities.RegistrationActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.smarteatdemo.MainActivity"
+            android:name="com.example.activities.MainActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -46,7 +46,7 @@
 
         <provider
             android:name="androidx.startup.InitializationProvider"
-            android:authorities="com.example.smarteatdemo.androidx-startup"
+            android:authorities="com.example.classes.androidx-startup"
             android:exported="false" >
             <meta-data
                 android:name="androidx.emoji2.text.EmojiCompatInitializer"

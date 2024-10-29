@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.smarteatdemo.app-mergeDebugResources-29:/values/values.xml",
+            "outputFile": "com.example.activities.app-mergeDebugResources-29:/values/values.xml",
             "map": [
                 {
                     "source": "C:\\Users\\kivan\\.gradle\\caches\\transforms-4\\5d4f4e3766a9d899ef99b3682f20f690\\transformed\\lifecycle-runtime-2.6.2\\res\\values\\values.xml",

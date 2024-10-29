@@ -1,6 +1,5 @@
-package com.example.smarteatdemo;
+package com.example.activities;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
