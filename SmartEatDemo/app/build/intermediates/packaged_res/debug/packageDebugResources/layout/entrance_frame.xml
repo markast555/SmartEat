@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/main"
-    tools:context=".MainActivity">
+    tools:context=".EntranceActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
@@ -126,7 +126,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <EditText
-                android:id="@+id/enterEditTextLogin"
+                android:id="@+id/entranceEditTextLogin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
@@ -153,7 +153,7 @@
             app:passwordToggleEnabled="true">
 
             <EditText
-                android:id="@+id/enterEditTextPassword"
+                android:id="@+id/entranceEditTextPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -185,8 +185,7 @@
             app:layout_constraintHorizontal_bias="0.51"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintWidth_percent="0.5"
-            android:onClick="onButtonEnterClick" />
+            app:layout_constraintWidth_percent="0.5" />
 
         <TextView
             android:id="@+id/textViewForgotPassword"

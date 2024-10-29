@@ -1,6 +1,5 @@
 package com.example.activities;
 
-import org.junit.Assert;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -21,8 +20,9 @@ public class unitTestForClasses {
         String password = "19198";
 
         UserRepositoryCrud userRepositoryCrud = new UserRepositoryCrud();
+
         userRepositoryCrud.setConnectionParameters(url, user, password);
-        //User user1 = new User();
+        User user1 = new User();
 
         userRepositoryCrud.setConnection();
 
