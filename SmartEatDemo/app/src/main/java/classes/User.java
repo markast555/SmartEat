@@ -5,78 +5,63 @@ import java.util.UUID;
 
 public class User {
 
-    private UUID id;
-    private String login;
+    private UUID idUser; //Первичный ключ, уникальное значение
+    private String login; //Уникальное значение
     private String password;
-    private String name;
     private Sex sex;
     private LocalDate dateOfBirth;
     private int height;
     private float weight;
-
-    private String phoneNumber;
-
-    private PhysicalActivityLevel physicalActivityLevel;
-
+    private PhysicalActivityLevel levelOfPhysicalActivity;
     private Goals goals;
+    private String phoneNumber; //Уникальное значение
 
-    private String individualCharacteristics;
-
-    public static UUID getUid() {
-        return UUID.randomUUID();
-    }
-
-    public User(UUID id, String login, String password, String name, Sex sex, LocalDate dateOfBirth, int height, float weight, String phoneNumber, PhysicalActivityLevel physicalActivityLevel, Goals goals, String individualCharacteristics) {
-        this.id = id;
+    public User(UUID idUser, String login, String password, Sex sex, LocalDate dateOfBirth, int height, float weight, PhysicalActivityLevel levelOfPhysicalActivity, Goals goals, String phoneNumber) {
+        this.idUser = idUser;
         this.login = login;
         this.password = password;
-        this.name = name;
         this.sex = sex;
         this.dateOfBirth = dateOfBirth;
         this.height = height;
         this.weight = weight;
-        this.phoneNumber = phoneNumber;
-        this.physicalActivityLevel = physicalActivityLevel;
+        this.levelOfPhysicalActivity = levelOfPhysicalActivity;
         this.goals = goals;
-        this.individualCharacteristics = individualCharacteristics;
+        this.phoneNumber = phoneNumber;
     }
 
-    public User(String login, String password, String name, Sex sex, LocalDate dateOfBirth, int height, float weight, String phoneNumber, PhysicalActivityLevel physicalActivityLevel, Goals goals, String individualCharacteristics) {
-        this.id = getUid();
+    public User(String login, String password, Sex sex, LocalDate dateOfBirth, int height, float weight, PhysicalActivityLevel levelOfPhysicalActivity, Goals goals, String phoneNumber) {
+        this.idUser = VariableGenerator.getUid();
         this.login = login;
         this.password = password;
-        this.name = name;
         this.sex = sex;
         this.dateOfBirth = dateOfBirth;
         this.height = height;
         this.weight = weight;
-        this.phoneNumber = phoneNumber;
-        this.physicalActivityLevel = physicalActivityLevel;
+        this.levelOfPhysicalActivity = levelOfPhysicalActivity;
         this.goals = goals;
-        this.individualCharacteristics = individualCharacteristics;
+        this.phoneNumber = phoneNumber;
     }
 
-    public User() {
-        this.id = getUid();
-        this.login = "login";
+    public User(){
+        this.idUser = VariableGenerator.getUid();
+        this.login = VariableGenerator.generateRandomLogin();
         this.password = "password";
-        this.name = "name";
-        //this.sex = Sex.MALE;
+        this.sex = Sex.MALE;
         this.dateOfBirth = LocalDate.of(1990, 5, 15);;
         this.height = 180;
         this.weight = 70.5F;
-        this.phoneNumber = "79208889988";
-        this.physicalActivityLevel = PhysicalActivityLevel.ModerateLevelOfActivity;
-        //this.goals = Goals.ImprovingHealth;
-        this.individualCharacteristics = null;
+        this.phoneNumber = VariableGenerator.generateRandomPhoneNumber();
+        this.levelOfPhysicalActivity = PhysicalActivityLevel.ModerateLevelOfActivity;
+        this.goals = Goals.ImprovingHealth;
     }
 
-    public UUID getId() {
-        return id;
+
+    public UUID getIdUser() {
+        return idUser;
     }
 
-    public void setId(UUID id) {
-        this.id = id;
+    public void setIdUser(UUID idUser) {
+        this.idUser = idUser;
     }
 
     public String getLogin() {
@@ -93,14 +78,6 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public Sex getSex() {
@@ -135,20 +112,12 @@ public class User {
         this.weight = weight;
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
+    public PhysicalActivityLevel getLevelOfPhysicalActivity() {
+        return levelOfPhysicalActivity;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
-
-    public PhysicalActivityLevel getPhysicalActivityLevel() {
-        return physicalActivityLevel;
-    }
-
-    public void setPhysicalActivityLevel(PhysicalActivityLevel physicalActivityLevel) {
-        this.physicalActivityLevel = physicalActivityLevel;
+    public void setLevelOfPhysicalActivity(PhysicalActivityLevel levelOfPhysicalActivity) {
+        this.levelOfPhysicalActivity = levelOfPhysicalActivity;
     }
 
     public Goals getGoals() {
@@ -159,29 +128,27 @@ public class User {
         this.goals = goals;
     }
 
-    public String getIndividualCharacteristics() {
-        return individualCharacteristics;
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
-    public void setIndividualCharacteristics(String individualCharacteristics) {
-        this.individualCharacteristics = individualCharacteristics;
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
     @Override
     public String toString() {
         return "User{" +
-                "id=" + id +
+                "idUser=" + idUser +
                 ", login='" + login + '\'' +
                 ", password='" + password + '\'' +
-                ", name='" + name + '\'' +
                 ", sex=" + sex +
                 ", dateOfBirth=" + dateOfBirth +
                 ", height=" + height +
                 ", weight=" + weight +
-                ", phoneNumber='" + phoneNumber + '\'' +
-                ", physicalActivityLevel=" + physicalActivityLevel +
+                ", levelOfPhysicalActivity=" + levelOfPhysicalActivity +
                 ", goals=" + goals +
-                ", individualCharacteristics='" + individualCharacteristics + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
                 '}';
     }
 }
