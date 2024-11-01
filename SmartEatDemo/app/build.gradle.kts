@@ -45,7 +45,7 @@ dependencies {
     androidTestImplementation(libs.espresso.core)
 
 
-    implementation("org.postgresql:postgresql:42.5.0") // Зависимость для PostgreSQL
+    //implementation("org.postgresql:postgresql:42.5.0") // Зависимость для PostgreSQL
     implementation("mysql:mysql-connector-java:8.0.33") // Зависимость для MySQL
 
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.7.0")

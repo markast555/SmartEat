@@ -3364,7 +3364,8 @@ int id legacy 0x7f0a00f8
 int id line1 0x7f0a00f9
 int id line3 0x7f0a00fa
 int id linear 0x7f0a00fb
-int id linerLayotToRegistration 0x7f0a00fc
+int id linerLayoutEntrance 0x7f0a020f
+int id linerLayoutToRegistration 0x7f0a0210
 int id listMode 0x7f0a00fd
 int id list_item 0x7f0a00fe
 int id logo2 0x7f0a00ff

@@ -3365,7 +3365,8 @@ id legacy
 id line1
 id line3
 id linear
-id linerLayotToRegistration
+id linerLayoutEntrance
+id linerLayoutToRegistration
 id listMode
 id list_item
 id logo2

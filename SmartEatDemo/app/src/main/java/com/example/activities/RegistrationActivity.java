@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.TypedValue;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -23,7 +24,6 @@ import com.google.android.material.textfield.TextInputLayout;
 
 public class RegistrationActivity extends AppCompatActivity {
 
-    private TextInputLayout textInputLayoutLogin;
     private EditText editTextLogin;
     private EditText editTextPassword;
     private EditText editTextPassword2;
@@ -59,7 +59,6 @@ public class RegistrationActivity extends AppCompatActivity {
             return insets;
         });
 
-        textInputLayoutLogin = findViewById(R.id.textInputLayoutLogin);
         editTextLogin = findViewById(R.id.editTextLogin);
         editTextPassword = findViewById(R.id.editTextPassword);
         editTextPassword2 = findViewById(R.id.editTextPassword2);
@@ -70,6 +69,37 @@ public class RegistrationActivity extends AppCompatActivity {
         setupPhoneNumberFormatting();
 
         buttonContinue.setOnClickListener(this::onContinueButtonClick);
+
+        addTextWatcher(editTextPassword);
+        addTextWatcher(editTextLogin);
+        addTextWatcher(editTextPassword2);
+        addTextWatcher(editTextPhoneNumber);
+    }
+
+    // Метод для добавления TextWatcher
+    private void addTextWatcher(EditText editText) {
+        editText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                adjustTextSize(editText);
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {}
+        });
+    }
+
+    // Метод для изменения размера текста
+    private void adjustTextSize(EditText editText) {
+        int height = editText.getHeight();
+        if (height > 0) {
+            // Пример вычисления размера шрифта
+            float textSize = height / 10f; // Измените делитель по необходимости
+            editText.setTextSize(TypedValue.COMPLEX_UNIT_SP, textSize);
+        }
     }
 
 
@@ -108,6 +138,7 @@ public class RegistrationActivity extends AppCompatActivity {
                 try {
                     String currentValue = s.toString();
 
+
                     // Запрет на удаление "+7-"
                     if (currentValue.length() < 4) {
                         editTextPhoneNumber.setText("+7-");
@@ -140,7 +171,7 @@ public class RegistrationActivity extends AppCompatActivity {
 
             private String formatRuNumber(String text) {
                 // Удаляем все символы, кроме цифр
-                String digits = text.replaceAll("[^\\d]", "");
+                String digits = text.replaceAll("[^\\d]", "").substring(1);
 
                 // Ограничиваем длину до 10 цифр
                 if (digits.length() > 10) {
@@ -170,12 +201,10 @@ public class RegistrationActivity extends AppCompatActivity {
     }
 
 
-
-
     private void onContinueButtonClick(View v) {
         String input = editTextLogin.getText().toString().trim();
         if (isValidLogin(input)) {
-            textInputLayoutLogin.setError(null); // Убираем ошибку
+            editTextLogin.setError(null); // Убираем ошибку
             //Toast.makeText(this, "Логин принят!", Toast.LENGTH_SHORT).show();
             // Логика для перехода на следующий экран
             // Например:
@@ -220,7 +249,7 @@ public class RegistrationActivity extends AppCompatActivity {
             }
 
         } else {
-            textInputLayoutLogin.setError("Логин: длина (4-16), смволы (a-zA-Z0-9_)");
+            editTextLogin.setError("Логин: длина (4-16), смволы (a-zA-Z0-9_)");
             Toast.makeText(this, "Логин: длина (4-16), смволы (a-zA-Z0-9_)",
                     Toast.LENGTH_LONG).show();
         }

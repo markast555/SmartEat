@@ -34,7 +34,8 @@ id entranceEditTextPassword
 id guideline5
 id guideline6
 id guideline7
-id linerLayotToRegistration
+id linerLayoutEntrance
+id linerLayoutToRegistration
 id logo2
 id main
 id textInputLayoutLogin
