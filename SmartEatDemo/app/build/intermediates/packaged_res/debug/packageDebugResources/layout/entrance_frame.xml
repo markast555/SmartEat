@@ -41,7 +41,7 @@
         <!--            app:layout_constraintVertical_bias="0.407" />-->
 
         <TableLayout
-            android:id="@+id/linerLayotToRegistration"
+            android:id="@+id/linerLayoutToRegistration"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:orientation="horizontal"
@@ -98,7 +98,6 @@
             android:gravity="center"
             android:text="@string/entrance_text"
             android:textColor="@color/dark_text"
-            android:textColorLink="#DD5235"
             android:textSize="34sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -113,8 +112,6 @@
             android:id="@+id/textInputLayoutLogin"
             android:layout_width="0dp"
             android:layout_height="0dp"
-
-            android:background="?attr/selectableItemBackground"
             app:hintEnabled="true"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -161,19 +158,13 @@
 
                 android:inputType="textPassword"
                 android:textColor="@color/dark_text"
-                android:textSize="16sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.17"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.543" />
+                android:textSize="16sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
             android:id="@+id/buttonEnter"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:backgroundTint="#EEF5E6"
             android:text="@string/button_enter"
             android:textColor="@color/dark_text"
@@ -181,10 +172,10 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHeight_percent="0.15"
-            app:layout_constraintVertical_bias="0.845"
-            app:layout_constraintHorizontal_bias="0.51"
+            app:layout_constraintHorizontal_bias="0.502"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.84"
             app:layout_constraintWidth_percent="0.5" />
 
         <TextView
