@@ -1,11 +1,16 @@
 package classes;
 
+import android.annotation.SuppressLint;
 import android.os.Build;
 
 import java.sql.*;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.ZoneId;
+import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
@@ -88,7 +93,7 @@ public class UserRepositoryCrud{
 
         setConnection();
         try (PreparedStatement statement = connection.prepareStatement(
-                "insert into users (id_user, login, password, sex, date_of_birth, height, weight, level_of_physical_activity, goals, phone_number) values (?,?,?,?,?,?,?,?,?,?) ")) {
+                "insert into users (id_user, login, password, sex, date_of_birth, height, weight, level_of_physical_activity, goals, phone_number, calorie_norm) values (?,?,?,?,?,?,?,?,?,?,?) ")) {
 
             statement.setObject(1, user.getIdUser().toString());
             statement.setString(2, user.getLogin());
@@ -100,6 +105,7 @@ public class UserRepositoryCrud{
             statement.setString(8, user.getLevelOfPhysicalActivity().getType());
             statement.setString(9, user.getGoals().getType());
             statement.setString(10, user.getPhoneNumber());
+            statement.setInt(11, user.getCalorieNorm());
 
             statement.execute();
 
@@ -107,48 +113,81 @@ public class UserRepositoryCrud{
         } catch (SQLException e) {
             System.out.println("Ошибка выполнения: " + e.getMessage());
             //e.printStackTrace();
-        }
-        closeConnection();
+        } finally {
+        closeConnection(); // Закрываем соединение в блоке finally
+    }
 
         return result;
     }
 
 
-//    public User selectById(UUID id) {
-//        User user = null;
+    public User selectByLogin(String login) {
+        User user = null;
+
+        setConnection(); // Установите соединение с базой данных
+
+        try (PreparedStatement statement = connection.prepareStatement(
+                "SELECT id_user, login, password, sex, date_of_birth, height, weight, level_of_physical_activity, goals, phone_number, calorie_norm FROM users WHERE login = ?")) {
+
+            // Устанавливаем значение параметра
+            statement.setString(1, login);
+
+            try (ResultSet resultSet = statement.executeQuery()) {
+                System.out.println("Я тута!!!");
+                if (resultSet.next()) {
+                    System.out.println("Я тутаАААА!!!");
+                    System.out.println("Нашёл!!!");
+                    user = new User(UUID.fromString(resultSet.getString("id_user")),
+                        resultSet.getString("login"),
+                        resultSet.getString("password"),
+                        Sex.fromType(resultSet.getString("sex")),
+                            toLocalDate(resultSet.getDate("date_of_birth")),
+                        resultSet.getInt("height"),
+                        resultSet.getFloat("weight"),
+                        PhysicalActivityLevel.fromType(resultSet.getString("level_of_physical_activity")),
+                        Goals.fromType(resultSet.getString("goals")),
+                        resultSet.getString("phone_number"),
+                        resultSet.getInt("calorie_norm"));
+                } else {
+                    System.out.println("Данные не найдены");
+                }
+            }
+        } catch (SQLException e) {
+            System.out.println("Ошибка выполнения: " + e.getMessage());
+        } finally {
+            closeConnection(); // Закрываем соединение в блоке finally
+        }
+
+        return user;
+    }
+
+    public static LocalDate toLocalDate(Date date) {
+        if (date == null) {
+            return null; // Обработка случая, когда дата равна null
+        }
+
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date);
+
+        return LocalDate.of(calendar.get(Calendar.YEAR),
+                calendar.get(Calendar.MONTH) + 1,
+                calendar.get(Calendar.DAY_OF_MONTH));
+    }
+
+
+
+//    // Метод для конвертации java.sql.Date в LocalDate
+//    private LocalDate convertSqlDateToLocalDate(Date sqlDate) {
+//        String dateString = "02/11/2024"; // Пример даты в формате dd/MM/yyyy
+//        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
 //
-//        setConnection();
-//        try (PreparedStatement statement = connection.prepareStatement(
-//                "select id_user, login, password, name, sex, date_of_birth, height, weight, level_of_physical_activity, goals, individual_characters, phone_number from users where id_user = ?")) {
-//
-//            try (ResultSet resultSet = statement.executeQuery()) {
-//                if (resultSet.next()) {
-//                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-//                        user = new User((UUID) resultSet.getObject("id_user"),
-//                                resultSet.getString("login"),
-//                                resultSet.getString("password"),
-//                                resultSet.getString("name"),
-//                                Sex.fromType(resultSet.getString("sex")),
-//                                resultSet.getDate("date_of_birth").toInstant()
-//                                        .atZone(ZoneId.systemDefault())
-//                                        .toLocalDate(),
-//                                resultSet.getInt("height"),
-//                                resultSet.getFloat("weight"),
-//                                resultSet.getString("phone_number"),
-//                                PhysicalActivityLevel.fromType(resultSet.getString("level_of_physical_activity")),
-//                                Goals.fromType(resultSet.getString("goals")),
-//                                resultSet.getString("individual_characters"));
-//                    }
-//                } else {
-//                    System.out.println("Данные не найдены");
-//                }
-//            }
-//        } catch (SQLException e) {
-//            System.out.println("Ошибка выполнения: " + e.getMessage());
+//        try {
+//            // Преобразование строки в Date
+//            Date date = (Date) formatter.parse(dateString);
+//            System.out.println("Преобразованная дата: " + date);
+//        } catch (ParseException e) {
+//            System.out.println("Ошибка преобразования даты: " + e.getMessage());
 //        }
-//        closeConnection();
-//
-//        return user;
 //    }
 
 //

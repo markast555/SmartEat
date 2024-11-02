@@ -15,8 +15,9 @@ public class User {
     private PhysicalActivityLevel levelOfPhysicalActivity;
     private Goals goals;
     private String phoneNumber; //Уникальное значение
+    private int calorieNorm;
 
-    public User(UUID idUser, String login, String password, Sex sex, LocalDate dateOfBirth, int height, float weight, PhysicalActivityLevel levelOfPhysicalActivity, Goals goals, String phoneNumber) {
+    public User(UUID idUser, String login, String password, Sex sex, LocalDate dateOfBirth, int height, float weight, PhysicalActivityLevel levelOfPhysicalActivity, Goals goals, String phoneNumber, int calorieNorm) {
         this.idUser = idUser;
         this.login = login;
         this.password = password;
@@ -27,20 +28,21 @@ public class User {
         this.levelOfPhysicalActivity = levelOfPhysicalActivity;
         this.goals = goals;
         this.phoneNumber = phoneNumber;
+        this.calorieNorm = calorieNorm;
     }
 
-    public User(String login, String password, Sex sex, LocalDate dateOfBirth, int height, float weight, PhysicalActivityLevel levelOfPhysicalActivity, Goals goals, String phoneNumber) {
-        this.idUser = VariableGenerator.getUid();
-        this.login = login;
-        this.password = password;
-        this.sex = sex;
-        this.dateOfBirth = dateOfBirth;
-        this.height = height;
-        this.weight = weight;
-        this.levelOfPhysicalActivity = levelOfPhysicalActivity;
-        this.goals = goals;
-        this.phoneNumber = phoneNumber;
-    }
+//    public User(String login, String password, Sex sex, LocalDate dateOfBirth, int height, float weight, PhysicalActivityLevel levelOfPhysicalActivity, Goals goals, String phoneNumber) {
+//        this.idUser = VariableGenerator.getUid();
+//        this.login = login;
+//        this.password = password;
+//        this.sex = sex;
+//        this.dateOfBirth = dateOfBirth;
+//        this.height = height;
+//        this.weight = weight;
+//        this.levelOfPhysicalActivity = levelOfPhysicalActivity;
+//        this.goals = goals;
+//        this.phoneNumber = phoneNumber;
+//    }
 
     public User(){
         this.idUser = VariableGenerator.getUid();
@@ -134,6 +136,14 @@ public class User {
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    public int getCalorieNorm() {
+        return calorieNorm;
+    }
+
+    public void setCalorieNorm(int calorieNorm) {
+        this.calorieNorm = calorieNorm;
     }
 
     @Override

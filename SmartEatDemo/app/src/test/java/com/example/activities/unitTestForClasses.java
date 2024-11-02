@@ -63,15 +63,6 @@ public class unitTestForClasses {
         Assert.assertEquals(16, phoneNumber.length());
     }
 
-
-    @Test
-    @DisplayName("Тестирование создания кортежа пользователя в табл. user_se в БД")
-    public void testCreateUserInBD() {
-        User user = new User();
-        System.out.println(user.toString());
-        Assert.assertTrue(userRepositoryCrud.create(user));
-    }
-
     @Test
     @DisplayName("Тестирование хеширования пароля (позитивный тест)")
     public void testHashPasswordPositive(){
@@ -89,6 +80,33 @@ public class unitTestForClasses {
         boolean isMatch = VariableGenerator.checkPassword("wrongPassword", hashedPassword);
         Assert.assertFalse(isMatch);
     }
+
+    @Test
+    @DisplayName("Тестирование создания кортежа пользователя в табл. user_se в БД")
+    public void testCreateUserInBD() {
+        User user = new User();
+        System.out.println(user.toString());
+        Assert.assertTrue(userRepositoryCrud.create(user));
+    }
+
+    @Test
+    @DisplayName("Тестирование нахождения пользователя по логину в табл. user_se в БД")
+    public void testSelectByLoginInBD() {
+        String login = "hB0RI4z";
+        User user = userRepositoryCrud.selectByLogin(login);
+        Assert.assertNotNull(user);
+    }
+
+
+
+//    @Test
+//    @DisplayName("Тестирование хеширования пароля (негативный тест)")
+//    public void testHashPasswordNegative(){
+//        String originalPassword = "AnyPassword";
+//        String hashedPassword = VariableGenerator.hashPassword(originalPassword);
+//        boolean isMatch = VariableGenerator.checkPassword("wrongPassword", hashedPassword);
+//        Assert.assertFalse(isMatch);
+//    }
 
 
 }

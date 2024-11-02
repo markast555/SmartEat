@@ -1,6 +1,5 @@
 package classes;
 
-import java.util.UUID;
 
 public class DatabaseParams {
 
@@ -18,5 +17,15 @@ public class DatabaseParams {
 
     public static String getPassword() {
         return password;
+    }
+
+    private static User user_se = null;
+
+    public static User getUser_se() {
+        return user_se;
+    }
+
+    public static void setUser_se(User user_se) {
+        DatabaseParams.user_se = user_se;
     }
 }

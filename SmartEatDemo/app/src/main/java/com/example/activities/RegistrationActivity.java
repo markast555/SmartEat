@@ -21,6 +21,9 @@ import androidx.core.view.WindowInsetsCompat;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
+import classes.DatabaseParams;
+import classes.User;
+
 public class RegistrationActivity extends AppCompatActivity {
 
     private TextInputLayout textInputLayoutLogin;
@@ -36,6 +39,10 @@ public class RegistrationActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        User user = DatabaseParams.getUser_se();
+        System.out.println(user.getHeight());
+
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.registration_frame);
@@ -139,8 +146,8 @@ public class RegistrationActivity extends AppCompatActivity {
             }
 
             private String formatRuNumber(String text) {
-                // Удаляем все символы, кроме цифр
-                String digits = text.replaceAll("[^\\d]", "");
+                // Удаляем все символы, кроме цифр (и первую семёрку)
+                String digits = text.replaceAll("[^\\d]", "").substring(1);
 
                 // Ограничиваем длину до 10 цифр
                 if (digits.length() > 10) {
@@ -148,6 +155,7 @@ public class RegistrationActivity extends AppCompatActivity {
                 }
 
                 StringBuilder formattedString = new StringBuilder("+7-");
+                //StringBuilder formattedString = new StringBuilder();
 
                 // Форматируем номер
                 if (digits.length() > 0) {
@@ -194,6 +202,7 @@ public class RegistrationActivity extends AppCompatActivity {
                             checkBoxConditions.setTextColor(getResources().getColor(R.color.dark_text,
                                     getTheme()));
                             Toast.makeText(this, "Принято!", Toast.LENGTH_SHORT).show();
+                            //User user = new User();
                         }else {
                             checkBoxConditions.setTextColor(getResources().getColor(R.color.red,
                                     getTheme()));
@@ -224,6 +233,7 @@ public class RegistrationActivity extends AppCompatActivity {
             Toast.makeText(this, "Логин: длина (4-16), смволы (a-zA-Z0-9_)",
                     Toast.LENGTH_LONG).show();
         }
+
     }
 
 

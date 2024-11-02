@@ -14,17 +14,20 @@ import android.util.Log;
 
 import android.widget.EditText;
 
+import classes.DatabaseParams;
+import classes.User;
+
 public class EntranceActivity extends AppCompatActivity {
 
     private EditText enterEditTextLogin;
-    private EditText enterEditTextPassword;
-
-    private static final String TAG = "MainActivity"; //Для вывода
+    private EditText enterEditTextPassword;//Для вывода
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        System.out.println("Я в onCreate(Main)");
-        //Log.d(TAG, "Я в onCreate(Main)");
+
+        User user = new User();
+        DatabaseParams.setUser_se(user);
+
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.entrance_frame);
@@ -56,13 +59,13 @@ public class EntranceActivity extends AppCompatActivity {
 
     // Обработка клика на кнопку "Войти"
     public void onButtonEnterClick(View v) {
+
         String login = getLogin();
         String password = getPassword();
 
-        Log.d(TAG, "Логин: " + login);
-        Log.d(TAG, "Пароль: " + password);
+        System.out.println("Логин: " + login);
+        System.out.println("Пароль: " + password);
     }
-
 
 }
 
