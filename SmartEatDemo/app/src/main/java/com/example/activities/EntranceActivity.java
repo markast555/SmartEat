@@ -2,6 +2,9 @@ package com.example.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.util.TypedValue;
 import android.view.View;
 
 import androidx.activity.EdgeToEdge;
@@ -41,6 +44,47 @@ public class EntranceActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+    }
+
+    private void setupUI() {
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });
+
+        enterEditTextLogin = findViewById(R.id.entranceEditTextLogin);
+        enterEditTextPassword = findViewById(R.id.entranceEditTextPassword);
+
+        addTextWatcher(enterEditTextLogin);
+        addTextWatcher(enterEditTextPassword);
+
+    }
+
+    // Метод для добавления TextWatcher
+    private void addTextWatcher(EditText editText) {
+        editText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                adjustTextSize(editText);
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {}
+        });
+    }
+
+    // Метод для изменения размера текста
+    private void adjustTextSize(EditText editText) {
+        int height = editText.getHeight();
+        if (height > 0) {
+            // Пример вычисления размера шрифта
+            float textSize = height / 10f; // Измените делитель по необходимости
+            editText.setTextSize(TypedValue.COMPLEX_UNIT_SP, textSize);
+        }
     }
 
     public void toRegistration(View v){
