@@ -7,6 +7,7 @@ array preloaded_fonts
 color black
 color dark_text
 color main
+color primary_text
 color red
 color white
 drawable home_icon
@@ -27,10 +28,12 @@ id buttonContinue
 id buttonEnter
 id checkBoxConditions
 id constraintLayout
+id editTextEmail
 id editTextLogin
 id editTextPassword
 id editTextPassword2
-id editTextPhoneNumber
+id email_code_input
+id email_verification_title
 id entranceEditTextLogin
 id entranceEditTextPassword
 id guideline5
@@ -42,10 +45,11 @@ id linerLayotToRegistration
 id linerLayoutEntrance
 id logo2
 id main
+id resend_code_button
+id textInputEmailLayout
 id textInputLayoutLogin
 id textInputLayoutPassword
 id textInputLayoutPassword2
-id textInputPhoneNumber
 id textViewEntrance
 id textViewEntranceToRegistration
 id textViewForgotPassword
@@ -53,6 +57,8 @@ id textViewHaveAccount
 id textViewNoAccount
 id textViewRegistration
 id textViewRegistrationToEntrance
+id verify_email_button
+layout email_verification_frame
 layout entrance_frame
 layout profile_frame
 layout registration_frame
@@ -63,6 +69,9 @@ string app_name
 string button_enter
 string button_u_enter
 string continue_text
+string email_code_hint
+string email_field
+string email_verification_title
 string entrance_text
 string is_account
 string login_field
@@ -73,7 +82,9 @@ string password_field
 string password_forgot
 string registration_text
 string registration_u_text
+string resend_code_button_text
 string telephone_number
+string verify_email_button_text
 style Base.Theme.SmartEatDemo
 style Theme.SmartEatDemo
 xml backup_rules

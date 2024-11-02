@@ -40,7 +40,7 @@
         <!--        android:background="@drawable/rounded_login_ui"-->
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textInputPhoneNumber"
+            android:id="@+id/textInputEmailLayout"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:hintEnabled="true"
@@ -54,14 +54,13 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <EditText
-                android:id="@+id/editTextPhoneNumber"
+                android:id="@+id/editTextEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:focusable="true"
-                android:hint="@string/telephone_number"
-                android:inputType="phone"
-                android:digits="0123456789"
+                android:hint="@string/email_field"
+                android:inputType="textEmailAddress"
                 android:textColor="@color/dark_text" />
         </com.google.android.material.textfield.TextInputLayout>
 

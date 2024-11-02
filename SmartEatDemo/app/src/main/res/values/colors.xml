@@ -4,5 +4,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="dark_text">#313131</color>
     <color name="main">#8BC34A</color>
+    <color name="main_dark">#6B923E</color>
     <color name="red">#FF0000</color>
+    <color name="primary_text">#000000</color>
 </resources>

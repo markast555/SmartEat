@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Patterns;
+import android.util.TypedValue;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -21,28 +23,17 @@ import androidx.core.view.WindowInsetsCompat;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
-import classes.DatabaseParams;
-import classes.User;
-
 public class RegistrationActivity extends AppCompatActivity {
 
-    private TextInputLayout textInputLayoutLogin;
     private EditText editTextLogin;
+    private EditText editTextEmail;
     private EditText editTextPassword;
     private EditText editTextPassword2;
-    private EditText editTextPhoneNumber;
     private CheckBox checkBoxConditions;
     private Button buttonContinue;
 
-    private boolean isPhoneNumberInitialized = false;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-        User user = DatabaseParams.getUser_se();
-        System.out.println(user.getHeight());
-
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.registration_frame);
@@ -66,145 +57,78 @@ public class RegistrationActivity extends AppCompatActivity {
             return insets;
         });
 
-        textInputLayoutLogin = findViewById(R.id.textInputLayoutLogin);
         editTextLogin = findViewById(R.id.editTextLogin);
+        editTextEmail = findViewById(R.id.editTextEmail); // Новое поле для email
         editTextPassword = findViewById(R.id.editTextPassword);
         editTextPassword2 = findViewById(R.id.editTextPassword2);
-        editTextPhoneNumber = findViewById(R.id.editTextPhoneNumber);
         checkBoxConditions = findViewById(R.id.checkBoxConditions);
         buttonContinue = findViewById(R.id.buttonContinue);
 
-        setupPhoneNumberFormatting();
-
         buttonContinue.setOnClickListener(this::onContinueButtonClick);
+
+        addTextWatcher(editTextPassword);
+        addTextWatcher(editTextLogin);
+        addTextWatcher(editTextPassword2);
+        addTextWatcher(editTextEmail);
     }
 
-
-    private void setupPhoneNumberFormatting() {
-        editTextPhoneNumber.setOnFocusChangeListener((v, hasFocus) -> {
-            if (hasFocus && !isPhoneNumberInitialized) {
-                editTextPhoneNumber.setText("+7-");
-                editTextPhoneNumber.setSelection(editTextPhoneNumber.getText().length()); // Устанавливаем курсор в конец
-                isPhoneNumberInitialized = true; // Устанавливаем флаг, чтобы не добавлять снова
-            }
-        });
-
-        editTextPhoneNumber.addTextChangedListener(new TextWatcher() {
-            private boolean mFormatting; // флаг для предотвращения бесконечных вызовов
-            private int mLastStartLocation;
-            private String mLastBeforeText;
-
+    // Метод для добавления TextWatcher
+    private void addTextWatcher(EditText editText) {
+        editText.addTextChangedListener(new TextWatcher() {
             @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                mLastStartLocation = start;
-                mLastBeforeText = s.toString();
-            }
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                // Ничего не делаем
+                adjustTextSize(editText);
             }
 
             @Override
-            public void afterTextChanged(Editable s) {
-                if (mFormatting) {
-                    return;
-                }
-
-                mFormatting = true;
-                try {
-                    String currentValue = s.toString();
-
-                    // Запрет на удаление "+7-"
-                    if (currentValue.length() < 4) {
-                        editTextPhoneNumber.setText("+7-");
-                        editTextPhoneNumber.setSelection(3); // Устанавливаем курсор после "+7-"
-                        return;
-                    }
-
-                    // Если номер уже начинается с "+7-", форматируем оставшуюся часть
-                    if (!currentValue.startsWith("+7-")) {
-                        currentValue = "+7-" + currentValue; // Добавляем префикс, если его нет
-                    }
-
-                    // Форматируем номер
-                    String formattedValue = formatRuNumber(currentValue);
-
-                    // Ограничиваем ввод до 16 символов
-                    if (formattedValue.length() > 16) {
-                        formattedValue = formattedValue.substring(0, 16);
-                    }
-
-                    editTextPhoneNumber.setText(formattedValue);
-                    editTextPhoneNumber.setSelection(formattedValue.length()); // Устанавливаем курсор в конец
-
-                } catch (Exception e) {
-                    e.printStackTrace(); // Логируем ошибку
-                } finally {
-                    mFormatting = false;
-                }
-            }
-
-            private String formatRuNumber(String text) {
-                // Удаляем все символы, кроме цифр (и первую семёрку)
-                String digits = text.replaceAll("[^\\d]", "").substring(1);
-
-                // Ограничиваем длину до 10 цифр
-                if (digits.length() > 10) {
-                    digits = digits.substring(0, 10);
-                }
-
-                StringBuilder formattedString = new StringBuilder("+7-");
-                //StringBuilder formattedString = new StringBuilder();
-
-                // Форматируем номер
-                if (digits.length() > 0) {
-                    formattedString.append(digits);
-                }
-
-                if (digits.length() > 3) {
-                    formattedString.insert(6, "-");
-                }
-                if (digits.length() > 6) {
-                    formattedString.insert(10, "-");
-                }
-                if (digits.length() > 8) {
-                    formattedString.insert(13, "-");
-                }
-
-                return formattedString.toString();
-            }
+            public void afterTextChanged(Editable s) {}
         });
     }
 
-
-
+    // Метод для изменения размера текста
+    private void adjustTextSize(EditText editText) {
+        int height = editText.getHeight();
+        if (height > 0) {
+            // Пример вычисления размера шрифта
+            float textSize = height / 10f; // Измените делитель по необходимости
+            editText.setTextSize(TypedValue.COMPLEX_UNIT_SP, textSize);
+        }
+    }
 
     private void onContinueButtonClick(View v) {
-        System.out.println("Я в onContinueButtonClick");
         String input = editTextLogin.getText().toString().trim();
         if (isValidLogin(input)) {
-            textInputLayoutLogin.setError(null); // Убираем ошибку
-            //Toast.makeText(this, "Логин принят!", Toast.LENGTH_SHORT).show();
-            // Логика для перехода на следующий экран
-            // Например:
-            // Intent intent = new Intent(this, NextActivity.class);
-            // startActivity(intent);
+            editTextLogin.setError(null); // Убираем ошибку
+
             input = editTextPassword.getText().toString().trim();
-            if (isValidLogin(input)) {
+            if (isValidPassword(input)) {
                 editTextPassword.setError(null);
                 String input2 = editTextPassword2.getText().toString().trim();
-                if (input.equals(input2)){
+                if (input.equals(input2)) {
                     editTextPassword2.setError(null);
-                    input = editTextPhoneNumber.getText().toString().trim();
-                    if (isValidPhoneNumber(input)) {
-                        editTextPhoneNumber.setError(null);
-                        if (checkBoxConditions.isChecked()){
+
+                    String emailInput = editTextEmail.getText().toString().trim();
+                    if (isValidEmail(emailInput)) {
+                        editTextEmail.setError(null);
+
+                        if (checkBoxConditions.isChecked()) {
                             checkBoxConditions.setTextColor(getResources().getColor(R.color.dark_text,
                                     getTheme()));
                             Toast.makeText(this, "Принято!", Toast.LENGTH_SHORT).show();
-                            //User user = new User();
-                        }else {
+
+                            // Переход в EmailVerificationActivity с передачей email
+                            try {
+                                Intent intent = new Intent(this, EmailVerificationActivity.class);
+                                intent.putExtra("userEmail", emailInput); // Передача email
+                                startActivity(intent);
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                                Toast.makeText(this, "Ошибка при переходе в EmailVerificationActivity", Toast.LENGTH_LONG).show();
+                            }
+                        } else {
                             checkBoxConditions.setTextColor(getResources().getColor(R.color.red,
                                     getTheme()));
                             Toast.makeText(this,
@@ -212,37 +136,36 @@ public class RegistrationActivity extends AppCompatActivity {
                                     Toast.LENGTH_LONG).show();
                             sleep(1000);
                         }
-                    }else {
-                        editTextPhoneNumber.setError("Номер телефона: +7-XXX-XXX-XX-XX");
-                        Toast.makeText(this, "Номер телефона: +7-XXX-XXX-XX-XX",
-                                Toast.LENGTH_LONG).show();
+                    } else {
+                        editTextEmail.setError("Введите корректный email");
+                        Toast.makeText(this, "Введите корректный email", Toast.LENGTH_LONG).show();
                     }
-                }else{
+                } else {
                     editTextPassword2.setError("Пароли не совпадают");
                     Toast.makeText(this, "Пароли не совпадают", Toast.LENGTH_LONG)
                             .show();
                 }
-
-            }else {
-                editTextPassword.setError("Пароль: длина (4-16), смволы (a-zA-Z0-9_)");
-                Toast.makeText(this, "Пароль: длина (4-16), смволы (a-zA-Z0-9_)",
+            } else {
+                editTextPassword.setError("Пароль: длина (4-16), символы (a-zA-Z0-9_)");
+                Toast.makeText(this, "Пароль: длина (4-16), символы (a-zA-Z0-9_)",
                         Toast.LENGTH_LONG).show();
             }
-
         } else {
-            textInputLayoutLogin.setError("Логин: длина (4-16), смволы (a-zA-Z0-9_)");
-            Toast.makeText(this, "Логин: длина (4-16), смволы (a-zA-Z0-9_)",
+            editTextLogin.setError("Логин: длина (4-16), символы (a-zA-Z0-9_)");
+            Toast.makeText(this, "Логин: длина (4-16), символы (a-zA-Z0-9_)",
                     Toast.LENGTH_LONG).show();
         }
-
     }
-
 
     private boolean isValidLogin(String login) {
         return login.length() >= 4 && login.length() <= 16 && login.matches("[a-zA-Z0-9_]+");
     }
 
-    private boolean isValidPhoneNumber(String phoneNumber) {
-        return phoneNumber.matches("\\+7-\\d{3}-\\d{3}-\\d{2}-\\d{2}");
+    private boolean isValidPassword(String password) {
+        return password.length() >= 4 && password.length() <= 16 && password.matches("[a-zA-Z0-9_]+");
+    }
+
+    private boolean isValidEmail(String email) {
+        return Patterns.EMAIL_ADDRESS.matcher(email).matches();
     }
 }
