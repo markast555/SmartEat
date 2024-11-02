@@ -13,12 +13,13 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import android.util.Log;
-
+import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import classes.DatabaseParams;
 import classes.User;
+import classes.UserRepositoryCrud;
 
 public class EntranceActivity extends AppCompatActivity {
 
@@ -109,6 +110,20 @@ public class EntranceActivity extends AppCompatActivity {
 
         System.out.println("Логин: " + login);
         System.out.println("Пароль: " + password);
+
+        UserRepositoryCrud userRepositoryCrud = new UserRepositoryCrud();
+        userRepositoryCrud.setConnectionParameters(DatabaseParams.getUrl(), DatabaseParams.getUser(), DatabaseParams.getPassword());
+
+        userRepositoryCrud.setConnection();
+
+
+//
+//        //String login = "hB0RI4z";
+//        User user = userRepositoryCrud.selectByLogin(login);
+//        //Assert.assertNotNull(user);
+//        if (user != null){
+//            Toast.makeText(this, "Принято!", Toast.LENGTH_SHORT).show();
+//        }
     }
 
 }
