@@ -20,4 +20,16 @@
     <string name="telephone_number">Номер телефона</string>
     <string name="agreeing_terms">Я прочитал(-а) и принимаю условия предоставлния услуг</string>
 
+    <!--email_frame-->
+    <string name="email_field">Email</string>
+    <string name="email_verification_title">Введите код, отправленный на вашу почту</string>
+    <string name="email_code_hint">Код подтверждения</string>
+    <string name="verify_email_button_text">Подтвердить</string>
+    <string name="resend_code_button_text">Отправить код повторно</string>
+
+
+    <!--profile_frame-->
+    <string name="profile">Профиль</string>
+
+
 </resources>
