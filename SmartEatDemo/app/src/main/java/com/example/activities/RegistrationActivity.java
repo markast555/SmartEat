@@ -202,6 +202,7 @@ public class RegistrationActivity extends AppCompatActivity {
 
 
     private void onContinueButtonClick(View v) {
+        System.out.println("Я в onContinueButtonClick");
         String input = editTextLogin.getText().toString().trim();
         if (isValidLogin(input)) {
             editTextLogin.setError(null); // Убираем ошибку

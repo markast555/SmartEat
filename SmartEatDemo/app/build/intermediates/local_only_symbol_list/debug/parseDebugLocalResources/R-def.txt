@@ -9,10 +9,12 @@ color dark_text
 color main
 color red
 color white
+drawable home_icon
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable logo
 drawable logo2
+drawable profile_icon
 drawable rounded_constraint_layout
 font adlam_display
 font agbalumo
@@ -34,8 +36,10 @@ id entranceEditTextPassword
 id guideline5
 id guideline6
 id guideline7
+id imageButtonHome
+id imageProfile
+id linerLayotToRegistration
 id linerLayoutEntrance
-id linerLayoutToRegistration
 id logo2
 id main
 id textInputLayoutLogin
@@ -50,6 +54,7 @@ id textViewNoAccount
 id textViewRegistration
 id textViewRegistrationToEntrance
 layout entrance_frame
+layout profile_frame
 layout registration_frame
 mipmap ic_launcher
 mipmap ic_launcher_round

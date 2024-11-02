@@ -110,6 +110,14 @@ public class Dish {
         this.description = description;
     }
 
+    public MealType getMealType() {
+        return mealType;
+    }
+
+    public void setMealType(MealType mealType) {
+        this.mealType = mealType;
+    }
+
     public UUID getIdDish() {
         return idDish;
     }

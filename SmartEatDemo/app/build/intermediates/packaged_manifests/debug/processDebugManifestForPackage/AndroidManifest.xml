@@ -28,6 +28,9 @@
         android:testOnly="true"
         android:theme="@style/Theme.SmartEatDemo" >
         <activity
+            android:name="com.example.activities.ProfileActivity"
+            android:exported="false" />
+        <activity
             android:name="com.example.activities.RegistrationActivity"
             android:exported="false" />
         <activity
