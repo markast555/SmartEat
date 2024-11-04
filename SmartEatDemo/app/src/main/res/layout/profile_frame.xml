@@ -9,6 +9,7 @@
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayoutProfile"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@color/main"
@@ -40,7 +41,7 @@
 
     <TextView
         android:id="@+id/textViewLogin"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/login_field"
         android:textColor="@color/dark_text"
@@ -59,12 +60,13 @@
         android:id="@+id/textInputLayoutLogin"
         android:layout_width="0dp"
         android:layout_height="0dp"
+
         app:hintEnabled="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintVertical_bias="0.16"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintHeight_percent="0.08"
         app:layout_constraintWidth_percent="0.82"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -77,47 +79,383 @@
             android:focusable="true"
             android:hint="@string/login_field"
             android:inputType="text"
-            android:textColor="@color/dark_text" />
+            android:textColor="@color/dark_text"
+            app:hintAnimationEnabled="false"/>
     </com.google.android.material.textfield.TextInputLayout>
 
-    <TableLayout
-        android:id="@+id/linerLayoutEntrance"
+    <TextView
+        android:id="@+id/textViewSex"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:orientation="horizontal"
-        android:background="@color/main"
+        android:layout_height="wrap_content"
+        android:text="@string/sex"
+        android:textColor="@color/dark_text"
+        android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintHeight_percent="0.1"
-        app:layout_constraintWidth_percent="1"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintVertical_bias="1">
+        app:layout_constraintHeight_percent="0.145"
+        app:layout_constraintVertical_bias="0.26"
+        app:layout_constraintHorizontal_bias="0.15"
+        app:layout_constraintWidth_percent="0.41"/>
 
-        <TableRow
+
+    <RadioGroup
+        android:id="@+id/radioGroupGender"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHeight_percent="0.08"
+        app:layout_constraintVertical_bias="0.31"
+        app:layout_constraintHorizontal_bias="0.15"
+        app:layout_constraintWidth_percent="0.41"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/radioButtonMale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/male" />
+
+        <RadioButton
+            android:id="@+id/radioButtonFemale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/female" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textViewDateOfBirth"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/date_of_birth"
+        android:textColor="@color/dark_text"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHeight_percent="0.145"
+        app:layout_constraintVertical_bias="0.26"
+        app:layout_constraintHorizontal_bias="0.86"
+        app:layout_constraintWidth_percent="0.35"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutDateOfBirth"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:hintEnabled="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.31"
+        app:layout_constraintHorizontal_bias="0.86"
+        app:layout_constraintHeight_percent="0.08"
+        app:layout_constraintWidth_percent="0.35"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <EditText
+            android:id="@+id/editTextDateOfBirth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:focusable="false"
+            android:hint="@string/date_of_birth"
+            android:textColor="@color/dark_text" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+<!--    <TableLayout-->
+<!--        android:id="@+id/tableLayoutHeightAndWeight"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintVertical_bias="0.55"-->
+<!--        app:layout_constraintHorizontal_bias="0.5"-->
+<!--        app:layout_constraintHeight_percent="0.08"-->
+<!--        app:layout_constraintWidth_percent="0.82">-->
+
+<!--        <TableRow>-->
+<!--            <TextView-->
+<!--                android:id="@+id/textViewHeight"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="@string/height"-->
+<!--                android:layout_weight="1"-->
+<!--                android:textColor="@color/dark_text"-->
+<!--                android:textSize="16sp"-->
+<!--                android:textStyle="bold"/>-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/textViewWeight"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="@string/weight"-->
+<!--                android:layout_weight="1"-->
+<!--                android:textColor="@color/dark_text"-->
+<!--                android:textSize="16sp"-->
+<!--                android:textStyle="bold"/>-->
+
+
+<!--        </TableRow>-->
+
+<!--        <TableRow>-->
+
+<!--            <com.google.android.material.textfield.TextInputLayout-->
+<!--                android:id="@+id/textInputLayoutHeight"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:hint="@string/height"-->
+<!--                app:hintEnabled="true"-->
+<!--                app:layout_weight="1">-->
+
+<!--                <EditText-->
+<!--                    android:id="@+id/editTextHeight"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:inputType="number"-->
+<!--                    app:layout_weight="1"/>-->
+<!--            </com.google.android.material.textfield.TextInputLayout>-->
+
+<!--            <com.google.android.material.textfield.TextInputLayout-->
+<!--                android:id="@+id/textInputLayoutWeight"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:hint="@string/weight"-->
+<!--                app:hintEnabled="true"-->
+<!--                app:layout_weight="1">-->
+
+<!--                <EditText-->
+<!--                    android:id="@+id/editTextWeight"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:inputType="number"-->
+<!--                    app:layout_weight="1"/>-->
+<!--            </com.google.android.material.textfield.TextInputLayout>-->
+
+<!--        </TableRow>-->
+<!--    </TableLayout>-->
+
+<TextView
+    android:id="@+id/textViewHeight"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:text="@string/height"
+    android:textColor="@color/dark_text"
+    android:textSize="16sp"
+    android:textStyle="bold"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintHeight_percent="0.145"
+    app:layout_constraintVertical_bias="0.4"
+    app:layout_constraintHorizontal_bias="0.14"
+    app:layout_constraintWidth_percent="0.35"/>
+
+    <TextView
+        android:id="@+id/textViewWeight"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/weight"
+        android:textColor="@color/dark_text"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHeight_percent="0.145"
+        app:layout_constraintVertical_bias="0.4"
+        app:layout_constraintHorizontal_bias="0.86"
+        app:layout_constraintWidth_percent="0.35"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutHeight"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:hintEnabled="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.455"
+        app:layout_constraintHorizontal_bias="0.14"
+        app:layout_constraintHeight_percent="0.08"
+        app:layout_constraintWidth_percent="0.35"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <EditText
+            android:id="@+id/editTextHeight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:focusable="true"
+            android:hint="@string/height"
+            android:textColor="@color/dark_text" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutWeight"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:hintEnabled="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.455"
+        app:layout_constraintHorizontal_bias="0.86"
+        app:layout_constraintHeight_percent="0.08"
+        app:layout_constraintWidth_percent="0.35"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <EditText
+            android:id="@+id/editTextWeight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:focusable="true"
+            android:hint="@string/weight"
+            android:textColor="@color/dark_text" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <TextView
+        android:id="@+id/textViewLevelOfPhysicalActivity"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/level_of_physical_activity"
+        android:textColor="@color/dark_text"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHeight_percent="0.145"
+        app:layout_constraintVertical_bias="0.54"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintWidth_percent="0.82"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutLevelOfPhysicalActivity"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+
+        app:hintEnabled="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.605"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHeight_percent="0.08"
+        app:layout_constraintWidth_percent="0.82"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <AutoCompleteTextView
+            android:id="@+id/autoCompleteTextViewLevelOfPhysicalActivity"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layout_constraintHeight_percent="0.1">
+            android:hint="@string/level_of_physical_activity"
+            android:inputType="none"
+            android:focusable="true"
+            android:clickable="true"
+            android:textColor="@color/dark_text"/>
+    </com.google.android.material.textfield.TextInputLayout>
 
-            <ImageButton
-                android:id="@+id/imageButtonHome"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:src="@drawable/home_icon"
-                android:background="@color/main"
-                android:contentDescription="@string/logo_description"/>
-            <ImageButton
-                android:id="@+id/imageProfile"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:src="@drawable/profile_icon"
-                android:background="@color/main_dark"
-                android:contentDescription="@string/logo_description"/>
 
-        </TableRow>
-    </TableLayout>
+    <TextView
+        android:id="@+id/textViewGoal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/goal"
+        android:textColor="@color/dark_text"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHeight_percent="0.145"
+        app:layout_constraintVertical_bias="0.68"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintWidth_percent="0.82"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutGoal"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+
+        app:hintEnabled="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.75"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHeight_percent="0.08"
+        app:layout_constraintWidth_percent="0.82"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <AutoCompleteTextView
+            android:id="@+id/autoCompleteTextViewGoal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="@string/goal"
+            android:inputType="none"
+            android:focusable="true"
+            android:clickable="true"
+            android:textColor="@color/dark_text"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayoutButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/main"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintWidth_percent="1">
+
+        <ImageButton
+            android:id="@+id/imageButtonHome"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/home_icon"
+            android:background="@color/main"
+            android:contentDescription="@string/logo_description"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/imageButtonProfile"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/imageButtonProfile"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/profile_icon"
+            android:background="@color/main_dark"
+            android:contentDescription="@string/logo_description"
+            app:layout_constraintStart_toEndOf="@+id/imageButtonHome"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
