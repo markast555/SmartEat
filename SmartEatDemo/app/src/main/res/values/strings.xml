@@ -30,6 +30,14 @@
 
     <!--profile_frame-->
     <string name="profile">Профиль</string>
+    <string name="sex">Пол</string>
+    <string name="male">М</string>
+    <string name="female">Ж</string>
+    <string name="date_of_birth">Дата рождения</string>
+    <string name="height">Рост (см)</string>
+    <string name="weight">Вес (кг)</string>
+    <string name="level_of_physical_activity">Уровень активности</string>
+    <string name="goal">Цель</string>
 
 
 </resources>
