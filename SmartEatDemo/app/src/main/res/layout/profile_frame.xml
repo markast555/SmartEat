@@ -77,10 +77,10 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:focusable="true"
-            android:hint="@string/login_field"
             android:inputType="text"
             android:textColor="@color/dark_text"
             app:hintAnimationEnabled="false"/>
+<!--        android:hint="@string/login_field"-->
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
@@ -167,8 +167,8 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:focusable="false"
-            android:hint="@string/date_of_birth"
             android:textColor="@color/dark_text" />
+        <!--            android:hint="@string/date_of_birth"-->
     </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -300,8 +300,8 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:focusable="true"
-            android:hint="@string/height"
             android:textColor="@color/dark_text" />
+        <!--            android:hint="@string/height"-->
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -324,19 +324,13 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:focusable="true"
-            android:hint="@string/weight"
             android:textColor="@color/dark_text" />
+        <!--            android:hint="@string/weight"-->
     </com.google.android.material.textfield.TextInputLayout>
 
-
-    <TextView
-        android:id="@+id/textViewLevelOfPhysicalActivity"
+    <TableLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/level_of_physical_activity"
-        android:textColor="@color/dark_text"
-        android:textSize="16sp"
-        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -344,7 +338,49 @@
         app:layout_constraintHeight_percent="0.145"
         app:layout_constraintVertical_bias="0.54"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintWidth_percent="0.82"/>
+        app:layout_constraintWidth_percent="0.82">
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/textViewLevelOfPhysicalActivity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/level_of_physical_activity"
+                android:textColor="@color/dark_text"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintHeight_percent="0.145"
+                app:layout_constraintVertical_bias="0.54"
+                app:layout_constraintHorizontal_bias="0.14"
+                app:layout_constraintWidth_percent="0.41"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
+                android:layout_weight="1">
+                <ImageButton
+                    android:id="@+id/imageButtonQuestion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/question_circle"
+                    android:background="?attr/selectableItemBackground"
+                    android:contentDescription="@string/logo_description"
+                    app:layout_constraintStart_toEndOf="@+id/textViewLevelOfPhysicalActivity"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.54"
+                    app:layout_constraintHorizontal_bias="0.02"
+                    android:layout_marginStart="3dp"/>
+            </LinearLayout>
+        </TableRow>
+    </TableLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayoutLevelOfPhysicalActivity"
@@ -365,11 +401,16 @@
             android:id="@+id/autoCompleteTextViewLevelOfPhysicalActivity"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="@string/level_of_physical_activity"
             android:inputType="none"
             android:focusable="true"
             android:clickable="true"
-            android:textColor="@color/dark_text"/>
+            android:textColor="@color/dark_text"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:singleLine="true"/>
+        <!--            android:hint="@string/level_of_physical_activity"-->
     </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -409,13 +450,33 @@
             android:id="@+id/autoCompleteTextViewGoal"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="@string/goal"
             android:inputType="none"
             android:focusable="true"
             android:clickable="true"
-            android:textColor="@color/dark_text"/>
+            android:textColor="@color/dark_text"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:singleLine="true"/>
+        <!--            android:hint="@string/goal"-->
     </com.google.android.material.textfield.TextInputLayout>
 
+
+    <Button
+        android:id="@+id/buttonSave"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/save"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.85"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHeight_percent="0.08"
+        app:layout_constraintWidth_percent="0.82"/>
 
 
     <androidx.constraintlayout.widget.ConstraintLayout

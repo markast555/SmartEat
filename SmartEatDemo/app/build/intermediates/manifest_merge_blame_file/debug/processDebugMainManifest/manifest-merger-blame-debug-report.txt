@@ -59,11 +59,11 @@
 39            <!-- </intent-filter> -->
 40        </activity>
 41        <activity
-41-->C:\Users\user\AndroidStudioProjects\SmartEatDemo\app\src\main\AndroidManifest.xml:25:9-27:40
+41-->C:\Users\user\AndroidStudioProjects\SmartEatDemo\app\src\main\AndroidManifest.xml:25:9-27:39
 42            android:name="com.example.activities.ProfileActivity"
 42-->C:\Users\user\AndroidStudioProjects\SmartEatDemo\app\src\main\AndroidManifest.xml:26:13-44
-43            android:exported="false" />
-43-->C:\Users\user\AndroidStudioProjects\SmartEatDemo\app\src\main\AndroidManifest.xml:27:13-37
+43            android:exported="true" />
+43-->C:\Users\user\AndroidStudioProjects\SmartEatDemo\app\src\main\AndroidManifest.xml:27:13-36
 44        <activity
 44-->C:\Users\user\AndroidStudioProjects\SmartEatDemo\app\src\main\AndroidManifest.xml:28:9-30:40
 45            android:name="com.example.activities.RegistrationActivity"

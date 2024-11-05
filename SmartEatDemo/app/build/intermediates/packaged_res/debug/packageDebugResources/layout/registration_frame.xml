@@ -86,11 +86,7 @@
                 android:focusable="true"
                 android:hint="@string/login_field"
                 android:inputType="text"
-                android:textColor="@color/dark_text"
-                android:autoSizeTextType="uniform"
-                android:autoSizeMinTextSize="9sp"
-                android:autoSizeMaxTextSize="20sp"
-                android:autoSizeStepGranularity="1sp"/>
+                android:textColor="@color/dark_text" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -143,6 +139,7 @@
             android:text="@string/registration_text"
             android:textColor="@color/dark_text"
             android:textSize="34sp"
+
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHeight_percent="0.145"

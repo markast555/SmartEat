@@ -107,9 +107,9 @@ ADDED from C:\Users\user\AndroidStudioProjects\SmartEatDemo\app\src\main\Android
 	android:name
 		ADDED from C:\Users\user\AndroidStudioProjects\SmartEatDemo\app\src\main\AndroidManifest.xml:17:19-60
 activity#com.example.activities.ProfileActivity
-ADDED from C:\Users\user\AndroidStudioProjects\SmartEatDemo\app\src\main\AndroidManifest.xml:25:9-27:40
+ADDED from C:\Users\user\AndroidStudioProjects\SmartEatDemo\app\src\main\AndroidManifest.xml:25:9-27:39
 	android:exported
-		ADDED from C:\Users\user\AndroidStudioProjects\SmartEatDemo\app\src\main\AndroidManifest.xml:27:13-37
+		ADDED from C:\Users\user\AndroidStudioProjects\SmartEatDemo\app\src\main\AndroidManifest.xml:27:13-36
 	android:name
 		ADDED from C:\Users\user\AndroidStudioProjects\SmartEatDemo\app\src\main\AndroidManifest.xml:26:13-44
 activity#com.example.activities.RegistrationActivity
