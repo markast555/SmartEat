@@ -1,14 +1,18 @@
 package com.example.activities;
 
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.TypedValue;
+import android.view.Gravity;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -16,6 +20,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 
 import java.util.Calendar;
 
@@ -34,6 +40,7 @@ public class ProfileActivity extends AppCompatActivity {
     private EditText editTextWeight;
     private AutoCompleteTextView autoCompleteTextViewLevelOfPhysicalActivity;
     private AutoCompleteTextView autoCompleteTextViewGoal;
+    private ImageButton imageButtonQuestion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +74,7 @@ public class ProfileActivity extends AppCompatActivity {
         autoCompleteTextViewLevelOfPhysicalActivity = findViewById(R.id.
                 autoCompleteTextViewLevelOfPhysicalActivity);
         autoCompleteTextViewGoal = findViewById(R.id.autoCompleteTextViewGoal);
+        imageButtonQuestion = findViewById(R.id.imageButtonQuestion);
 
         addTextWatcherTextView(textViewLogin);
         addTextWatcherEditText(editTextLogin);
@@ -81,6 +89,9 @@ public class ProfileActivity extends AppCompatActivity {
 
         setupPhysicalActivityLevelDropdown();
         setupGoalDropdown();
+
+        imageButtonQuestion.setOnClickListener(v -> showPhysicalActivityInfoDialog());
+
 
     }
 
@@ -185,6 +196,35 @@ public class ProfileActivity extends AppCompatActivity {
         autoCompleteTextViewGoal.setFocusable(false);
         autoCompleteTextViewGoal.setOnClickListener(v -> autoCompleteTextViewGoal.showDropDown());
     }
+
+//    private void showPhysicalActivityInfoDialog() {
+//        BottomSheetDialog dialog = new BottomSheetDialog(this);
+//        View dialogView = getLayoutInflater().inflate(R.layout.physical_activity_info_sheet, null);
+//        dialog.setContentView(dialogView);
+//
+//        ImageButton buttonClose = dialogView.findViewById(R.id.imageButtonClose);
+//        buttonClose.setOnClickListener(v -> dialog.dismiss());
+//
+//        dialog.show();
+//    }
+
+    private void showPhysicalActivityInfoDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        View dialogView = getLayoutInflater().inflate(R.layout.physical_activity_info_sheet, null);
+        builder.setView(dialogView);
+
+        AlertDialog dialog = builder.create();
+        dialog.setCancelable(true);
+
+        ImageButton buttonClose = dialogView.findViewById(R.id.imageButtonClose);
+        buttonClose.setOnClickListener(v -> dialog.dismiss());
+
+        // Центрирование диалогового окна
+        dialog.getWindow().setGravity(Gravity.CENTER);
+
+        dialog.show();
+    }
+
 
 
 }

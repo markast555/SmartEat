@@ -38,6 +38,12 @@
     <string name="weight">Вес (кг)</string>
     <string name="level_of_physical_activity">Уровень активности</string>
     <string name="goal">Цель</string>
+    <string name="save">Сохранить</string>
+
+
+    <!--physical_activity_info_sheet-->
+    <string name="levels_of_physical_activity">Уровни физической активности</string>
+    <string name="physical_activity_info">- Сидячий (малоподвижный)\n\n- Небольшая активность (легкие упражнения 1-3 дня в неделю)\n\n- Умеренная активность (умеренные упражнения 3-5 дней в неделю)\n\n- Высокая активность (интенсивные упражнения 6-7 дней в неделю)\n\n- Очень высокая активность (физическая работа или тренировки дважды в день)</string>
 
 
 </resources>
