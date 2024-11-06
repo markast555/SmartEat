@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_frame_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".MainActivity">
+
+    <!-- Верхняя панель -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/headerLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/main"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.1">
+
+        <TextView
+            android:id="@+id/textViewMainTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Главная"
+            android:textColor="@color/white"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Центральное окно -->
+    <LinearLayout
+        android:id="@+id/centerWindow"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/rounded_gray_rectangle"
+        android:padding="16dp"
+        app:layout_constraintTop_toBottomOf="@id/headerLayout"
+        app:layout_constraintBottom_toTopOf="@id/constraintLayoutButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.4"
+        app:layout_constraintWidth_percent="0.8">
+
+        <!-- Обертка для ползунка и текста -->
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <!-- Здесь оставляем ваш оригинальный SeekBar из main_frame.xml -->
+            <SeekBar
+                android:id="@+id/seekBar"
+                android:layout_width="@dimen/seekbar_total_width"
+                android:layout_height="wrap_content"
+                android:minHeight="@dimen/seekbar_thumb_height"
+                android:maxHeight="@dimen/seekbar_thumb_height"
+                android:thumbOffset="0dp"
+                android:max="100"
+                android:progress="0"
+                android:splitTrack="false"
+                android:paddingStart="@dimen/seekbar_padding"
+                android:paddingEnd="@dimen/seekbar_padding"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </FrameLayout>
+
+        <!-- Кнопка "Начать" под слайдером -->
+        <Button
+            android:id="@+id/startButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Начать"
+            android:backgroundTint="@color/main"
+            android:textColor="@color/border"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:textSize="18sp"
+            android:layout_marginTop="16dp" />
+    </LinearLayout>
+
+    <!-- Нижняя панель навигации -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayoutButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/main"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintWidth_percent="1">
+
+        <ImageButton
+            android:id="@+id/imageButtonHome"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/home_icon"
+            android:background="@color/main_dark"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/imageButtonProfile"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/imageButtonProfile"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/profile_icon"
+            android:background="@color/main"
+            app:layout_constraintStart_toEndOf="@+id/imageButtonHome"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

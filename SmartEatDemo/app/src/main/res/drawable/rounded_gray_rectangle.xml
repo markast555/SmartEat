@@ -1,0 +1,13 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Серый фон -->
+    <solid android:color="@color/light_gray" /> <!-- Светло-серый цвет фона -->
+
+    <!-- Чёрная окантовка -->
+    <stroke android:width="1dp" android:color="#000000" /> <!-- Чёрная рамка толщиной 1dp -->
+
+    <!-- Закруглённые углы -->
+    <corners android:radius="16dp" />
+
+    <!-- Отступы внутри -->
+    <padding android:left="8dp" android:right="8dp" android:top="8dp" android:bottom="8dp"/>
+</shape>

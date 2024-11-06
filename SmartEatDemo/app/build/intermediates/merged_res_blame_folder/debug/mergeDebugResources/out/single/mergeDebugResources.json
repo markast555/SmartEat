@@ -1,150 +1,226 @@
 [
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\mipmap-xhdpi\\ic_launcher_round.webp"
+        "merged": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\drawable_slider_thumb.xml.flat",
+        "source": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\drawable\\slider_thumb.xml"
     },
     {
-        "merged": "com.example.activities.app-debug-31:/layout_profile_frame.xml.flat",
-        "source": "com.example.activities.app-main-33:/layout/profile_frame.xml"
+        "merged": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\drawable_rounded_gray_rectangle.xml.flat",
+        "source": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\drawable\\rounded_gray_rectangle.xml"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\mipmap-xxhdpi\\ic_launcher_round.webp"
+        "merged": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\layout_entrance_frame.xml.flat",
+        "source": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\layout\\entrance_frame.xml"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\font_angkor.xml.flat",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\font\\angkor.xml"
+        "merged": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\drawable_rounded_constraint_layout.xml.flat",
+        "source": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\drawable\\rounded_constraint_layout.xml"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\mipmap-xxhdpi\\ic_launcher.png"
+        "merged": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\drawable_profile_icon.xml.flat",
+        "source": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\drawable\\profile_icon.xml"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\drawable_logo.png.flat",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\drawable\\logo.png"
+        "merged": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\mipmap-mdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\layout_email_verification_frame.xml.flat",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\layout\\email_verification_frame.xml"
+        "merged": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\mipmap-xhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+        "merged": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\drawable_rounded_button.xml.flat",
+        "source": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\drawable\\rounded_button.xml"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\drawable_ic_launcher_background.xml.flat",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\drawable\\ic_launcher_background.xml"
+        "merged": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\xml_backup_rules.xml.flat",
+        "source": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\xml\\backup_rules.xml"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\mipmap-mdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\mipmap-mdpi\\ic_launcher.png"
+        "merged": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\layout_main_frame.xml.flat",
+        "source": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\layout\\main_frame.xml"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\font_shojumaru.xml.flat",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\font\\shojumaru.xml"
+        "merged": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\font_shojumaru.xml.flat",
+        "source": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\font\\shojumaru.xml"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\xml_backup_rules.xml.flat",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\xml\\backup_rules.xml"
+        "merged": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\drawable_tb.xml.flat",
+        "source": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\drawable\\tb.xml"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\font_bagel_fat_one.xml.flat",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\font\\bagel_fat_one.xml"
+        "merged": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\font_agbalumo.xml.flat",
+        "source": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\font\\agbalumo.xml"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\font_adlam_display.xml.flat",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\font\\adlam_display.xml"
+        "merged": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\font_playfair_display.xml.flat",
+        "source": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\font\\playfair_display.xml"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\drawable_image_button_question.xml.flat",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\drawable\\image_button_question.xml"
+        "merged": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\drawable_rounded_rectangle_background.xml.flat",
+        "source": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\drawable\\rounded_rectangle_background.xml"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\drawable_logo2.png.flat",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\drawable\\logo2.png"
+        "merged": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\drawable_logo.png.flat",
+        "source": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\drawable\\logo.png"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\layout_physical_activity_info_sheet.xml.flat",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\layout\\physical_activity_info_sheet.xml"
+        "merged": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\mipmap-xxhdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\layout_entrance_frame.xml.flat",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\layout\\entrance_frame.xml"
+        "merged": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\drawable_rounded_turq_rectangle.xml.flat",
+        "source": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\drawable\\rounded_turq_rectangle.xml"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\drawable_profile_icon.xml.flat",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\drawable\\profile_icon.xml"
+        "merged": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\layout_registration_frame.xml.flat",
+        "source": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\layout\\registration_frame.xml"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\mipmap-xhdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\mipmap-xhdpi\\ic_launcher.png"
+        "merged": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\drawable_slider_thumb_manual.xml.flat",
+        "source": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\drawable\\slider_thumb_manual.xml"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\drawable_close_icon.xml.flat",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\drawable\\close_icon.xml"
+        "merged": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\drawable_logo2.png.flat",
+        "source": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\drawable\\logo2.png"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\font_baloo.xml.flat",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\font\\baloo.xml"
+        "merged": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\drawable\\ic_launcher_background.xml"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\mipmap-xxxhdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\mipmap-xxxhdpi\\ic_launcher.png"
+        "merged": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\mipmap-xhdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\drawable_home_icon.xml.flat",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\drawable\\home_icon.xml"
+        "merged": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\drawable_custom_progress.xml.flat",
+        "source": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\drawable\\custom_progress.xml"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\font_playfair_display.xml.flat",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\font\\playfair_display.xml"
+        "merged": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\drawable_toggle_inactive.xml.flat",
+        "source": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\drawable\\toggle_inactive.xml"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\drawable_rounded_constraint_layout.xml.flat",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\drawable\\rounded_constraint_layout.xml"
+        "merged": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\drawable_custom_progress_drawable.xml.flat",
+        "source": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\drawable\\custom_progress_drawable.xml"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\mipmap-anydpi-v26\\ic_launcher.xml"
+        "merged": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\drawable_slider_track.xml.flat",
+        "source": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\drawable\\slider_track.xml"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\mipmap-hdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\mipmap-hdpi\\ic_launcher_round.webp"
+        "merged": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\mipmap-xxhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\layout_profile_frame.xml.flat",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\layout\\profile_frame.xml"
+        "merged": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\font_bagel_fat_one.xml.flat",
+        "source": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\font\\bagel_fat_one.xml"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\font_agbalumo.xml.flat",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\font\\agbalumo.xml"
+        "merged": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\layout_main2_frame.xml.flat",
+        "source": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\layout\\main2_frame.xml"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\mipmap-mdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\mipmap-mdpi\\ic_launcher_round.webp"
+        "merged": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\mipmap-hdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\drawable_ic_launcher_foreground.xml.flat",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\drawable\\ic_launcher_foreground.xml"
+        "merged": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\font_baloo.xml.flat",
+        "source": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\font\\baloo.xml"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\drawable_question_circle.xml.flat",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\drawable\\question_circle.xml"
+        "merged": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\drawable_home_icon.xml.flat",
+        "source": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\drawable\\home_icon.xml"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\drawable_background_pressed.xml.flat",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\drawable\\background_pressed.xml"
+        "merged": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\font_angkor.xml.flat",
+        "source": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\font\\angkor.xml"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\xml_data_extraction_rules.xml.flat",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\xml\\data_extraction_rules.xml"
+        "merged": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\layout_registration_frame.xml.flat",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\layout\\registration_frame.xml"
+        "merged": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\mipmap-xxxhdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
+        "merged": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\drawable_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\drawable\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\drawable_slider_unchecked.xml.flat",
+        "source": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\drawable\\slider_unchecked.xml"
+    },
+    {
+        "merged": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\layout_profile_frame.xml.flat",
+        "source": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\layout\\profile_frame.xml"
+    },
+    {
+        "merged": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\layout_email_verification_frame.xml.flat",
+        "source": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\layout\\email_verification_frame.xml"
+    },
+    {
+        "merged": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\drawable_rounded_blue_background.xml.flat",
+        "source": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\drawable\\rounded_blue_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\xml_data_extraction_rules.xml.flat",
+        "source": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\xml\\data_extraction_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\drawable_custom_thumb.xml.flat",
+        "source": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\drawable\\custom_thumb.xml"
+    },
+    {
+        "merged": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\font_adlam_display.xml.flat",
+        "source": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\font\\adlam_display.xml"
+    },
+    {
+        "merged": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\drawable_slider_checked.xml.flat",
+        "source": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\drawable\\slider_checked.xml"
+    },
+    {
+        "merged": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\drawable_slider_thumb_auto.xml.flat",
+        "source": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\drawable\\slider_thumb_auto.xml"
+    },
+    {
+        "merged": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\drawable_question_circle.xml.flat",
+        "source": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\drawable\\question_circle.xml"
+    },
+    {
+        "merged": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\layout_physical_activity_info_sheet.xml.flat",
+        "source": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\layout\\physical_activity_info_sheet.xml"
+    },
+    {
+        "merged": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\anim_shake.xml.flat",
+        "source": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\anim\\shake.xml"
+    },
+    {
+        "merged": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\drawable_circle_background.xml.flat",
+        "source": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\drawable\\circle_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\drawable_toggle_slider.xml.flat",
+        "source": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\drawable\\toggle_slider.xml"
+    },
+    {
+        "merged": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\drawable_close_icon.xml.flat",
+        "source": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\drawable\\close_icon.xml"
+    },
+    {
+        "merged": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\drawable_slider_background.xml.flat",
+        "source": "C:\\Users\\polka\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\drawable\\slider_background.xml"
     }
 ]

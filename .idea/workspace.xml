@@ -46,7 +46,32 @@
           <theme>@style/Theme.SmartEatDemo</theme>
         </config>
       </layout>
+      <layout url="file://$PROJECT_DIR$/SmartEatDemo/app/src/main/res/layout/email_verification_frame.xml">
+        <config>
+          <theme>@style/Theme.SmartEatDemo</theme>
+        </config>
+      </layout>
       <layout url="file://$PROJECT_DIR$/SmartEatDemo/app/src/main/res/layout/entrance_frame.xml">
+        <config>
+          <theme>@style/Theme.SmartEatDemo</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/SmartEatDemo/app/src/main/res/layout/main2_frame.xml">
+        <config>
+          <theme>@style/Theme.SmartEatDemo</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/SmartEatDemo/app/src/main/res/layout/main_frame.xml">
+        <config>
+          <theme>@style/Theme.SmartEatDemo</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/SmartEatDemo/app/src/main/res/layout/physical_activity_info_sheet.xml">
+        <config>
+          <theme>@style/Theme.SmartEatDemo</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/SmartEatDemo/app/src/main/res/layout/profile_frame.xml">
         <config>
           <theme>@style/Theme.SmartEatDemo</theme>
         </config>
@@ -67,30 +92,29 @@
       <change beforePath="$PROJECT_DIR$/.gradle/8.7/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.7/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/apk/debug/app-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/apk/debug/app-debug.apk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/apk/debug/output-metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/apk/debug/output-metadata.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/app_metadata/debug/writeDebugAppMetadata/app-metadata.properties" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/app_metadata/debug/writeDebugAppMetadata/app-metadata.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/compatible_screen_manifest/debug/createDebugCompatibleScreenManifests/output-metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/compatible_screen_manifest/debug/createDebugCompatibleScreenManifests/output-metadata.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/processDebugResources/R.jar" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/processDebugResources/R.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/dex/debug/mergeProjectDexDebug/10/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/dex/debug/mergeProjectDexDebug/10/classes.dex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/dex_archive_input_jar_hashes/debug/dexBuilderDebug/out" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/dex_archive_input_jar_hashes/debug/dexBuilderDebug/out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/incremental/debug-mergeJavaRes/merge-state" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/incremental/debug-mergeJavaRes/merge-state" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/incremental/debug/mergeDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/incremental/debug/mergeDebugResources/compile-file-map.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/incremental/debug/mergeDebugResources/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/incremental/debug/mergeDebugResources/merger.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/incremental/debug/packageDebugResources/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/incremental/debug/packageDebugResources/merger.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/incremental/mergeDebugAssets/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/incremental/mergeDebugAssets/merger.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/incremental/mergeDebugJniLibFolders/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/incremental/mergeDebugJniLibFolders/merger.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/incremental/mergeDebugShaders/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/incremental/mergeDebugShaders/merger.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/androidResources" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/androidResources" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/linked_resources_binary_format/debug/processDebugResources/linked-resources-binary-format-debug.ap_" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/linked_resources_binary_format/debug/processDebugResources/linked-resources-binary-format-debug.ap_" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/linked_resources_binary_format/debug/processDebugResources/output-metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/linked_resources_binary_format/debug/processDebugResources/output-metadata.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/local_only_symbol_list/debug/parseDebugLocalResources/R-def.txt" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/local_only_symbol_list/debug/parseDebugLocalResources/R-def.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/manifest_merge_blame_file/debug/processDebugMainManifest/manifest-merger-blame-debug-report.txt" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/manifest_merge_blame_file/debug/processDebugMainManifest/manifest-merger-blame-debug-report.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/merged_manifest/debug/processDebugMainManifest/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/merged_manifest/debug/processDebugMainManifest/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/merged_manifests/debug/processDebugManifest/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/merged_manifests/debug/processDebugManifest/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/merged_manifests/debug/processDebugManifest/output-metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/merged_manifests/debug/processDebugManifest/output-metadata.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/merged_res/debug/mergeDebugResources/layout_entrance_frame.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/merged_res/debug/mergeDebugResources/layout_entrance_frame.xml.flat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/merged_res/debug/mergeDebugResources/layout_registration_frame.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/merged_res/debug/mergeDebugResources/layout_registration_frame.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/merged_res/debug/mergeDebugResources/values_values.arsc.flat" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/merged_res/debug/mergeDebugResources/values_values.arsc.flat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/mergeDebugResources.json" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/mergeDebugResources.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-af.json" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-af.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-am.json" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-am.json" afterDir="false" />
@@ -214,10 +238,6 @@
       <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values.json" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/single/mergeDebugResources.json" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/single/mergeDebugResources.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/packaged_manifests/debug/processDebugManifestForPackage/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/packaged_manifests/debug/processDebugManifestForPackage/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/packaged_manifests/debug/processDebugManifestForPackage/output-metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/packaged_manifests/debug/processDebugManifestForPackage/output-metadata.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/packaged_res/debug/packageDebugResources/layout/entrance_frame.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/packaged_res/debug/packageDebugResources/layout/entrance_frame.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/packaged_res/debug/packageDebugResources/layout/registration_frame.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/packaged_res/debug/packageDebugResources/layout/registration_frame.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/packaged_res/debug/packageDebugResources/values-night-v8/values-night-v8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/packaged_res/debug/packageDebugResources/values-night-v8/values-night-v8.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/packaged_res/debug/packageDebugResources/values/values.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/packaged_res/debug/packageDebugResources/values/values.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/runtime_symbol_list/debug/processDebugResources/R.txt" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/runtime_symbol_list/debug/processDebugResources/R.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/source_set_path_map/debug/mapDebugSourceSetPaths/file-map.txt" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/source_set_path_map/debug/mapDebugSourceSetPaths/file-map.txt" afterDir="false" />
@@ -225,11 +245,12 @@
       <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/symbol_list_with_package_name/debug/processDebugResources/package-aware-r.txt" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/symbol_list_with_package_name/debug/processDebugResources/package-aware-r.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/outputs/logs/manifest-merger-debug-report.txt" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/outputs/logs/manifest-merger-debug-report.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/tmp/compileDebugJavaWithJavac/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/tmp/compileDebugJavaWithJavac/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/src/main/java/classes/Dish.java" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/src/main/java/classes/Dish.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/src/main/java/com/example/activities/EntranceActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/src/main/java/com/example/activities/EntranceActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/src/main/java/com/example/activities/RegistrationActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/src/main/java/com/example/activities/RegistrationActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/src/main/res/layout/entrance_frame.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/src/main/res/layout/entrance_frame.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/src/main/res/layout/registration_frame.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/src/main/res/layout/registration_frame.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/src/main/java/com/example/activities/ProfileActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/src/main/java/com/example/activities/ProfileActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/src/main/res/values/colors.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/src/main/res/values/themes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/src/main/res/values/themes.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -239,7 +260,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=PhysicalDevice, isTemplate=false, identifier=serial=R58N6039FKH)]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=PhysicalDevice, isTemplate=false, identifier=serial=BL9000RU00010712)]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -299,10 +320,11 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="resourceFile" />
-        <option value="layoutResourceFile" />
         <option value="Enum" />
+        <option value="layoutResourceFile" />
         <option value="Class" />
+        <option value="valueResourceFile" />
+        <option value="resourceFile" />
       </list>
     </option>
   </component>
@@ -386,10 +408,10 @@
     &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;com.google.services.firebase.aqiPopupShown&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;kivanov&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;markast&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_directory_selection&quot;: &quot;D:/SmartEatDemo/SmartEatDemo/app/src/main/java&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/SmartEatDemo/SmartEatDemo/app&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/AndroidStudioProjects1&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Suggestions&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.17&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
@@ -417,7 +439,7 @@
       <recent name="com.example.smarteatdemo" />
     </key>
   </component>
-  <component name="RunManager" selected="Android App.EntranceActivity">
+  <component name="RunManager" selected="Android App.SmartEatDemo.app">
     <configuration name="EntranceActivity" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false" temporary="true">
       <module name="SmartEatDemo.SmartEatDemo.app.main~1" />
       <option name="DEPLOY" value="true" />
@@ -431,6 +453,8 @@
       <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
       <option name="ACTIVITY_EXTRA_FLAGS" value="" />
       <option name="MODE" value="specific_activity" />
+      <option name="RESTORE_ENABLED" value="false" />
+      <option name="RESTORE_FILE" value="" />
       <option name="CLEAR_LOGCAT" value="false" />
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
       <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
@@ -485,7 +509,7 @@
       </method>
     </configuration>
     <configuration name="SmartEatDemo.app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
-      <module name="SmartEatDemo.SmartEatDemo.app.main" />
+      <module name="AndroidStudioProjects1.SmartEatDemo.app.main" />
       <option name="DEPLOY" value="true" />
       <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
       <option name="DEPLOY_AS_INSTANT" value="false" />
@@ -497,6 +521,8 @@
       <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
       <option name="ACTIVITY_EXTRA_FLAGS" value="" />
       <option name="MODE" value="default_activity" />
+      <option name="RESTORE_ENABLED" value="false" />
+      <option name="RESTORE_FILE" value="" />
       <option name="CLEAR_LOGCAT" value="false" />
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
       <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
@@ -551,7 +577,7 @@
       </method>
     </configuration>
     <configuration name="SmartEatDemo.app.androidTest" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
-      <module name="SmartEatDemo.SmartEatDemo.app.androidTest" />
+      <module name="AndroidStudioProjects.SmartEatDemo.app.androidTest" />
       <option name="DEPLOY" value="true" />
       <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
       <option name="DEPLOY_AS_INSTANT" value="false" />
@@ -563,6 +589,76 @@
       <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
       <option name="ACTIVITY_EXTRA_FLAGS" value="" />
       <option name="MODE" value="default_activity" />
+      <option name="RESTORE_ENABLED" value="false" />
+      <option name="RESTORE_FILE" value="" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Hybrid>
+      <Java>
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Java>
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Java/Kotlin Method Sample (legacy)" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SmartEatDemo.app.main" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
+      <module name="AndroidStudioProjects.SmartEatDemo.app.main" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
+      <option name="ALWAYS_INSTALL_WITH_PM" value="false" />
+      <option name="CLEAR_APP_STORAGE" value="false" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="RESTORE_ENABLED" value="false" />
+      <option name="RESTORE_FILE" value="" />
       <option name="CLEAR_LOGCAT" value="false" />
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
       <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
@@ -617,7 +713,7 @@
       </method>
     </configuration>
     <configuration name="SmartEatDemo.app.unitTest" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
-      <module name="SmartEatDemo.SmartEatDemo.app.unitTest" />
+      <module name="AndroidStudioProjects.SmartEatDemo.app.unitTest" />
       <option name="DEPLOY" value="true" />
       <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
       <option name="DEPLOY_AS_INSTANT" value="false" />
@@ -629,6 +725,8 @@
       <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
       <option name="ACTIVITY_EXTRA_FLAGS" value="" />
       <option name="MODE" value="default_activity" />
+      <option name="RESTORE_ENABLED" value="false" />
+      <option name="RESTORE_FILE" value="" />
       <option name="CLEAR_LOGCAT" value="false" />
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
       <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
@@ -695,6 +793,8 @@
       <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
       <option name="ACTIVITY_EXTRA_FLAGS" value="" />
       <option name="MODE" value="default_activity" />
+      <option name="RESTORE_ENABLED" value="false" />
+      <option name="RESTORE_FILE" value="" />
       <option name="CLEAR_LOGCAT" value="false" />
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
       <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
@@ -761,6 +861,8 @@
       <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
       <option name="ACTIVITY_EXTRA_FLAGS" value="" />
       <option name="MODE" value="default_activity" />
+      <option name="RESTORE_ENABLED" value="false" />
+      <option name="RESTORE_FILE" value="" />
       <option name="CLEAR_LOGCAT" value="false" />
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
       <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
@@ -827,6 +929,8 @@
       <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
       <option name="ACTIVITY_EXTRA_FLAGS" value="" />
       <option name="MODE" value="default_activity" />
+      <option name="RESTORE_ENABLED" value="false" />
+      <option name="RESTORE_FILE" value="" />
       <option name="CLEAR_LOGCAT" value="false" />
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
       <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
@@ -893,6 +997,8 @@
       <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
       <option name="ACTIVITY_EXTRA_FLAGS" value="" />
       <option name="MODE" value="default_activity" />
+      <option name="RESTORE_ENABLED" value="false" />
+      <option name="RESTORE_FILE" value="" />
       <option name="CLEAR_LOGCAT" value="false" />
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
       <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />

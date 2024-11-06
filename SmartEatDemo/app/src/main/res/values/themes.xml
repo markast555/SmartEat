@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.SmartEatDemo" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-         <item name="colorPrimary">@color/main</item>
+        <item name="colorPrimary">@color/main</item>
 
 <!--        <item name="shapeAppearanceOverlay">@style/ShapeAppearance.App.CornerSize</item>-->
     </style>
@@ -11,7 +11,13 @@
 <!--        <item name="colorPrimaryVariant">@color/black</item>-->
     </style>
 
-<!--    <style name="ShapeAppearance.App.CornerSize">-->
+    <style name="CustomButtonTheme" parent="Theme.MaterialComponents.Light">
+        <item name="colorPrimary">@android:color/transparent</item> <!-- Убираем основной цвет -->
+        <item name="colorButtonNormal">@color/turq</item> <!-- Устанавливаем индивидуальный цвет -->
+    </style>
+
+
+    <!--    <style name="ShapeAppearance.App.CornerSize">-->
 <!--        <item name="cornerFamily">rounded</item>-->
 <!--        <item name="cornerSize">16dp</item>-->
 <!--    </style>-->

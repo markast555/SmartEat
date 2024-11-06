@@ -43,6 +43,7 @@ anim m3_side_sheet_exit_to_right
 anim mtrl_bottom_sheet_slide_in
 anim mtrl_bottom_sheet_slide_out
 anim mtrl_card_lowers_interpolator
+anim shake
 animator design_appbar_state_list_animator
 animator design_fab_hide_motion_spec
 animator design_fab_show_motion_spec
@@ -1366,12 +1367,15 @@ color background_floating_material_light
 color background_material_dark
 color background_material_light
 color black
+color border
 color bright_foreground_disabled_material_dark
 color bright_foreground_disabled_material_light
 color bright_foreground_inverse_material_dark
 color bright_foreground_inverse_material_light
 color bright_foreground_material_dark
 color bright_foreground_material_light
+color button_auto
+color button_manual
 color button_material_dark
 color button_material_light
 color call_notification_answer_color
@@ -1427,8 +1431,10 @@ color error_color_material_dark
 color error_color_material_light
 color foreground_material_dark
 color foreground_material_light
+color gray
 color highlighted_text_material_dark
 color highlighted_text_material_light
+color light_gray
 color m3_appbar_overlay_color
 color m3_assist_chip_icon_tint_color
 color m3_assist_chip_stroke_color
@@ -1865,6 +1871,8 @@ color m3_timepicker_secondary_text_button_text_color
 color m3_timepicker_time_input_stroke_color
 color m3_tonal_button_ripple_color_selector
 color main
+color main2_background
+color main_background
 color main_dark
 color material_blue_grey_800
 color material_blue_grey_900
@@ -2103,6 +2111,7 @@ color secondary_text_default_material_dark
 color secondary_text_default_material_light
 color secondary_text_disabled_material_dark
 color secondary_text_disabled_material_light
+color start_button
 color switch_thumb_disabled_material_dark
 color switch_thumb_disabled_material_light
 color switch_thumb_material_dark
@@ -2111,6 +2120,8 @@ color switch_thumb_normal_material_dark
 color switch_thumb_normal_material_light
 color tooltip_background_dark
 color tooltip_background_light
+color turq
+color turq2
 color white
 dimen abc_action_bar_content_inset_material
 dimen abc_action_bar_content_inset_with_nav
@@ -2907,6 +2918,11 @@ dimen notification_small_icon_size_as_large
 dimen notification_subtext_size
 dimen notification_top_pad
 dimen notification_top_pad_large_text
+dimen seekbar_padding
+dimen seekbar_thumb_height
+dimen seekbar_thumb_radius
+dimen seekbar_thumb_width
+dimen seekbar_total_width
 dimen tooltip_corner_radius
 dimen tooltip_horizontal_padding
 dimen tooltip_margin
@@ -3005,6 +3021,7 @@ drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
 drawable close_icon
+drawable custom_progress_drawable
 drawable design_fab_background
 drawable design_ic_visibility
 drawable design_ic_visibility_off
@@ -3109,6 +3126,11 @@ drawable notify_panel_notification_icon_bg
 drawable profile_icon
 drawable question_circle
 drawable rounded_constraint_layout
+drawable rounded_gray_rectangle
+drawable rounded_turq_rectangle
+drawable slider_background
+drawable slider_checked
+drawable slider_unchecked
 drawable test_level_drawable
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
@@ -3222,6 +3244,7 @@ id bounceStart
 id buttonContinue
 id buttonEnter
 id buttonPanel
+id buttonProceedToSelection
 id buttonSave
 id cache_measures
 id callMeasure
@@ -3230,6 +3253,7 @@ id carryVelocity
 id center
 id centerCrop
 id centerInside
+id centerWindow
 id center_horizontal
 id center_vertical
 id chain
@@ -3350,6 +3374,7 @@ id groups
 id guideline5
 id guideline6
 id guideline7
+id headerLayout
 id header_title
 id hide_ime_id
 id hideable
@@ -3392,6 +3417,8 @@ id list_item
 id logo2
 id m3_side_sheet
 id main
+id main2_frame_layout
+id main_frame_layout
 id marquee
 id masked
 id match_constraint
@@ -3541,6 +3568,7 @@ id search_mag_icon
 id search_plate
 id search_src_text
 id search_voice_btn
+id seekBar
 id select_dialog_listview
 id selected
 id selection_type
@@ -3554,6 +3582,7 @@ id sin
 id skipCollapsed
 id skipped
 id slide
+id sliderSwitch
 id snackbar_action
 id snackbar_text
 id snap
@@ -3572,6 +3601,7 @@ id src_in
 id src_over
 id standard
 id start
+id startButton
 id startHorizontal
 id startToEnd
 id startVertical
@@ -3621,6 +3651,7 @@ id textViewHaveAccount
 id textViewHeight
 id textViewLevelOfPhysicalActivity
 id textViewLogin
+id textViewMainTitle
 id textViewNoAccount
 id textViewProfile
 id textViewRegistration
@@ -3818,6 +3849,8 @@ layout m3_alert_dialog_actions
 layout m3_alert_dialog_title
 layout m3_auto_complete_simple_item
 layout m3_side_sheet_dialog
+layout main2_frame
+layout main_frame
 layout material_chip_input_combo
 layout material_clock_display
 layout material_clock_display_divider
@@ -4370,6 +4403,7 @@ style Base_Widget_MaterialComponents_TextView
 style CardView
 style CardView_Dark
 style CardView_Light
+style CustomButtonTheme
 style MaterialAlertDialog_Material3
 style MaterialAlertDialog_Material3_Animation
 style MaterialAlertDialog_Material3_Body_Text

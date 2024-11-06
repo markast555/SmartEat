@@ -1,9 +1,9 @@
-#Tue Nov 05 23:10:28 MSK 2024
-base.0=C\:\\Users\\user\\AndroidStudioProjects\\SmartEatDemo\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
-base.1=C\:\\Users\\user\\AndroidStudioProjects\\SmartEatDemo\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
-base.2=C\:\\Users\\user\\AndroidStudioProjects\\SmartEatDemo\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\10\\classes.dex
-base.3=C\:\\Users\\user\\AndroidStudioProjects\\SmartEatDemo\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\12\\classes.dex
-base.4=C\:\\Users\\user\\AndroidStudioProjects\\SmartEatDemo\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes2.dex
+#Wed Nov 06 19:23:40 MSK 2024
+base.0=D\:\\AndroidStudioProjects1\\SmartEatDemo\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
+base.1=D\:\\AndroidStudioProjects1\\SmartEatDemo\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
+base.2=D\:\\AndroidStudioProjects1\\SmartEatDemo\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\10\\classes.dex
+base.3=D\:\\AndroidStudioProjects1\\SmartEatDemo\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\12\\classes.dex
+base.4=D\:\\AndroidStudioProjects1\\SmartEatDemo\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes2.dex
 path.0=classes.dex
 path.1=0/classes.dex
 path.2=10/classes.dex

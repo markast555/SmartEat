@@ -118,6 +118,9 @@ public class EntranceActivity extends AppCompatActivity {
 
         userRepositoryCrud.setConnection();
 
+        Intent intent = new Intent(EntranceActivity.this, ProfileActivity.class);
+        startActivity(intent);
+
 
 //
 //        //String login = "hB0RI4z";

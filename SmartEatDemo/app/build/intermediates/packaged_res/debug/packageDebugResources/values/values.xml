@@ -25,12 +25,27 @@
         <item>@font/shojumaru</item>
     </array>
     <color name="black">#FF000000</color>
+    <color name="border">#000000</color>
+    <color name="button_auto">#5F9EA0</color>
+    <color name="button_manual">#D3D3D3</color>
     <color name="dark_text">#313131</color>
+    <color name="gray">#8a8a8a</color>
+    <color name="light_gray">#D3D3D3</color>
     <color name="main">#8BC34A</color>
+    <color name="main2_background">#8093F1</color>
+    <color name="main_background">#CCCCCC</color>
     <color name="main_dark">#6B923E</color>
     <color name="primary_text">#000000</color>
     <color name="red">#FF0000</color>
+    <color name="start_button">#ADFF2F</color>
+    <color name="turq">#008080</color>
+    <color name="turq2">#005c5c</color>
     <color name="white">#FFFFFFFF</color>
+    <dimen name="seekbar_padding">40dp</dimen>
+    <dimen name="seekbar_thumb_height">40dp</dimen>
+    <dimen name="seekbar_thumb_radius">20dp</dimen>
+    <dimen name="seekbar_thumb_width">80dp</dimen>
+    <dimen name="seekbar_total_width">240dp</dimen>
     <string name="agreeing_terms">Я прочитал(-а) и принимаю условия предоставлния услуг</string>
     <string name="app_name">SmartEatDemo</string>
     <string name="button_enter">Войти</string>
@@ -66,9 +81,13 @@
     <string name="weight">Вес (кг)</string>
     <style name="Base.Theme.SmartEatDemo" parent="Theme.Material3.DayNight.NoActionBar">
         
-         <item name="colorPrimary">@color/main</item>
+        <item name="colorPrimary">@color/main</item>
 
 
+    </style>
+    <style name="CustomButtonTheme" parent="Theme.MaterialComponents.Light">
+        <item name="colorPrimary">@android:color/transparent</item> 
+        <item name="colorButtonNormal">@color/turq</item> 
     </style>
     <style name="Theme.SmartEatDemo" parent="Base.Theme.SmartEatDemo">
 
