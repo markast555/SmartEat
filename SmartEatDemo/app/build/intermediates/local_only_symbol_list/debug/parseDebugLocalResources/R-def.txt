@@ -1,17 +1,34 @@
 R_DEF: Internal format may change without notice
 local
+anim shake
 array com_google_android_gms_fonts_certs
 array com_google_android_gms_fonts_certs_dev
 array com_google_android_gms_fonts_certs_prod
 array preloaded_fonts
 color black
+color border
+color button_auto
+color button_manual
 color dark_text
+color gray
+color light_gray
 color main
+color main2_background
+color main_background
 color main_dark
 color primary_text
 color red
+color start_button
+color turq
+color turq2
 color white
+dimen seekbar_padding
+dimen seekbar_thumb_height
+dimen seekbar_thumb_radius
+dimen seekbar_thumb_width
+dimen seekbar_total_width
 drawable close_icon
+drawable custom_progress_drawable
 drawable home_icon
 drawable ic_launcher_background
 drawable ic_launcher_foreground
@@ -20,6 +37,11 @@ drawable logo2
 drawable profile_icon
 drawable question_circle
 drawable rounded_constraint_layout
+drawable rounded_gray_rectangle
+drawable rounded_turq_rectangle
+drawable slider_background
+drawable slider_checked
+drawable slider_unchecked
 font adlam_display
 font agbalumo
 font angkor
@@ -31,7 +53,9 @@ id autoCompleteTextViewGoal
 id autoCompleteTextViewLevelOfPhysicalActivity
 id buttonContinue
 id buttonEnter
+id buttonProceedToSelection
 id buttonSave
+id centerWindow
 id checkBoxConditions
 id constraintLayout
 id constraintLayoutButton
@@ -50,6 +74,7 @@ id entranceEditTextPassword
 id guideline5
 id guideline6
 id guideline7
+id headerLayout
 id imageButtonClose
 id imageButtonHome
 id imageButtonProfile
@@ -58,10 +83,15 @@ id linerLayoutEntrance
 id linerLayoutToRegistration
 id logo2
 id main
+id main2_frame_layout
+id main_frame_layout
 id radioButtonFemale
 id radioButtonMale
 id radioGroupGender
 id resend_code_button
+id seekBar
+id sliderSwitch
+id startButton
 id textInputEmailLayout
 id textInputLayoutDateOfBirth
 id textInputLayoutGoal
@@ -80,6 +110,7 @@ id textViewHaveAccount
 id textViewHeight
 id textViewLevelOfPhysicalActivity
 id textViewLogin
+id textViewMainTitle
 id textViewNoAccount
 id textViewProfile
 id textViewRegistration
@@ -89,6 +120,8 @@ id textViewWeight
 id verify_email_button
 layout email_verification_frame
 layout entrance_frame
+layout main2_frame
+layout main_frame
 layout physical_activity_info_sheet
 layout profile_frame
 layout registration_frame
@@ -128,6 +161,7 @@ string telephone_number
 string verify_email_button_text
 string weight
 style Base.Theme.SmartEatDemo
+style CustomButtonTheme
 style Theme.SmartEatDemo
 xml backup_rules
 xml data_extraction_rules

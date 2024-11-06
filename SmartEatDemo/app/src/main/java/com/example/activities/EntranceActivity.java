@@ -120,6 +120,9 @@ public class EntranceActivity extends AppCompatActivity {
                 userRepositoryCrud.setConnectionParameters(DatabaseParams.getUrl(), DatabaseParams.getUser(), DatabaseParams.getPassword());
                 userRepositoryCrud.setConnection();
 
+        Intent intent = new Intent(EntranceActivity.this, ProfileActivity.class);
+        startActivity(intent);
+
 
                 boolean connectionSuccess = userRepositoryCrud.isConnection();
                 handleConnectionResult(connectionSuccess);

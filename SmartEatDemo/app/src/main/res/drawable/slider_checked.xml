@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Фон слайдера -->
+    <item android:drawable="@drawable/slider_background" />
+
+    <!-- Внутренний сдвинутый элемент, отображающийся при включенном состоянии -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/turq" /> <!-- Цвет при включении -->
+            <corners android:radius="16dp" />
+        </shape>
+    </item>
+</layer-list>

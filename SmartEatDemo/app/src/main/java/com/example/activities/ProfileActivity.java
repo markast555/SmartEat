@@ -2,12 +2,14 @@ package com.example.activities;
 
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
+import android.view.Window;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.DatePicker;
@@ -17,6 +19,7 @@ import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -47,6 +50,10 @@ public class ProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.profile_frame);
+
+        Window window = getWindow();
+        window.setStatusBarColor(ContextCompat.getColor(this, R.color.main));
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -55,6 +62,7 @@ public class ProfileActivity extends AppCompatActivity {
 
         setupUI();
     }
+
 
     private void setupUI() {
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
@@ -75,6 +83,14 @@ public class ProfileActivity extends AppCompatActivity {
                 autoCompleteTextViewLevelOfPhysicalActivity);
         autoCompleteTextViewGoal = findViewById(R.id.autoCompleteTextViewGoal);
         imageButtonQuestion = findViewById(R.id.imageButtonQuestion);
+
+        ImageButton imageButtonHome = findViewById(R.id.imageButtonHome);
+        imageButtonHome.setOnClickListener(v -> {
+            Intent intent = new Intent(ProfileActivity.this, MainActivity.class);
+            startActivity(intent);
+            overridePendingTransition(0, 0); // Отключает анимацию перехода
+            finish(); // Завершает ProfileActivity
+        });
 
         addTextWatcherTextView(textViewLogin);
         addTextWatcherEditText(editTextLogin);

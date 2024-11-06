@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Фон слайдера -->
+    <item android:drawable="@drawable/slider_background" />
+
+    <!-- Внутренний сдвинутый элемент, отображающийся при выключенном состоянии -->
+    <item
+        android:top="4dp"
+        android:left="4dp">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/light_gray" /> <!-- Цвет при выключении -->
+            <corners android:radius="16dp" />
+        </shape>
+    </item>
+</layer-list>
