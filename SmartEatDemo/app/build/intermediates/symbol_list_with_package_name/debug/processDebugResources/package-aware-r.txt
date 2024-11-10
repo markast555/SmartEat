@@ -3027,6 +3027,8 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable diary_icon
+drawable exit_icon
 drawable home_icon
 drawable ic_arrow_back_black_24
 drawable ic_call_answer
@@ -3227,7 +3229,9 @@ id async
 id auto
 id autoComplete
 id autoCompleteTextViewGoal
+id autoCompleteTextViewGoalAfter
 id autoCompleteTextViewLevelOfPhysicalActivity
+id autoCompleteTextViewLevelOfPhysicalActivityAfter
 id autoCompleteToEnd
 id autoCompleteToStart
 id barrier
@@ -3324,6 +3328,7 @@ id easeOut
 id east
 id edge
 id editTextDateOfBirth
+id editTextDateOfBirthAfter
 id editTextEmail
 id editTextHeight
 id editTextLogin
@@ -3389,9 +3394,11 @@ id ignore
 id ignoreRequest
 id image
 id imageButtonClose
+id imageButtonDiary
 id imageButtonHome
 id imageButtonProfile
 id imageButtonQuestion
+id imageButtonQuestionAfter
 id immediateStop
 id included
 id indeterminate
@@ -3535,8 +3542,11 @@ id progress_circular
 id progress_horizontal
 id radio
 id radioButtonFemale
+id radioButtonFemaleAfter
 id radioButtonMale
+id radioButtonMaleAfter
 id radioGroupGender
+id radioGroupGenderAfter
 id ratio
 id rectangles
 id report_drawn
@@ -3643,8 +3653,10 @@ id textSpacerNoTitle
 id textStart
 id textTop
 id textViewDateOfBirth
+id textViewDateOfBirthAfter
 id textViewEntrance
 id textViewEntranceToRegistration
+id textViewFillOutProfile
 id textViewForgotPassword
 id textViewGoal
 id textViewHaveAccount
@@ -3657,6 +3669,7 @@ id textViewProfile
 id textViewRegistration
 id textViewRegistrationToEntrance
 id textViewSex
+id textViewSexAfter
 id textViewWeight
 id text_input_end_icon
 id text_input_error_icon
@@ -3904,6 +3917,7 @@ layout notification_template_icon_group
 layout notification_template_part_chronometer
 layout notification_template_part_time
 layout physical_activity_info_sheet
+layout profile_after_registration_frame
 layout profile_frame
 layout registration_frame
 layout select_dialog_item_material
@@ -3962,8 +3976,11 @@ string call_notification_screening_text
 string character_counter_content_description
 string character_counter_overflowed_content_description
 string character_counter_pattern
+string choose_goal
+string choose_level_of_physical_activity
 string clear_text_end_icon_content_description
 string continue_text
+string date
 string date_of_birth
 string email_code_hint
 string email_field
@@ -3975,6 +3992,7 @@ string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
 string female
+string fill_out_profile
 string goal
 string height
 string hide_bottom_view_on_scroll_behavior
@@ -4112,6 +4130,9 @@ string status_bar_notification_info_overflow
 string telephone_number
 string verify_email_button_text
 string weight
+string your_height
+string your_login_field
+string your_weight
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style Animation_AppCompat_Dialog

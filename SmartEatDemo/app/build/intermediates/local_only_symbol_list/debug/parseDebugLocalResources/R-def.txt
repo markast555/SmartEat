@@ -29,6 +29,8 @@ dimen seekbar_thumb_width
 dimen seekbar_total_width
 drawable close_icon
 drawable custom_progress_drawable
+drawable diary_icon
+drawable exit_icon
 drawable home_icon
 drawable ic_launcher_background
 drawable ic_launcher_foreground
@@ -50,7 +52,9 @@ font baloo
 font playfair_display
 font shojumaru
 id autoCompleteTextViewGoal
+id autoCompleteTextViewGoalAfter
 id autoCompleteTextViewLevelOfPhysicalActivity
+id autoCompleteTextViewLevelOfPhysicalActivityAfter
 id buttonContinue
 id buttonEnter
 id buttonProceedToSelection
@@ -61,6 +65,7 @@ id constraintLayout
 id constraintLayoutButton
 id constraintLayoutProfile
 id editTextDateOfBirth
+id editTextDateOfBirthAfter
 id editTextEmail
 id editTextHeight
 id editTextLogin
@@ -76,9 +81,11 @@ id guideline6
 id guideline7
 id headerLayout
 id imageButtonClose
+id imageButtonDiary
 id imageButtonHome
 id imageButtonProfile
 id imageButtonQuestion
+id imageButtonQuestionAfter
 id linerLayoutEntrance
 id linerLayoutToRegistration
 id logo2
@@ -86,8 +93,11 @@ id main
 id main2_frame_layout
 id main_frame_layout
 id radioButtonFemale
+id radioButtonFemaleAfter
 id radioButtonMale
+id radioButtonMaleAfter
 id radioGroupGender
+id radioGroupGenderAfter
 id resend_code_button
 id seekBar
 id sliderSwitch
@@ -102,8 +112,10 @@ id textInputLayoutPassword
 id textInputLayoutPassword2
 id textInputLayoutWeight
 id textViewDateOfBirth
+id textViewDateOfBirthAfter
 id textViewEntrance
 id textViewEntranceToRegistration
+id textViewFillOutProfile
 id textViewForgotPassword
 id textViewGoal
 id textViewHaveAccount
@@ -116,6 +128,7 @@ id textViewProfile
 id textViewRegistration
 id textViewRegistrationToEntrance
 id textViewSex
+id textViewSexAfter
 id textViewWeight
 id verify_email_button
 layout email_verification_frame
@@ -123,6 +136,7 @@ layout entrance_frame
 layout main2_frame
 layout main_frame
 layout physical_activity_info_sheet
+layout profile_after_registration_frame
 layout profile_frame
 layout registration_frame
 mipmap ic_launcher
@@ -131,13 +145,17 @@ string agreeing_terms
 string app_name
 string button_enter
 string button_u_enter
+string choose_goal
+string choose_level_of_physical_activity
 string continue_text
+string date
 string date_of_birth
 string email_code_hint
 string email_field
 string email_verification_title
 string entrance_text
 string female
+string fill_out_profile
 string goal
 string height
 string is_account
@@ -160,6 +178,9 @@ string sex
 string telephone_number
 string verify_email_button_text
 string weight
+string your_height
+string your_login_field
+string your_weight
 style Base.Theme.SmartEatDemo
 style CustomButtonTheme
 style Theme.SmartEatDemo

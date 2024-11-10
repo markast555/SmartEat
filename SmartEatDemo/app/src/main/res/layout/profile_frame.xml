@@ -33,9 +33,20 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/exit_icon"
+            android:background="@color/main"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.5"
-            app:layout_constraintHorizontal_bias="0.5" />
+            app:layout_constraintHorizontal_bias="0.95"/>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -79,6 +90,7 @@
             android:focusable="true"
             android:inputType="text"
             android:textColor="@color/dark_text"
+            android:hint="@string/your_login_field"
             app:hintAnimationEnabled="false"/>
 <!--        android:hint="@string/login_field"-->
     </com.google.android.material.textfield.TextInputLayout>
@@ -167,7 +179,8 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:focusable="false"
-            android:textColor="@color/dark_text" />
+            android:textColor="@color/dark_text"
+            android:hint="@string/date"/>
         <!--            android:hint="@string/date_of_birth"-->
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -300,7 +313,8 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:focusable="true"
-            android:textColor="@color/dark_text" />
+            android:textColor="@color/dark_text"
+            android:hint="@string/your_height"/>
         <!--            android:hint="@string/height"-->
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -324,7 +338,8 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:focusable="true"
-            android:textColor="@color/dark_text" />
+            android:textColor="@color/dark_text"
+            android:hint="@string/your_weight"/>
         <!--            android:hint="@string/weight"-->
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -409,7 +424,8 @@
             android:paddingEnd="16dp"
             android:maxLines="1"
             android:ellipsize="end"
-            android:singleLine="true"/>
+            android:singleLine="true"
+            android:hint="@string/choose_level_of_physical_activity"/>
         <!--            android:hint="@string/level_of_physical_activity"-->
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -458,7 +474,8 @@
             android:paddingEnd="16dp"
             android:maxLines="1"
             android:ellipsize="end"
-            android:singleLine="true"/>
+            android:singleLine="true"
+            android:hint="@string/choose_goal"/>
         <!--            android:hint="@string/goal"-->
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -491,6 +508,20 @@
         app:layout_constraintWidth_percent="1">
 
         <ImageButton
+            android:id="@+id/imageButtonDiary"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/diary_icon"
+            android:background="@color/main"
+            android:contentDescription="@string/logo_description"
+            app:layout_constraintEnd_toStartOf="@+id/imageButtonHome"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <ImageButton
             android:id="@+id/imageButtonHome"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -498,7 +529,7 @@
             android:src="@drawable/home_icon"
             android:background="@color/main"
             android:contentDescription="@string/logo_description"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageButtonDiary"
             app:layout_constraintEnd_toStartOf="@+id/imageButtonProfile"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
