@@ -14,46 +14,54 @@ public class User {
     private float weight;
     private PhysicalActivityLevel levelOfPhysicalActivity;
     private Goals goals;
-    private String phoneNumber; //Уникальное значение
+    private String gmail; //Уникальное значение
     private int calorieNorm;
 
-    public User(UUID idUser, String login, String password, Sex sex, LocalDate dateOfBirth, int height, float weight, PhysicalActivityLevel levelOfPhysicalActivity, Goals goals, String phoneNumber, int calorieNorm) {
+    public User(String login, String password, String gmail) {
+        this.login = login;
+        this.password = VariableGenerator.hashPassword(password);
+        this.gmail = gmail;
+    }
+
+
+    public User(UUID idUser, String login, String password, Sex sex, LocalDate dateOfBirth, int height, float weight, PhysicalActivityLevel levelOfPhysicalActivity, Goals goals, String gmail, int calorieNorm) {
         this.idUser = idUser;
         this.login = login;
-        this.password = password;
+        this.password = VariableGenerator.hashPassword(password);
         this.sex = sex;
         this.dateOfBirth = dateOfBirth;
         this.height = height;
         this.weight = weight;
         this.levelOfPhysicalActivity = levelOfPhysicalActivity;
         this.goals = goals;
-        this.phoneNumber = phoneNumber;
+        this.gmail = gmail;
         this.calorieNorm = calorieNorm;
     }
 
-//    public User(String login, String password, Sex sex, LocalDate dateOfBirth, int height, float weight, PhysicalActivityLevel levelOfPhysicalActivity, Goals goals, String phoneNumber) {
-//        this.idUser = VariableGenerator.getUid();
-//        this.login = login;
-//        this.password = password;
-//        this.sex = sex;
-//        this.dateOfBirth = dateOfBirth;
-//        this.height = height;
-//        this.weight = weight;
-//        this.levelOfPhysicalActivity = levelOfPhysicalActivity;
-//        this.goals = goals;
-//        this.phoneNumber = phoneNumber;
-//    }
+    public User(String login, String password, Sex sex, LocalDate dateOfBirth, int height, float weight, PhysicalActivityLevel levelOfPhysicalActivity, Goals goals, String gmail, int calorieNorm) {
+        this.login = login;
+        this.password = VariableGenerator.hashPassword(password);
+        this.sex = sex;
+        this.dateOfBirth = dateOfBirth;
+        this.height = height;
+        this.weight = weight;
+        this.levelOfPhysicalActivity = levelOfPhysicalActivity;
+        this.goals = goals;
+        this.gmail = gmail;
+        this.calorieNorm = calorieNorm;
+    }
+
 
     public User(){
         this.idUser = VariableGenerator.getUid();
         this.login = VariableGenerator.generateRandomLogin();
-        this.password = "password";
+        this.password = VariableGenerator.hashPassword("password");
         this.sex = Sex.MALE;
         this.dateOfBirth = LocalDate.of(1990, 5, 15);;
         this.height = 180;
         this.weight = 70.5F;
-        this.phoneNumber = VariableGenerator.generateRandomPhoneNumber();
-        this.levelOfPhysicalActivity = PhysicalActivityLevel.ModerateLevelOfActivity;
+        this.gmail = VariableGenerator.generateRandomGmail();
+        this.levelOfPhysicalActivity = PhysicalActivityLevel.ModerateActivity;
         this.goals = Goals.ImprovingHealth;
     }
 
@@ -130,12 +138,12 @@ public class User {
         this.goals = goals;
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
+    public String getGmail() {
+        return gmail;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public void setGmail(String gmail) {
+        this.gmail = gmail;
     }
 
     public int getCalorieNorm() {
@@ -158,7 +166,8 @@ public class User {
                 ", weight=" + weight +
                 ", levelOfPhysicalActivity=" + levelOfPhysicalActivity +
                 ", goals=" + goals +
-                ", phoneNumber='" + phoneNumber + '\'' +
+                ", gmail='" + gmail + '\'' +
+                ", calorieNorm=" + calorieNorm +
                 '}';
     }
 }

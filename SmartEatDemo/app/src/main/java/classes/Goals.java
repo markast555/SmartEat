@@ -24,6 +24,6 @@ public enum Goals {
                 return goal;
             }
         }
-        throw new IllegalArgumentException("Нет дня с типом: " + type);
+        throw new IllegalArgumentException("Нет такой цели: " + type);
     }
 }

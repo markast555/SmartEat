@@ -27,6 +27,7 @@
     <color name="black">#FF000000</color>
     <color name="dark_text">#313131</color>
     <color name="main">#8BC34A</color>
+    <color name="main_dark">#6B923E</color>
     <color name="primary_text">#000000</color>
     <color name="red">#FF0000</color>
     <color name="white">#FFFFFFFF</color>
@@ -46,6 +47,7 @@
     <string name="password_confirmation">Подтверждение пароля</string>
     <string name="password_field">Пароль</string>
     <string name="password_forgot"><u>Забыли пароль?</u></string>
+    <string name="profile">Профиль</string>
     <string name="registration_text">Регистрация</string>
     <string name="registration_u_text"><u>Регистрация</u></string>
     <string name="resend_code_button_text">Отправить код повторно</string>

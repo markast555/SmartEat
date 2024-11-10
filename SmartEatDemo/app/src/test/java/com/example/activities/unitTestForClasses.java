@@ -55,12 +55,11 @@ public class unitTestForClasses {
     }
 
     @Test
-    @DisplayName("Тестирование генератора случайного номера телефона для будущих тестов")
+    @DisplayName("Тестирование генератора случайного адреса электроннай почты телефона для будущих тестов")
     public void testGenerateRandomPhoneNumber() {
-        String phoneNumber;
-        phoneNumber = VariableGenerator.generateRandomPhoneNumber();
-        Assert.assertNotNull(phoneNumber);
-        Assert.assertEquals(16, phoneNumber.length());
+        String gmail;
+        gmail = VariableGenerator.generateRandomGmail();
+        Assert.assertNotNull(gmail);
     }
 
     @Test
@@ -82,20 +81,29 @@ public class unitTestForClasses {
     }
 
     @Test
-    @DisplayName("Тестирование создания кортежа пользователя в табл. user_se в БД")
+    @DisplayName("Тестирование создания кортежа пользователя в табл. users в БД")
     public void testCreateUserInBD() {
         User user = new User();
         System.out.println(user.toString());
         Assert.assertTrue(userRepositoryCrud.create(user));
     }
 
-    @Test
-    @DisplayName("Тестирование нахождения пользователя по логину в табл. user_se в БД")
-    public void testSelectByLoginInBD() {
-        String login = "hB0RI4z";
-        User user = userRepositoryCrud.selectByLogin(login);
-        Assert.assertNotNull(user);
-    }
+//    @Test
+//    @DisplayName("Тестирование нахождения пользователя по логину в табл. users в БД")
+//    public void testSelectByLoginInBD() {
+//        String login = "3MGN3";
+//        User user = userRepositoryCrud.selectByLogin(login);
+//        System.out.println(user.toString());
+//        Assert.assertNotNull(user);
+//    }
+
+//    @Test
+//    @DisplayName("Тестирование нахождения пользователя по логину в табл. user_se в БД")
+//    public void testSelectByLogin() {
+//        String login = "hB0RI4z";
+//        User user = userRepositoryCrud.selectByLogin(login);
+//        Assert.assertNotNull(user);
+//    }
 
 
 

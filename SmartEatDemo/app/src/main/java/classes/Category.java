@@ -24,6 +24,6 @@ public enum Category {
                 return category;
             }
         }
-        throw new IllegalArgumentException("Нет категории: " + type);
+        throw new IllegalArgumentException("Нет такой категории: " + type);
     }
 }

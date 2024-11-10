@@ -3,6 +3,7 @@ package classes;
 import org.mindrot.jbcrypt.BCrypt;
 
 import java.security.SecureRandom;
+import java.util.Random;
 import java.util.UUID;
 
 public class VariableGenerator {
@@ -25,34 +26,22 @@ public class VariableGenerator {
         return login.toString();
     }
 
-    //Метод генирации номера телефона
-    public static String generateRandomPhoneNumber() {
-        SecureRandom random = new SecureRandom();
-        StringBuilder phoneNumber = new StringBuilder("+7-");
+    private static final String[] NAMES = {
+            "john", "jane", "mike", "sara", "alex", "emma", "david", "lisa", "chris", "kathy"
+    };
 
-        for (int i = 0; i < 3; i++) {
-            phoneNumber.append(random.nextInt(10)); // Генерация цифры от 0 до 9
-        }
-        phoneNumber.append("-");
+    private static final String[] SURNAMES = {
+            "smith", "johnson", "williams", "brown", "jones", "garcia", "miller", "davis", "rodriguez", "martinez"
+    };
 
-        // Первая часть номера (3 цифры)
-        for (int i = 0; i < 3; i++) {
-            phoneNumber.append(random.nextInt(10));
-        }
-        phoneNumber.append("-");
+    private static final Random RANDOM = new Random();
 
-        // Вторая часть номера (2 цифры)
-        for (int i = 0; i < 2; i++) {
-            phoneNumber.append(random.nextInt(10));
-        }
-        phoneNumber.append("-");
 
-        // Третья часть номера (2 цифры)
-        for (int i = 0; i < 2; i++) {
-            phoneNumber.append(random.nextInt(10));
-        }
-
-        return phoneNumber.toString();
+    public static String generateRandomGmail() {
+        String name = NAMES[RANDOM.nextInt(NAMES.length)];
+        String surname = SURNAMES[RANDOM.nextInt(SURNAMES.length)];
+        int randomNumber = RANDOM.nextInt(100); // Случайное число от 0 до 99
+        return name + "." + surname + randomNumber + "@gmail.com";
     }
 
     //Метод генерации UUID
