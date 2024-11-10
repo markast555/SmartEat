@@ -39,7 +39,15 @@
     <string name="level_of_physical_activity">Уровень активности</string>
     <string name="goal">Цель</string>
     <string name="save">Сохранить</string>
+    <string name="your_login_field">Ваш логин</string>
+    <string name="date">ДД.ММ.ГГГГ</string>
+    <string name="your_height">Ваш рост</string>
+    <string name="your_weight">Ваш вес</string>
+    <string name="choose_level_of_physical_activity">Выберите уровень активности</string>
+    <string name="choose_goal">Выберите цель</string>
 
+    <!--profile_after_registration_frame-->
+    <string name="fill_out_profile">Заполните профиль</string>
 
     <!--physical_activity_info_sheet-->
     <string name="levels_of_physical_activity">Уровни физической активности</string>
