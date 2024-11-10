@@ -21,6 +21,6 @@ public enum Sex {
                 return sex;
             }
         }
-        throw new IllegalArgumentException("Нет дня с типом: " + type);
+        throw new IllegalArgumentException("Нет такого пола: " + type);
     }
 }

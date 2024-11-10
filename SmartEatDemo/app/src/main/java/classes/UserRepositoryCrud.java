@@ -1,19 +1,16 @@
 package classes;
 
-import android.annotation.SuppressLint;
-import android.os.Build;
+//import java.sql.SQType;
 
 import java.sql.*;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.time.ZoneId;
-import java.time.format.DateTimeParseException;
-import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.List;
 import java.util.UUID;
-import java.util.stream.Collectors;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 
 /**
@@ -27,6 +24,12 @@ public class UserRepositoryCrud{
     private String password;
 
     private Connection connection = null;
+
+    private boolean isConnection = false;
+
+    public boolean isConnection() {
+        return isConnection;
+    }
 
     public Connection getConnection() {
         return connection;
@@ -48,12 +51,15 @@ public class UserRepositoryCrud{
     /**
      * Устанавливает соединение с БД.
      */
+
+
     public void setConnection() {
         if (connection == null) {
             try {
-                Class.forName("com.mysql.cj.jdbc.Driver");
+                Class.forName("com.mysql.jdbc.Driver");
                 connection = DriverManager.getConnection(url, user, password);
                 System.out.println("Соединение установлено успешно!");
+                isConnection = true;
             } catch (SQLException e) {
                 System.out.println("Ошибка подключения: " + e.getMessage());
             } catch (ClassNotFoundException e) {
@@ -92,33 +98,35 @@ public class UserRepositoryCrud{
         boolean result = false;
 
         setConnection();
-        try (PreparedStatement statement = connection.prepareStatement(
-                "insert into users (id_user, login, password, sex, date_of_birth, height, weight, level_of_physical_activity, goals, phone_number, calorie_norm) values (?,?,?,?,?,?,?,?,?,?,?) ")) {
+        try {
+            try (PreparedStatement statement = connection.prepareStatement(
+                    "INSERT INTO users (id_user, login, password, sex, date_of_birth, height, weight, level_of_physical_activity, goal, gmail, calorie_norm) VALUES (?,?,?,?,?,?,?,?,?,?,?)")) {
 
-            statement.setObject(1, user.getIdUser().toString());
-            statement.setString(2, user.getLogin());
-            statement.setString(3, user.getPassword());
-            statement.setString(4, user.getSex().getType());
-            statement.setDate(5, dateToSqlDate(user.getDateOfBirth()));
-            statement.setInt(6, user.getHeight());
-            statement.setFloat(7, user.getWeight());
-            statement.setString(8, user.getLevelOfPhysicalActivity().getType());
-            statement.setString(9, user.getGoals().getType());
-            statement.setString(10, user.getPhoneNumber());
-            statement.setInt(11, user.getCalorieNorm());
 
-            statement.execute();
+                statement.setObject(1, user.getIdUser().toString());
+                statement.setString(2, user.getLogin());
+                statement.setString(3, user.getPassword());
+                statement.setString(4, user.getSex().getType());
+                statement.setDate(5, dateToSqlDate(user.getDateOfBirth()));
+                statement.setInt(6, user.getHeight());
+                statement.setFloat(7, user.getWeight());
+                statement.setString(8, user.getLevelOfPhysicalActivity().getType());
+                statement.setString(9, user.getGoals().getType());
+                statement.setString(10, user.getGmail());
+                statement.setInt(11, user.getCalorieNorm());
 
-            result = true;
+                statement.execute();
+                result = true;
+            }
         } catch (SQLException e) {
             System.out.println("Ошибка выполнения: " + e.getMessage());
-            //e.printStackTrace();
         } finally {
-        closeConnection(); // Закрываем соединение в блоке finally
-    }
+            closeConnection(); // Закрываем соединение в блоке finally
+        }
 
         return result;
     }
+
 
 
     public User selectByLogin(String login) {
@@ -127,7 +135,7 @@ public class UserRepositoryCrud{
         setConnection(); // Установите соединение с базой данных
 
         try (PreparedStatement statement = connection.prepareStatement(
-                "SELECT id_user, login, password, sex, date_of_birth, height, weight, level_of_physical_activity, goals, phone_number, calorie_norm FROM users WHERE login = ?")) {
+                "SELECT id_user, login, password, sex, date_of_birth, height, weight, level_of_physical_activity, goal, gmail, calorie_norm FROM users WHERE login = ?")) {
 
             // Устанавливаем значение параметра
             statement.setString(1, login);
@@ -145,8 +153,8 @@ public class UserRepositoryCrud{
                         resultSet.getInt("height"),
                         resultSet.getFloat("weight"),
                         PhysicalActivityLevel.fromType(resultSet.getString("level_of_physical_activity")),
-                        Goals.fromType(resultSet.getString("goals")),
-                        resultSet.getString("phone_number"),
+                        Goals.fromType(resultSet.getString("goal")),
+                        resultSet.getString("gmail"),
                         resultSet.getInt("calorie_norm"));
                 } else {
                     System.out.println("Данные не найдены");

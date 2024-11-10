@@ -10,6 +10,7 @@ constraintlayout = "2.1.4"
 testng = "6.9.6"
 junitJunit = "4.12"
 junitJupiter = "5.8.1"
+cronetEmbedded = "119.6045.31"
 
 [libraries]
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -22,6 +23,7 @@ constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayo
 testng = { group = "org.testng", name = "testng", version.ref = "testng" }
 junit-junit = { group = "junit", name = "junit", version.ref = "junitJunit" }
 junit-jupiter = { group = "org.junit.jupiter", name = "junit-jupiter", version.ref = "junitJupiter" }
+cronet-embedded = { group = "org.chromium.net", name = "cronet-embedded", version.ref = "cronetEmbedded" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

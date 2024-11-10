@@ -1,11 +1,11 @@
 package classes;
 
 public enum PhysicalActivityLevel {
-    SedentaryLifestyle("Сидячий образ жизни"),
-    LowLevelOfActivity("Низкий уровень активности"),
-    ModerateLevelOfActivity("Умеренный уровень активности"),
-
-    HighLevelOfActivity("Высокий уровень активности");
+    SedentaryLifestyle("Очень низкий"),
+    LightActivity("Низкий"),
+    ModerateActivity("Умеренный"),
+    HighActivity("Высокий"),
+    VeryHighActivity("Очень высокий");
 
     private final String type;
 
@@ -24,6 +24,6 @@ public enum PhysicalActivityLevel {
                 return physicalActivityLevel;
             }
         }
-        throw new IllegalArgumentException("Нет дня с типом: " + type);
+        throw new IllegalArgumentException("Нет такого типа активности: " + type);
     }
 }

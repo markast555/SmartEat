@@ -1865,6 +1865,7 @@ color m3_timepicker_secondary_text_button_text_color
 color m3_timepicker_time_input_stroke_color
 color m3_tonal_button_ripple_color_selector
 color main
+color main_dark
 color material_blue_grey_800
 color material_blue_grey_900
 color material_blue_grey_950
@@ -3595,7 +3596,9 @@ id textViewEntrance
 id textViewEntranceToRegistration
 id textViewForgotPassword
 id textViewHaveAccount
+id textViewLogin
 id textViewNoAccount
+id textViewProfile
 id textViewRegistration
 id textViewRegistrationToEntrance
 id text_input_end_icon
@@ -4025,6 +4028,7 @@ string path_password_eye
 string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
+string profile
 string registration_text
 string registration_u_text
 string resend_code_button_text
@@ -5320,3 +5324,4 @@ styleable ViewTransition android_id SharedValue SharedValueId clearsTag duration
 styleable include constraintSet
 xml backup_rules
 xml data_extraction_rules
+xml network_security_config

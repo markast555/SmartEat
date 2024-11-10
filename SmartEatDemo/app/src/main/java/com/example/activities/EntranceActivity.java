@@ -13,9 +13,9 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
+
 
 import classes.DatabaseParams;
 import classes.User;
@@ -104,26 +104,38 @@ public class EntranceActivity extends AppCompatActivity {
 
     // Обработка клика на кнопку "Войти"
     public void onButtonEnterClick(View v) {
-
         String login = getLogin();
         String password = getPassword();
 
         System.out.println("Логин: " + login);
         System.out.println("Пароль: " + password);
 
-        UserRepositoryCrud userRepositoryCrud = new UserRepositoryCrud();
-        userRepositoryCrud.setConnectionParameters(DatabaseParams.getUrl(), DatabaseParams.getUser(), DatabaseParams.getPassword());
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                User user = new User();
+                UserRepositoryCrud userRepositoryCrud = new UserRepositoryCrud();
+                userRepositoryCrud.setConnectionParameters(DatabaseParams.getUrl(), DatabaseParams.getUser(), DatabaseParams.getPassword());
+                userRepositoryCrud.setConnection();
 
-        userRepositoryCrud.setConnection();
 
+                boolean connectionSuccess = userRepositoryCrud.isConnection();
+                handleConnectionResult(connectionSuccess);
+            }
+        }).start();
+    }
 
-//
-//        //String login = "hB0RI4z";
-//        User user = userRepositoryCrud.selectByLogin(login);
-//        //Assert.assertNotNull(user);
-//        if (user != null){
-//            Toast.makeText(this, "Принято!", Toast.LENGTH_SHORT).show();
-//        }
+    private void handleConnectionResult(boolean connectionSuccess) {
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                if (connectionSuccess) {
+                    Toast.makeText(EntranceActivity.this, "Успех: " + connectionSuccess, Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(EntranceActivity.this, "Ошибка соединения", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 
 }
