@@ -45,6 +45,8 @@ public class EntranceActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        setupUI();
     }
 
     private void setupUI() {
@@ -57,20 +59,20 @@ public class EntranceActivity extends AppCompatActivity {
         enterEditTextLogin = findViewById(R.id.entranceEditTextLogin);
         enterEditTextPassword = findViewById(R.id.entranceEditTextPassword);
 
-        addTextWatcher(enterEditTextLogin);
-        addTextWatcher(enterEditTextPassword);
+        addTextWatcherEditText(enterEditTextLogin);
+        addTextWatcherEditText(enterEditTextPassword);
 
     }
 
     // Метод для добавления TextWatcher
-    private void addTextWatcher(EditText editText) {
+    private void addTextWatcherEditText(EditText editText) {
         editText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                adjustTextSize(editText);
+                adjustTextSizeEditText(editText);
             }
 
             @Override
@@ -79,7 +81,7 @@ public class EntranceActivity extends AppCompatActivity {
     }
 
     // Метод для изменения размера текста
-    private void adjustTextSize(EditText editText) {
+    private void adjustTextSizeEditText(EditText editText) {
         int height = editText.getHeight();
         if (height > 0) {
             // Пример вычисления размера шрифта
@@ -117,6 +119,9 @@ public class EntranceActivity extends AppCompatActivity {
                 UserRepositoryCrud userRepositoryCrud = new UserRepositoryCrud();
                 userRepositoryCrud.setConnectionParameters(DatabaseParams.getUrl(), DatabaseParams.getUser(), DatabaseParams.getPassword());
                 userRepositoryCrud.setConnection();
+
+        Intent intent = new Intent(EntranceActivity.this, ProfileActivity.class);
+        startActivity(intent);
 
 
                 boolean connectionSuccess = userRepositoryCrud.isConnection();

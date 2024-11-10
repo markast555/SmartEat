@@ -66,21 +66,21 @@ public class RegistrationActivity extends AppCompatActivity {
 
         buttonContinue.setOnClickListener(this::onContinueButtonClick);
 
-        addTextWatcher(editTextPassword);
-        addTextWatcher(editTextLogin);
-        addTextWatcher(editTextPassword2);
-        addTextWatcher(editTextEmail);
+        addTextWatcherEditText(editTextPassword);
+        addTextWatcherEditText(editTextLogin);
+        addTextWatcherEditText(editTextPassword2);
+        addTextWatcherEditText(editTextEmail);
     }
 
     // Метод для добавления TextWatcher
-    private void addTextWatcher(EditText editText) {
+    private void addTextWatcherEditText(EditText editText) {
         editText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                adjustTextSize(editText);
+                adjustTextSizeEditText(editText);
             }
 
             @Override
@@ -89,7 +89,7 @@ public class RegistrationActivity extends AppCompatActivity {
     }
 
     // Метод для изменения размера текста
-    private void adjustTextSize(EditText editText) {
+    private void adjustTextSizeEditText(EditText editText) {
         int height = editText.getHeight();
         if (height > 0) {
             // Пример вычисления размера шрифта

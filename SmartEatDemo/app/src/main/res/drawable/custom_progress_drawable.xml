@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Фон SeekBar (не заполненная часть) -->
+    <item android:id="@android:id/background">
+        <shape android:shape="rectangle">
+            <size android:height="40dp"/> <!-- Высота совпадает с высотой ползунка -->
+            <solid android:color="@color/turq"/> <!-- Цвет фона полосы -->
+            <corners android:radius="20dp"/> <!-- Закругленные края -->
+        </shape>
+    </item>
+
+    <!-- Заполненная часть SeekBar -->
+    <item android:id="@android:id/progress">
+        <clip>
+            <shape android:shape="rectangle">
+                <size android:height="40dp"/>
+                <solid android:color="@color/main"/> <!-- Ваш основной цвет -->
+                <corners android:radius="20dp"/>
+            </shape>
+        </clip>
+    </item>
+</layer-list>

@@ -9,161 +9,169 @@
 9        android:targetSdkVersion="34" />
 10
 11    <uses-permission android:name="android.permission.INTERNET" />
-11-->D:\SmartEatDemo\SmartEatDemo\app\src\main\AndroidManifest.xml:5:5-67
-11-->D:\SmartEatDemo\SmartEatDemo\app\src\main\AndroidManifest.xml:5:22-64
-12    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-12-->D:\SmartEatDemo\SmartEatDemo\app\src\main\AndroidManifest.xml:6:5-79
-12-->D:\SmartEatDemo\SmartEatDemo\app\src\main\AndroidManifest.xml:6:22-76
-13
-14    <permission
-14-->[androidx.core:core:1.13.0] C:\Users\kivan\.gradle\caches\transforms-4\f3a9cf4ee370e5d6f7905fa9840b16ac\transformed\core-1.13.0\AndroidManifest.xml:22:5-24:47
-15        android:name="com.example.activities.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-15-->[androidx.core:core:1.13.0] C:\Users\kivan\.gradle\caches\transforms-4\f3a9cf4ee370e5d6f7905fa9840b16ac\transformed\core-1.13.0\AndroidManifest.xml:23:9-81
-16        android:protectionLevel="signature" />
-16-->[androidx.core:core:1.13.0] C:\Users\kivan\.gradle\caches\transforms-4\f3a9cf4ee370e5d6f7905fa9840b16ac\transformed\core-1.13.0\AndroidManifest.xml:24:9-44
-17
-18    <uses-permission android:name="com.example.activities.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-18-->[androidx.core:core:1.13.0] C:\Users\kivan\.gradle\caches\transforms-4\f3a9cf4ee370e5d6f7905fa9840b16ac\transformed\core-1.13.0\AndroidManifest.xml:26:5-97
-18-->[androidx.core:core:1.13.0] C:\Users\kivan\.gradle\caches\transforms-4\f3a9cf4ee370e5d6f7905fa9840b16ac\transformed\core-1.13.0\AndroidManifest.xml:26:22-94
-19
-20    <application
-20-->D:\SmartEatDemo\SmartEatDemo\app\src\main\AndroidManifest.xml:8:5-48:19
-21        android:allowBackup="true"
-21-->D:\SmartEatDemo\SmartEatDemo\app\src\main\AndroidManifest.xml:9:9-35
-22        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-22-->[androidx.core:core:1.13.0] C:\Users\kivan\.gradle\caches\transforms-4\f3a9cf4ee370e5d6f7905fa9840b16ac\transformed\core-1.13.0\AndroidManifest.xml:28:18-86
-23        android:dataExtractionRules="@xml/data_extraction_rules"
-23-->D:\SmartEatDemo\SmartEatDemo\app\src\main\AndroidManifest.xml:10:9-65
-24        android:debuggable="true"
-25        android:extractNativeLibs="false"
-26        android:fullBackupContent="@xml/backup_rules"
-26-->D:\SmartEatDemo\SmartEatDemo\app\src\main\AndroidManifest.xml:11:9-54
-27        android:icon="@mipmap/ic_launcher"
-27-->D:\SmartEatDemo\SmartEatDemo\app\src\main\AndroidManifest.xml:12:9-43
-28        android:label="@string/app_name"
-28-->D:\SmartEatDemo\SmartEatDemo\app\src\main\AndroidManifest.xml:13:9-41
-29        android:networkSecurityConfig="@xml/network_security_config"
-29-->D:\SmartEatDemo\SmartEatDemo\app\src\main\AndroidManifest.xml:18:9-69
-30        android:roundIcon="@mipmap/ic_launcher_round"
-30-->D:\SmartEatDemo\SmartEatDemo\app\src\main\AndroidManifest.xml:14:9-54
-31        android:supportsRtl="true"
-31-->D:\SmartEatDemo\SmartEatDemo\app\src\main\AndroidManifest.xml:15:9-35
-32        android:theme="@style/Theme.SmartEatDemo" >
-32-->D:\SmartEatDemo\SmartEatDemo\app\src\main\AndroidManifest.xml:16:9-50
-33        <activity
-33-->D:\SmartEatDemo\SmartEatDemo\app\src\main\AndroidManifest.xml:21:9-27:20
-34            android:name="com.example.activities.EmailVerificationActivity"
-34-->D:\SmartEatDemo\SmartEatDemo\app\src\main\AndroidManifest.xml:21:19-60
-35            android:exported="false" >
-35-->D:\SmartEatDemo\SmartEatDemo\app\src\main\AndroidManifest.xml:22:13-37
-36
-37            <!-- <intent-filter> -->
-38            <!-- <action android:name="android.intent.action.MAIN" /> -->
-39            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-40            <!-- </intent-filter> -->
-41        </activity>
-42        <activity
-42-->D:\SmartEatDemo\SmartEatDemo\app\src\main\AndroidManifest.xml:29:9-31:40
-43            android:name="com.example.activities.ProfileActivity"
-43-->D:\SmartEatDemo\SmartEatDemo\app\src\main\AndroidManifest.xml:30:13-44
-44            android:exported="false" />
-44-->D:\SmartEatDemo\SmartEatDemo\app\src\main\AndroidManifest.xml:31:13-37
-45        <activity
-45-->D:\SmartEatDemo\SmartEatDemo\app\src\main\AndroidManifest.xml:32:9-34:40
-46            android:name="com.example.activities.RegistrationActivity"
-46-->D:\SmartEatDemo\SmartEatDemo\app\src\main\AndroidManifest.xml:33:13-49
-47            android:exported="false" />
-47-->D:\SmartEatDemo\SmartEatDemo\app\src\main\AndroidManifest.xml:34:13-37
-48        <activity
-48-->D:\SmartEatDemo\SmartEatDemo\app\src\main\AndroidManifest.xml:35:9-43:20
-49            android:name="com.example.activities.EntranceActivity"
-49-->D:\SmartEatDemo\SmartEatDemo\app\src\main\AndroidManifest.xml:36:13-45
-50            android:exported="true" >
-50-->D:\SmartEatDemo\SmartEatDemo\app\src\main\AndroidManifest.xml:37:13-36
-51            <intent-filter>
-51-->D:\SmartEatDemo\SmartEatDemo\app\src\main\AndroidManifest.xml:38:13-42:29
-52                <action android:name="android.intent.action.MAIN" />
-52-->D:\SmartEatDemo\SmartEatDemo\app\src\main\AndroidManifest.xml:39:17-69
-52-->D:\SmartEatDemo\SmartEatDemo\app\src\main\AndroidManifest.xml:39:25-66
-53
-54                <category android:name="android.intent.category.LAUNCHER" />
-54-->D:\SmartEatDemo\SmartEatDemo\app\src\main\AndroidManifest.xml:41:17-77
-54-->D:\SmartEatDemo\SmartEatDemo\app\src\main\AndroidManifest.xml:41:27-74
-55            </intent-filter>
-56        </activity>
-57
-58        <meta-data
-58-->D:\SmartEatDemo\SmartEatDemo\app\src\main\AndroidManifest.xml:45:9-47:57
-59            android:name="preloaded_fonts"
-59-->D:\SmartEatDemo\SmartEatDemo\app\src\main\AndroidManifest.xml:46:13-43
-60            android:resource="@array/preloaded_fonts" />
-60-->D:\SmartEatDemo\SmartEatDemo\app\src\main\AndroidManifest.xml:47:13-54
-61
-62        <provider
-62-->[androidx.emoji2:emoji2:1.3.0] C:\Users\kivan\.gradle\caches\transforms-4\57b955a0e4e916a95d01c50174fb4a7d\transformed\emoji2-1.3.0\AndroidManifest.xml:24:9-32:20
-63            android:name="androidx.startup.InitializationProvider"
-63-->[androidx.emoji2:emoji2:1.3.0] C:\Users\kivan\.gradle\caches\transforms-4\57b955a0e4e916a95d01c50174fb4a7d\transformed\emoji2-1.3.0\AndroidManifest.xml:25:13-67
-64            android:authorities="com.example.activities.androidx-startup"
-64-->[androidx.emoji2:emoji2:1.3.0] C:\Users\kivan\.gradle\caches\transforms-4\57b955a0e4e916a95d01c50174fb4a7d\transformed\emoji2-1.3.0\AndroidManifest.xml:26:13-68
-65            android:exported="false" >
-65-->[androidx.emoji2:emoji2:1.3.0] C:\Users\kivan\.gradle\caches\transforms-4\57b955a0e4e916a95d01c50174fb4a7d\transformed\emoji2-1.3.0\AndroidManifest.xml:27:13-37
-66            <meta-data
-66-->[androidx.emoji2:emoji2:1.3.0] C:\Users\kivan\.gradle\caches\transforms-4\57b955a0e4e916a95d01c50174fb4a7d\transformed\emoji2-1.3.0\AndroidManifest.xml:29:13-31:52
-67                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-67-->[androidx.emoji2:emoji2:1.3.0] C:\Users\kivan\.gradle\caches\transforms-4\57b955a0e4e916a95d01c50174fb4a7d\transformed\emoji2-1.3.0\AndroidManifest.xml:30:17-75
-68                android:value="androidx.startup" />
-68-->[androidx.emoji2:emoji2:1.3.0] C:\Users\kivan\.gradle\caches\transforms-4\57b955a0e4e916a95d01c50174fb4a7d\transformed\emoji2-1.3.0\AndroidManifest.xml:31:17-49
-69            <meta-data
-69-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\kivan\.gradle\caches\transforms-4\2eed0b3a918b4966960727c39b29a7f7\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:29:13-31:52
-70                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-70-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\kivan\.gradle\caches\transforms-4\2eed0b3a918b4966960727c39b29a7f7\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:30:17-78
-71                android:value="androidx.startup" />
-71-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\kivan\.gradle\caches\transforms-4\2eed0b3a918b4966960727c39b29a7f7\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:31:17-49
-72            <meta-data
-72-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\kivan\.gradle\caches\transforms-4\8a69c77c4b7b9c67631c7894a994b5f7\transformed\profileinstaller-1.3.1\AndroidManifest.xml:29:13-31:52
-73                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-73-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\kivan\.gradle\caches\transforms-4\8a69c77c4b7b9c67631c7894a994b5f7\transformed\profileinstaller-1.3.1\AndroidManifest.xml:30:17-85
-74                android:value="androidx.startup" />
-74-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\kivan\.gradle\caches\transforms-4\8a69c77c4b7b9c67631c7894a994b5f7\transformed\profileinstaller-1.3.1\AndroidManifest.xml:31:17-49
-75        </provider>
-76
-77        <receiver
-77-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\kivan\.gradle\caches\transforms-4\8a69c77c4b7b9c67631c7894a994b5f7\transformed\profileinstaller-1.3.1\AndroidManifest.xml:34:9-52:20
-78            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-78-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\kivan\.gradle\caches\transforms-4\8a69c77c4b7b9c67631c7894a994b5f7\transformed\profileinstaller-1.3.1\AndroidManifest.xml:35:13-76
-79            android:directBootAware="false"
-79-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\kivan\.gradle\caches\transforms-4\8a69c77c4b7b9c67631c7894a994b5f7\transformed\profileinstaller-1.3.1\AndroidManifest.xml:36:13-44
-80            android:enabled="true"
-80-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\kivan\.gradle\caches\transforms-4\8a69c77c4b7b9c67631c7894a994b5f7\transformed\profileinstaller-1.3.1\AndroidManifest.xml:37:13-35
-81            android:exported="true"
-81-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\kivan\.gradle\caches\transforms-4\8a69c77c4b7b9c67631c7894a994b5f7\transformed\profileinstaller-1.3.1\AndroidManifest.xml:38:13-36
-82            android:permission="android.permission.DUMP" >
-82-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\kivan\.gradle\caches\transforms-4\8a69c77c4b7b9c67631c7894a994b5f7\transformed\profileinstaller-1.3.1\AndroidManifest.xml:39:13-57
-83            <intent-filter>
-83-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\kivan\.gradle\caches\transforms-4\8a69c77c4b7b9c67631c7894a994b5f7\transformed\profileinstaller-1.3.1\AndroidManifest.xml:40:13-42:29
-84                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-84-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\kivan\.gradle\caches\transforms-4\8a69c77c4b7b9c67631c7894a994b5f7\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:17-91
-84-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\kivan\.gradle\caches\transforms-4\8a69c77c4b7b9c67631c7894a994b5f7\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:25-88
-85            </intent-filter>
-86            <intent-filter>
-86-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\kivan\.gradle\caches\transforms-4\8a69c77c4b7b9c67631c7894a994b5f7\transformed\profileinstaller-1.3.1\AndroidManifest.xml:43:13-45:29
-87                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-87-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\kivan\.gradle\caches\transforms-4\8a69c77c4b7b9c67631c7894a994b5f7\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:17-85
-87-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\kivan\.gradle\caches\transforms-4\8a69c77c4b7b9c67631c7894a994b5f7\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:25-82
-88            </intent-filter>
-89            <intent-filter>
-89-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\kivan\.gradle\caches\transforms-4\8a69c77c4b7b9c67631c7894a994b5f7\transformed\profileinstaller-1.3.1\AndroidManifest.xml:46:13-48:29
-90                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-90-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\kivan\.gradle\caches\transforms-4\8a69c77c4b7b9c67631c7894a994b5f7\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:17-88
-90-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\kivan\.gradle\caches\transforms-4\8a69c77c4b7b9c67631c7894a994b5f7\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:25-85
-91            </intent-filter>
-92            <intent-filter>
-92-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\kivan\.gradle\caches\transforms-4\8a69c77c4b7b9c67631c7894a994b5f7\transformed\profileinstaller-1.3.1\AndroidManifest.xml:49:13-51:29
-93                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-93-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\kivan\.gradle\caches\transforms-4\8a69c77c4b7b9c67631c7894a994b5f7\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:17-95
-93-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\kivan\.gradle\caches\transforms-4\8a69c77c4b7b9c67631c7894a994b5f7\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:25-92
-94            </intent-filter>
-95        </receiver>
-96    </application>
-97
-98</manifest>
+11-->D:\AndroidStudioProjects1\SmartEatDemo\app\src\main\AndroidManifest.xml:5:5-67
+11-->D:\AndroidStudioProjects1\SmartEatDemo\app\src\main\AndroidManifest.xml:5:22-64
+12
+13    <permission
+13-->[androidx.core:core:1.13.0] C:\Users\polka\.gradle\caches\transforms-4\f3a9cf4ee370e5d6f7905fa9840b16ac\transformed\core-1.13.0\AndroidManifest.xml:22:5-24:47
+14        android:name="com.example.activities.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+14-->[androidx.core:core:1.13.0] C:\Users\polka\.gradle\caches\transforms-4\f3a9cf4ee370e5d6f7905fa9840b16ac\transformed\core-1.13.0\AndroidManifest.xml:23:9-81
+15        android:protectionLevel="signature" />
+15-->[androidx.core:core:1.13.0] C:\Users\polka\.gradle\caches\transforms-4\f3a9cf4ee370e5d6f7905fa9840b16ac\transformed\core-1.13.0\AndroidManifest.xml:24:9-44
+16
+17    <uses-permission android:name="com.example.activities.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+17-->[androidx.core:core:1.13.0] C:\Users\polka\.gradle\caches\transforms-4\f3a9cf4ee370e5d6f7905fa9840b16ac\transformed\core-1.13.0\AndroidManifest.xml:26:5-97
+17-->[androidx.core:core:1.13.0] C:\Users\polka\.gradle\caches\transforms-4\f3a9cf4ee370e5d6f7905fa9840b16ac\transformed\core-1.13.0\AndroidManifest.xml:26:22-94
+18
+19    <application
+19-->D:\AndroidStudioProjects1\SmartEatDemo\app\src\main\AndroidManifest.xml:7:5-50:19
+20        android:allowBackup="true"
+20-->D:\AndroidStudioProjects1\SmartEatDemo\app\src\main\AndroidManifest.xml:8:9-35
+21        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+21-->[androidx.core:core:1.13.0] C:\Users\polka\.gradle\caches\transforms-4\f3a9cf4ee370e5d6f7905fa9840b16ac\transformed\core-1.13.0\AndroidManifest.xml:28:18-86
+22        android:dataExtractionRules="@xml/data_extraction_rules"
+22-->D:\AndroidStudioProjects1\SmartEatDemo\app\src\main\AndroidManifest.xml:9:9-65
+23        android:debuggable="true"
+24        android:extractNativeLibs="false"
+25        android:fullBackupContent="@xml/backup_rules"
+25-->D:\AndroidStudioProjects1\SmartEatDemo\app\src\main\AndroidManifest.xml:10:9-54
+26        android:icon="@mipmap/ic_launcher"
+26-->D:\AndroidStudioProjects1\SmartEatDemo\app\src\main\AndroidManifest.xml:11:9-43
+27        android:label="@string/app_name"
+27-->D:\AndroidStudioProjects1\SmartEatDemo\app\src\main\AndroidManifest.xml:12:9-41
+28        android:roundIcon="@mipmap/ic_launcher_round"
+28-->D:\AndroidStudioProjects1\SmartEatDemo\app\src\main\AndroidManifest.xml:13:9-54
+29        android:supportsRtl="true"
+29-->D:\AndroidStudioProjects1\SmartEatDemo\app\src\main\AndroidManifest.xml:14:9-35
+30        android:testOnly="true"
+31        android:theme="@style/Theme.SmartEatDemo" >
+31-->D:\AndroidStudioProjects1\SmartEatDemo\app\src\main\AndroidManifest.xml:15:9-50
+32        <activity
+32-->D:\AndroidStudioProjects1\SmartEatDemo\app\src\main\AndroidManifest.xml:17:9-23:20
+33            android:name="com.example.activities.EmailVerificationActivity"
+33-->D:\AndroidStudioProjects1\SmartEatDemo\app\src\main\AndroidManifest.xml:17:19-60
+34            android:exported="false" >
+34-->D:\AndroidStudioProjects1\SmartEatDemo\app\src\main\AndroidManifest.xml:18:13-37
+35
+36            <!-- <intent-filter> -->
+37            <!-- <action android:name="android.intent.action.MAIN" /> -->
+38            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+39            <!-- </intent-filter> -->
+40        </activity>
+41        <activity
+41-->D:\AndroidStudioProjects1\SmartEatDemo\app\src\main\AndroidManifest.xml:25:9-27:40
+42            android:name="com.example.activities.MainActivity"
+42-->D:\AndroidStudioProjects1\SmartEatDemo\app\src\main\AndroidManifest.xml:26:13-41
+43            android:exported="false" />
+43-->D:\AndroidStudioProjects1\SmartEatDemo\app\src\main\AndroidManifest.xml:27:13-37
+44        <activity
+44-->D:\AndroidStudioProjects1\SmartEatDemo\app\src\main\AndroidManifest.xml:28:9-30:40
+45            android:name="com.example.activities.Main2Activity"
+45-->D:\AndroidStudioProjects1\SmartEatDemo\app\src\main\AndroidManifest.xml:29:13-42
+46            android:exported="false" />
+46-->D:\AndroidStudioProjects1\SmartEatDemo\app\src\main\AndroidManifest.xml:30:13-37
+47        <activity
+47-->D:\AndroidStudioProjects1\SmartEatDemo\app\src\main\AndroidManifest.xml:31:9-33:39
+48            android:name="com.example.activities.ProfileActivity"
+48-->D:\AndroidStudioProjects1\SmartEatDemo\app\src\main\AndroidManifest.xml:32:13-44
+49            android:exported="true" />
+49-->D:\AndroidStudioProjects1\SmartEatDemo\app\src\main\AndroidManifest.xml:33:13-36
+50        <activity
+50-->D:\AndroidStudioProjects1\SmartEatDemo\app\src\main\AndroidManifest.xml:34:9-36:40
+51            android:name="com.example.activities.RegistrationActivity"
+51-->D:\AndroidStudioProjects1\SmartEatDemo\app\src\main\AndroidManifest.xml:35:13-49
+52            android:exported="false" />
+52-->D:\AndroidStudioProjects1\SmartEatDemo\app\src\main\AndroidManifest.xml:36:13-37
+53        <activity
+53-->D:\AndroidStudioProjects1\SmartEatDemo\app\src\main\AndroidManifest.xml:37:9-45:20
+54            android:name="com.example.activities.EntranceActivity"
+54-->D:\AndroidStudioProjects1\SmartEatDemo\app\src\main\AndroidManifest.xml:38:13-45
+55            android:exported="true" >
+55-->D:\AndroidStudioProjects1\SmartEatDemo\app\src\main\AndroidManifest.xml:39:13-36
+56            <intent-filter>
+56-->D:\AndroidStudioProjects1\SmartEatDemo\app\src\main\AndroidManifest.xml:40:13-44:29
+57                <action android:name="android.intent.action.MAIN" />
+57-->D:\AndroidStudioProjects1\SmartEatDemo\app\src\main\AndroidManifest.xml:41:17-69
+57-->D:\AndroidStudioProjects1\SmartEatDemo\app\src\main\AndroidManifest.xml:41:25-66
+58
+59                <category android:name="android.intent.category.LAUNCHER" />
+59-->D:\AndroidStudioProjects1\SmartEatDemo\app\src\main\AndroidManifest.xml:43:17-77
+59-->D:\AndroidStudioProjects1\SmartEatDemo\app\src\main\AndroidManifest.xml:43:27-74
+60            </intent-filter>
+61        </activity>
+62
+63        <meta-data
+63-->D:\AndroidStudioProjects1\SmartEatDemo\app\src\main\AndroidManifest.xml:47:9-49:57
+64            android:name="preloaded_fonts"
+64-->D:\AndroidStudioProjects1\SmartEatDemo\app\src\main\AndroidManifest.xml:48:13-43
+65            android:resource="@array/preloaded_fonts" />
+65-->D:\AndroidStudioProjects1\SmartEatDemo\app\src\main\AndroidManifest.xml:49:13-54
+66
+67        <provider
+67-->[androidx.emoji2:emoji2:1.3.0] C:\Users\polka\.gradle\caches\transforms-4\57b955a0e4e916a95d01c50174fb4a7d\transformed\emoji2-1.3.0\AndroidManifest.xml:24:9-32:20
+68            android:name="androidx.startup.InitializationProvider"
+68-->[androidx.emoji2:emoji2:1.3.0] C:\Users\polka\.gradle\caches\transforms-4\57b955a0e4e916a95d01c50174fb4a7d\transformed\emoji2-1.3.0\AndroidManifest.xml:25:13-67
+69            android:authorities="com.example.activities.androidx-startup"
+69-->[androidx.emoji2:emoji2:1.3.0] C:\Users\polka\.gradle\caches\transforms-4\57b955a0e4e916a95d01c50174fb4a7d\transformed\emoji2-1.3.0\AndroidManifest.xml:26:13-68
+70            android:exported="false" >
+70-->[androidx.emoji2:emoji2:1.3.0] C:\Users\polka\.gradle\caches\transforms-4\57b955a0e4e916a95d01c50174fb4a7d\transformed\emoji2-1.3.0\AndroidManifest.xml:27:13-37
+71            <meta-data
+71-->[androidx.emoji2:emoji2:1.3.0] C:\Users\polka\.gradle\caches\transforms-4\57b955a0e4e916a95d01c50174fb4a7d\transformed\emoji2-1.3.0\AndroidManifest.xml:29:13-31:52
+72                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+72-->[androidx.emoji2:emoji2:1.3.0] C:\Users\polka\.gradle\caches\transforms-4\57b955a0e4e916a95d01c50174fb4a7d\transformed\emoji2-1.3.0\AndroidManifest.xml:30:17-75
+73                android:value="androidx.startup" />
+73-->[androidx.emoji2:emoji2:1.3.0] C:\Users\polka\.gradle\caches\transforms-4\57b955a0e4e916a95d01c50174fb4a7d\transformed\emoji2-1.3.0\AndroidManifest.xml:31:17-49
+74            <meta-data
+74-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\polka\.gradle\caches\transforms-4\2eed0b3a918b4966960727c39b29a7f7\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:29:13-31:52
+75                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+75-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\polka\.gradle\caches\transforms-4\2eed0b3a918b4966960727c39b29a7f7\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:30:17-78
+76                android:value="androidx.startup" />
+76-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\polka\.gradle\caches\transforms-4\2eed0b3a918b4966960727c39b29a7f7\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:31:17-49
+77            <meta-data
+77-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\polka\.gradle\caches\transforms-4\8a69c77c4b7b9c67631c7894a994b5f7\transformed\profileinstaller-1.3.1\AndroidManifest.xml:29:13-31:52
+78                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+78-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\polka\.gradle\caches\transforms-4\8a69c77c4b7b9c67631c7894a994b5f7\transformed\profileinstaller-1.3.1\AndroidManifest.xml:30:17-85
+79                android:value="androidx.startup" />
+79-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\polka\.gradle\caches\transforms-4\8a69c77c4b7b9c67631c7894a994b5f7\transformed\profileinstaller-1.3.1\AndroidManifest.xml:31:17-49
+80        </provider>
+81
+82        <receiver
+82-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\polka\.gradle\caches\transforms-4\8a69c77c4b7b9c67631c7894a994b5f7\transformed\profileinstaller-1.3.1\AndroidManifest.xml:34:9-52:20
+83            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+83-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\polka\.gradle\caches\transforms-4\8a69c77c4b7b9c67631c7894a994b5f7\transformed\profileinstaller-1.3.1\AndroidManifest.xml:35:13-76
+84            android:directBootAware="false"
+84-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\polka\.gradle\caches\transforms-4\8a69c77c4b7b9c67631c7894a994b5f7\transformed\profileinstaller-1.3.1\AndroidManifest.xml:36:13-44
+85            android:enabled="true"
+85-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\polka\.gradle\caches\transforms-4\8a69c77c4b7b9c67631c7894a994b5f7\transformed\profileinstaller-1.3.1\AndroidManifest.xml:37:13-35
+86            android:exported="true"
+86-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\polka\.gradle\caches\transforms-4\8a69c77c4b7b9c67631c7894a994b5f7\transformed\profileinstaller-1.3.1\AndroidManifest.xml:38:13-36
+87            android:permission="android.permission.DUMP" >
+87-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\polka\.gradle\caches\transforms-4\8a69c77c4b7b9c67631c7894a994b5f7\transformed\profileinstaller-1.3.1\AndroidManifest.xml:39:13-57
+88            <intent-filter>
+88-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\polka\.gradle\caches\transforms-4\8a69c77c4b7b9c67631c7894a994b5f7\transformed\profileinstaller-1.3.1\AndroidManifest.xml:40:13-42:29
+89                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+89-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\polka\.gradle\caches\transforms-4\8a69c77c4b7b9c67631c7894a994b5f7\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:17-91
+89-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\polka\.gradle\caches\transforms-4\8a69c77c4b7b9c67631c7894a994b5f7\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:25-88
+90            </intent-filter>
+91            <intent-filter>
+91-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\polka\.gradle\caches\transforms-4\8a69c77c4b7b9c67631c7894a994b5f7\transformed\profileinstaller-1.3.1\AndroidManifest.xml:43:13-45:29
+92                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+92-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\polka\.gradle\caches\transforms-4\8a69c77c4b7b9c67631c7894a994b5f7\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:17-85
+92-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\polka\.gradle\caches\transforms-4\8a69c77c4b7b9c67631c7894a994b5f7\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:25-82
+93            </intent-filter>
+94            <intent-filter>
+94-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\polka\.gradle\caches\transforms-4\8a69c77c4b7b9c67631c7894a994b5f7\transformed\profileinstaller-1.3.1\AndroidManifest.xml:46:13-48:29
+95                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+95-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\polka\.gradle\caches\transforms-4\8a69c77c4b7b9c67631c7894a994b5f7\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:17-88
+95-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\polka\.gradle\caches\transforms-4\8a69c77c4b7b9c67631c7894a994b5f7\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:25-85
+96            </intent-filter>
+97            <intent-filter>
+97-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\polka\.gradle\caches\transforms-4\8a69c77c4b7b9c67631c7894a994b5f7\transformed\profileinstaller-1.3.1\AndroidManifest.xml:49:13-51:29
+98                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+98-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\polka\.gradle\caches\transforms-4\8a69c77c4b7b9c67631c7894a994b5f7\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:17-95
+98-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\polka\.gradle\caches\transforms-4\8a69c77c4b7b9c67631c7894a994b5f7\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:25-92
+99            </intent-filter>
+100        </receiver>
+101    </application>
+102
+103</manifest>

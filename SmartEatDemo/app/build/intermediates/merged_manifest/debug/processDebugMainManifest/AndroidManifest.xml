@@ -40,8 +40,14 @@
             <!-- </intent-filter> -->
         </activity>
         <activity
-            android:name="com.example.activities.ProfileActivity"
+            android:name="com.example.activities.MainActivity"
             android:exported="false" />
+        <activity
+            android:name="com.example.activities.Main2Activity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.activities.ProfileActivity"
+            android:exported="true" />
         <activity
             android:name="com.example.activities.RegistrationActivity"
             android:exported="false" />

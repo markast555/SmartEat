@@ -41,7 +41,7 @@
         <!--            app:layout_constraintVertical_bias="0.407" />-->
 
         <TableLayout
-            android:id="@+id/linerLayotToRegistration"
+            android:id="@+id/linerLayoutToRegistration"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:orientation="horizontal"
