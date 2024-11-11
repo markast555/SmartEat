@@ -80,7 +80,7 @@
             android:inputType="text"
             android:textColor="@color/dark_text"
             app:hintAnimationEnabled="false"/>
-<!--        android:hint="@string/login_field"-->
+        <!--        android:hint="@string/login_field"-->
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
@@ -172,96 +172,96 @@
     </com.google.android.material.textfield.TextInputLayout>
 
 
-<!--    <TableLayout-->
-<!--        android:id="@+id/tableLayoutHeightAndWeight"-->
-<!--        android:layout_width="0dp"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        app:layout_constraintVertical_bias="0.55"-->
-<!--        app:layout_constraintHorizontal_bias="0.5"-->
-<!--        app:layout_constraintHeight_percent="0.08"-->
-<!--        app:layout_constraintWidth_percent="0.82">-->
+    <!--    <TableLayout-->
+    <!--        android:id="@+id/tableLayoutHeightAndWeight"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent"-->
+    <!--        app:layout_constraintVertical_bias="0.55"-->
+    <!--        app:layout_constraintHorizontal_bias="0.5"-->
+    <!--        app:layout_constraintHeight_percent="0.08"-->
+    <!--        app:layout_constraintWidth_percent="0.82">-->
 
-<!--        <TableRow>-->
-<!--            <TextView-->
-<!--                android:id="@+id/textViewHeight"-->
-<!--                android:layout_width="0dp"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="@string/height"-->
-<!--                android:layout_weight="1"-->
-<!--                android:textColor="@color/dark_text"-->
-<!--                android:textSize="16sp"-->
-<!--                android:textStyle="bold"/>-->
+    <!--        <TableRow>-->
+    <!--            <TextView-->
+    <!--                android:id="@+id/textViewHeight"-->
+    <!--                android:layout_width="0dp"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:text="@string/height"-->
+    <!--                android:layout_weight="1"-->
+    <!--                android:textColor="@color/dark_text"-->
+    <!--                android:textSize="16sp"-->
+    <!--                android:textStyle="bold"/>-->
 
-<!--            <TextView-->
-<!--                android:id="@+id/textViewWeight"-->
-<!--                android:layout_width="0dp"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="@string/weight"-->
-<!--                android:layout_weight="1"-->
-<!--                android:textColor="@color/dark_text"-->
-<!--                android:textSize="16sp"-->
-<!--                android:textStyle="bold"/>-->
+    <!--            <TextView-->
+    <!--                android:id="@+id/textViewWeight"-->
+    <!--                android:layout_width="0dp"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:text="@string/weight"-->
+    <!--                android:layout_weight="1"-->
+    <!--                android:textColor="@color/dark_text"-->
+    <!--                android:textSize="16sp"-->
+    <!--                android:textStyle="bold"/>-->
 
 
-<!--        </TableRow>-->
+    <!--        </TableRow>-->
 
-<!--        <TableRow>-->
+    <!--        <TableRow>-->
 
-<!--            <com.google.android.material.textfield.TextInputLayout-->
-<!--                android:id="@+id/textInputLayoutHeight"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:hint="@string/height"-->
-<!--                app:hintEnabled="true"-->
-<!--                app:layout_weight="1">-->
+    <!--            <com.google.android.material.textfield.TextInputLayout-->
+    <!--                android:id="@+id/textInputLayoutHeight"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:hint="@string/height"-->
+    <!--                app:hintEnabled="true"-->
+    <!--                app:layout_weight="1">-->
 
-<!--                <EditText-->
-<!--                    android:id="@+id/editTextHeight"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:inputType="number"-->
-<!--                    app:layout_weight="1"/>-->
-<!--            </com.google.android.material.textfield.TextInputLayout>-->
+    <!--                <EditText-->
+    <!--                    android:id="@+id/editTextHeight"-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:inputType="number"-->
+    <!--                    app:layout_weight="1"/>-->
+    <!--            </com.google.android.material.textfield.TextInputLayout>-->
 
-<!--            <com.google.android.material.textfield.TextInputLayout-->
-<!--                android:id="@+id/textInputLayoutWeight"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:hint="@string/weight"-->
-<!--                app:hintEnabled="true"-->
-<!--                app:layout_weight="1">-->
+    <!--            <com.google.android.material.textfield.TextInputLayout-->
+    <!--                android:id="@+id/textInputLayoutWeight"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:hint="@string/weight"-->
+    <!--                app:hintEnabled="true"-->
+    <!--                app:layout_weight="1">-->
 
-<!--                <EditText-->
-<!--                    android:id="@+id/editTextWeight"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:inputType="number"-->
-<!--                    app:layout_weight="1"/>-->
-<!--            </com.google.android.material.textfield.TextInputLayout>-->
+    <!--                <EditText-->
+    <!--                    android:id="@+id/editTextWeight"-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:inputType="number"-->
+    <!--                    app:layout_weight="1"/>-->
+    <!--            </com.google.android.material.textfield.TextInputLayout>-->
 
-<!--        </TableRow>-->
-<!--    </TableLayout>-->
+    <!--        </TableRow>-->
+    <!--    </TableLayout>-->
 
-<TextView
-    android:id="@+id/textViewHeight"
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"
-    android:text="@string/height"
-    android:textColor="@color/dark_text"
-    android:textSize="16sp"
-    android:textStyle="bold"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintHeight_percent="0.145"
-    app:layout_constraintVertical_bias="0.4"
-    app:layout_constraintHorizontal_bias="0.14"
-    app:layout_constraintWidth_percent="0.35"/>
+    <TextView
+        android:id="@+id/textViewHeight"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/height"
+        android:textColor="@color/dark_text"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHeight_percent="0.145"
+        app:layout_constraintVertical_bias="0.4"
+        app:layout_constraintHorizontal_bias="0.14"
+        app:layout_constraintWidth_percent="0.35"/>
 
     <TextView
         android:id="@+id/textViewWeight"

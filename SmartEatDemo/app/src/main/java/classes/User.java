@@ -1,9 +1,16 @@
 package classes;
 
+import android.os.Build;
+import android.os.Parcel;
+import android.os.Parcelable;
+import android.text.Editable;
+
+import androidx.annotation.NonNull;
+
 import java.time.LocalDate;
 import java.util.UUID;
 
-public class User {
+public class User implements Parcelable {
 
     private UUID idUser; //Первичный ключ, уникальное значение
     private String login; //Уникальное значение
@@ -55,7 +62,8 @@ public class User {
     public User(){
         this.idUser = VariableGenerator.getUid();
         this.login = VariableGenerator.generateRandomLogin();
-        this.password = VariableGenerator.hashPassword("password");
+        this.password = "";
+        //this.password = VariableGenerator.hashPassword("password");
         this.sex = Sex.MALE;
         this.dateOfBirth = LocalDate.of(1990, 5, 15);;
         this.height = 180;
@@ -64,7 +72,6 @@ public class User {
         this.levelOfPhysicalActivity = PhysicalActivityLevel.ModerateActivity;
         this.goals = Goals.ImprovingHealth;
     }
-
 
     public UUID getIdUser() {
         return idUser;
@@ -169,5 +176,56 @@ public class User {
                 ", gmail='" + gmail + '\'' +
                 ", calorieNorm=" + calorieNorm +
                 '}';
+    }
+
+    // Parcelable реализация
+    protected User(Parcel in) {
+        idUser = (UUID) in.readSerializable();
+        login = in.readString();
+        password = in.readString();
+        sex = (Sex) in.readSerializable(); // Предполагается, что Sex реализует Serializable
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            dateOfBirth = (LocalDate) in.readSerializable(); // Либо используйте другой способ
+        }
+        height = in.readInt();
+        weight = in.readFloat();
+        levelOfPhysicalActivity = (PhysicalActivityLevel) in.readSerializable(); // Предполагается, что реализует Serializable
+        goals = (Goals) in.readSerializable(); // Предполагается, что Goals реализует Serializable
+        gmail = in.readString();
+        calorieNorm = in.readInt();
+    }
+
+    public static final Creator<User> CREATOR = new Creator<User>() {
+        @Override
+        public User createFromParcel(Parcel in) {
+            return new User(in);
+        }
+
+        @Override
+        public User[] newArray(int size) {
+            return new User[size];
+        }
+    };
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeSerializable(idUser);
+        dest.writeString(login);
+        dest.writeString(password);
+        dest.writeSerializable(sex); // Предполагается, что Sex реализует Serializable
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            dest.writeSerializable(dateOfBirth); // Либо используйте другой способ
+        }
+        dest.writeInt(height);
+        dest.writeFloat(weight);
+        dest.writeSerializable(levelOfPhysicalActivity); // Предполагается, что реализует Serializable
+        dest.writeSerializable(goals); // Предполагается, что Goals реализует Serializable
+        dest.writeString(gmail);
+        dest.writeInt(calorieNorm);
     }
 }

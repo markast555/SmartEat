@@ -20,8 +20,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.google.android.material.textfield.TextInputEditText;
-import com.google.android.material.textfield.TextInputLayout;
+import classes.User;
 
 public class RegistrationActivity extends AppCompatActivity {
 
@@ -122,6 +121,8 @@ public class RegistrationActivity extends AppCompatActivity {
                             // Переход в EmailVerificationActivity с передачей email
                             try {
                                 Intent intent = new Intent(this, EmailVerificationActivity.class);
+                                User user = new User(null, editTextLogin.getText().toString(), editTextPassword.getText().toString(), null, null, 0, 0, null, null, editTextEmail.getText().toString(), 0);
+                                intent.putExtra("user", user);
                                 intent.putExtra("userEmail", emailInput); // Передача email
                                 startActivity(intent);
                             } catch (Exception e) {

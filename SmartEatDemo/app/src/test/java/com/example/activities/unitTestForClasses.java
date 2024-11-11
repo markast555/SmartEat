@@ -6,7 +6,8 @@ import org.junit.Assert;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.mindrot.jbcrypt.BCrypt;
+
+import java.sql.SQLException;
 
 import classes.DatabaseParams;
 import classes.User;
@@ -31,14 +32,14 @@ public class unitTestForClasses {
 
     @Test
     @DisplayName("Тестирование соединения с БД")
-    public void testSetConnection() {
+    public void testSetConnection() throws SQLException, ClassNotFoundException {
         userRepositoryCrud.setConnection();
         Assert.assertNotNull(userRepositoryCrud.getConnection());
     }
 
     @Test
     @DisplayName("Тестирование прерывания соединения с БД")
-    public void testCloseConnection() {
+    public void testCloseConnection() throws SQLException, ClassNotFoundException {
         userRepositoryCrud.setConnection();
         Assert.assertNotNull(userRepositoryCrud.getConnection());
         userRepositoryCrud.closeConnection();
@@ -82,28 +83,55 @@ public class unitTestForClasses {
 
     @Test
     @DisplayName("Тестирование создания кортежа пользователя в табл. users в БД")
-    public void testCreateUserInBD() {
+    public void testCreateUserInBD() throws SQLException, ClassNotFoundException {
         User user = new User();
         System.out.println(user.toString());
         Assert.assertTrue(userRepositoryCrud.create(user));
     }
 
-//    @Test
-//    @DisplayName("Тестирование нахождения пользователя по логину в табл. users в БД")
-//    public void testSelectByLoginInBD() {
-//        String login = "3MGN3";
-//        User user = userRepositoryCrud.selectByLogin(login);
-//        System.out.println(user.toString());
-//        Assert.assertNotNull(user);
-//    }
 
-//    @Test
-//    @DisplayName("Тестирование нахождения пользователя по логину в табл. user_se в БД")
-//    public void testSelectByLogin() {
-//        String login = "hB0RI4z";
-//        User user = userRepositoryCrud.selectByLogin(login);
-//        Assert.assertNotNull(user);
-//    }
+    @Test
+    @DisplayName("Тестирование нахождения пользователя по логину в табл. users в БД")
+    public void testSelectByLoginInBDPositive() throws SQLException, ClassNotFoundException {
+        String login = "k9Ba0G";
+        User user = userRepositoryCrud.selectByLogin(login);
+        System.out.println(user.toString());
+        Assert.assertNotNull(user);
+    }
+
+    @Test
+    @DisplayName("Тестирование нахождения пользователя по логину в табл. user_se в БД")
+    public void testSelectByLoginNegative() throws SQLException, ClassNotFoundException {
+        String login = "k9Ba0G000000";;
+        User user = userRepositoryCrud.selectByLogin(login);
+        Assert.assertNull(user);
+    }
+
+    @Test
+    @DisplayName("Тестирование на разхеширование пароля из записи, найденной из табл. users в БД по логину")
+    public void testCreateUserInBD_And_SelectByLoginIn_And_HashPasswordPositive() throws SQLException, ClassNotFoundException {
+
+        String originalPassword = "password";
+        User user = new User();
+        user.setPassword(originalPassword);
+        user.setPassword(VariableGenerator.hashPassword(user.getPassword()));
+        String originalPasswordHashBefore = user.getPassword();
+        String login = user.getLogin();
+
+        boolean isMatchBefore = VariableGenerator.checkPassword(originalPassword, originalPasswordHashBefore);
+        Assert.assertTrue(isMatchBefore);
+
+        Assert.assertTrue(userRepositoryCrud.create(user));
+
+        User userBD = userRepositoryCrud.selectByLogin(login);
+        Assert.assertNotNull(userBD);
+        String originalPasswordHashAfter = userBD.getPassword();
+
+        Assert.assertEquals(originalPasswordHashBefore, originalPasswordHashAfter);
+
+        boolean isMatchAfter = VariableGenerator.checkPassword(originalPassword, originalPasswordHashAfter);
+        Assert.assertTrue(isMatchAfter);
+    }
 
 
 
