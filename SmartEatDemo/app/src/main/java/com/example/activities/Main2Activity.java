@@ -17,12 +17,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 import classes.CustomThumbDrawable;
+import classes.User;
 
 public class Main2Activity extends AppCompatActivity {
 
     private SeekBar seekBar;
     private CustomThumbDrawable customThumb;
     private ImageButton imageButtonProfile;
+    private User user = null;
 
     public Drawable createProgressDrawable(int height, int trackWidth, Context context) {
         // Создаем закругленные углы
@@ -59,6 +61,9 @@ public class Main2Activity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        user = getIntent().getParcelableExtra("user");
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main2_frame); // Замените на ваш файл макета
 
@@ -136,6 +141,7 @@ public class Main2Activity extends AppCompatActivity {
 
     private void openProfileActivity() {
         Intent intent = new Intent(Main2Activity.this, ProfileActivity.class);
+        intent.putExtra("user", user);
         startActivity(intent);
         overridePendingTransition(0, 0); // Убираем анимацию перехода
     }
@@ -148,6 +154,7 @@ public class Main2Activity extends AppCompatActivity {
 
         // Запускаем MainActivity
         Intent intent = new Intent(Main2Activity.this, MainActivity.class);
+        intent.putExtra("user", user);
         startActivity(intent);
         overridePendingTransition(0, 0);
 

@@ -78,14 +78,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/male" />
+            android:text="@string/male"
+            android:onClick="clickOnMale"/>
 
         <RadioButton
             android:id="@+id/radioButtonFemaleAfter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/female" />
+            android:text="@string/female"
+            android:onClick="clickOnFemale"/>
     </RadioGroup>
 
     <TextView
@@ -361,17 +363,17 @@
         <AutoCompleteTextView
             android:id="@+id/autoCompleteTextViewLevelOfPhysicalActivityAfter"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:inputType="none"
-            android:focusable="true"
+            android:layout_height="69dp"
             android:clickable="true"
-            android:textColor="@color/dark_text"
+            android:ellipsize="end"
+            android:focusable="true"
+            android:hint="@string/choose_level_of_physical_activity"
+            android:inputType="none"
+            android:maxLines="1"
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
-            android:maxLines="1"
-            android:ellipsize="end"
             android:singleLine="true"
-            android:hint="@string/choose_level_of_physical_activity"/>
+            android:textColor="@color/dark_text" />
         <!--            android:hint="@string/level_of_physical_activity"-->
     </com.google.android.material.textfield.TextInputLayout>
 

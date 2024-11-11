@@ -3,6 +3,7 @@ package com.example.activities;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -16,6 +17,7 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,10 +28,18 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 
+import java.sql.SQLException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 
+import classes.DatabaseParams;
 import classes.Goals;
 import classes.PhysicalActivityLevel;
+import classes.Sex;
+import classes.User;
+import classes.UserRepositoryCrud;
+import classes.VariableGenerator;
 
 public class ProfileAfterRegistrationActivity extends AppCompatActivity {
 
@@ -44,9 +54,14 @@ public class ProfileAfterRegistrationActivity extends AppCompatActivity {
     private AutoCompleteTextView autoCompleteTextViewLevelOfPhysicalActivityAfter;
     private AutoCompleteTextView autoCompleteTextViewGoalAfter;
     private ImageButton imageButtonQuestionAfter;
+    private User user = null;
+    private Sex sex = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        user = getIntent().getParcelableExtra("user"); // Получаем объект User
+
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.profile_after_registration_frame);
@@ -104,7 +119,6 @@ public class ProfileAfterRegistrationActivity extends AppCompatActivity {
         setupGoalDropdown();
 
         imageButtonQuestionAfter.setOnClickListener(v -> showPhysicalActivityInfoDialog());
-
 
     }
 
@@ -238,7 +252,90 @@ public class ProfileAfterRegistrationActivity extends AppCompatActivity {
     }
 
     public void toMain(View v){
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
+
+        System.out.println(user.toString());
+
+        System.out.println("sex = " + sex);
+        System.out.println("editTextDateOfBirthAfter = " + editTextDateOfBirthAfter.getText());
+        System.out.println("editTextHeight = " + editTextHeight.getText());
+        System.out.println("editTextWeight = " + editTextWeight.getText());
+        System.out.println("autoCompleteTextViewLevelOfPhysicalActivityAfter = " + autoCompleteTextViewLevelOfPhysicalActivityAfter.getText());
+        System.out.println("autoCompleteTextViewGoalAfter = " + autoCompleteTextViewGoalAfter.getText());
+
+        if (sex != null && !editTextDateOfBirthAfter.getText().toString().equals("") &&  !editTextHeight.getText().toString().equals("") && !editTextWeight.getText().toString().equals("") && !autoCompleteTextViewLevelOfPhysicalActivityAfter.getText().toString().equals("")) {
+
+            try {
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
+
+                user.setIdUser(VariableGenerator.getUid());
+                user.setSex(sex);
+
+                String dateString = editTextDateOfBirthAfter.getText().toString();
+                LocalDate dateOfBirth = LocalDate.parse(dateString, formatter);
+                user.setDateOfBirth(dateOfBirth);
+
+                user.setHeight(Integer.parseInt(editTextHeight.getText().toString()));
+                user.setWeight(Integer.parseInt(editTextWeight.getText().toString()));
+                user.setLevelOfPhysicalActivity(PhysicalActivityLevel.fromType(autoCompleteTextViewLevelOfPhysicalActivityAfter.getText().toString()));
+
+                if (!autoCompleteTextViewGoalAfter.getText().toString().equals("")) {
+                    user.setGoals(Goals.fromType(autoCompleteTextViewGoalAfter.getText().toString()));
+                }else{
+                    user.setGoals(null);
+                }
+
+                System.out.println("Готово!!!!");
+                System.out.println(user.toString());
+            } catch (Exception e) {
+                System.out.println("Ошибка: " + e.getMessage());
+            }
+
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+
+                    UserRepositoryCrud userRepositoryCrud = new UserRepositoryCrud();
+                    userRepositoryCrud.setConnectionParameters(DatabaseParams.getUrl(), DatabaseParams.getUser(), DatabaseParams.getPassword());
+                    boolean isCreate = false;
+                    try {
+                        isCreate = userRepositoryCrud.create(user);
+                    } catch (SQLException e) {
+                        System.out.println("Ошибка подключения к базе данных: " + e.getMessage());
+                        showInfo("Ощибка соединения");
+                    } catch (ClassNotFoundException e) {
+                        System.out.println("Драйвер базы данных не найден: " + e.getMessage());
+                        showInfo("Ощибка соединения");
+                    }
+
+                    if (isCreate) {
+                        showInfo("Аккаунт создан");
+                        Intent intent = new Intent(ProfileAfterRegistrationActivity.this, MainActivity.class);
+                        intent.putExtra("user", user);
+                        startActivity(intent);
+                    }
+                }
+            }).start();
+
+        } else{
+            Toast.makeText(ProfileAfterRegistrationActivity.this, "Не все обязательные поля заполнены", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void showInfo(String info) {
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                Toast.makeText(ProfileAfterRegistrationActivity.this, info, Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+
+    public void clickOnMale(View view) {
+        this.sex = Sex.MALE;
+    }
+
+    public void clickOnFemale(View view) {
+        this.sex = Sex.FEMALE;
     }
 }

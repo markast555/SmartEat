@@ -106,12 +106,12 @@ public class UserRepositoryCrud{
                 statement.setObject(1, user.getIdUser().toString());
                 statement.setString(2, user.getLogin());
                 statement.setString(3, user.getPassword());
-                statement.setString(4, user.getSex().getType());
+                statement.setString(4, Sex.TranslateFromRusToEng(user.getSex().getType()));
                 statement.setDate(5, dateToSqlDate(user.getDateOfBirth()));
                 statement.setInt(6, user.getHeight());
                 statement.setFloat(7, user.getWeight());
-                statement.setString(8, user.getLevelOfPhysicalActivity().getType());
-                statement.setString(9, user.getGoals().getType());
+                statement.setString(8, PhysicalActivityLevel.TranslateFromRusToEng(user.getLevelOfPhysicalActivity().getType()));
+                statement.setString(9, Goals.TranslateFromRusToEng(user.getGoals().getType()));
                 statement.setString(10, user.getGmail());
                 statement.setInt(11, user.getCalorieNorm());
 
@@ -145,12 +145,12 @@ public class UserRepositoryCrud{
                     user = new User(UUID.fromString(resultSet.getString("id_user")),
                             resultSet.getString("login"),
                             resultSet.getString("password"),
-                            Sex.fromType(resultSet.getString("sex")),
+                            Sex.fromType(Sex.TranslateFromEngToRus(resultSet.getString("sex"))),
                             toLocalDate(resultSet.getDate("date_of_birth")),
                             resultSet.getInt("height"),
                             resultSet.getFloat("weight"),
-                            PhysicalActivityLevel.fromType(resultSet.getString("level_of_physical_activity")),
-                            Goals.fromType(resultSet.getString("goal")),
+                            PhysicalActivityLevel.fromType(PhysicalActivityLevel.TranslateFromEngToRus(resultSet.getString("level_of_physical_activity"))),
+                            Goals.fromType(Goals.TranslateFromEngToRus(resultSet.getString("goal"))),
                             resultSet.getString("gmail"),
                             resultSet.getInt("calorie_norm"));
                 } else {
@@ -166,6 +166,33 @@ public class UserRepositoryCrud{
         return user;
     }
 
+    public boolean checkByOneField(String value, String nameField) throws SQLException, ClassNotFoundException {
+        boolean result = false;
+
+        setConnection(); // Установите соединение с базой данных
+
+        try (PreparedStatement statement = connection.prepareStatement(
+                "SELECT id_user, login, password, sex, date_of_birth, height, weight, level_of_physical_activity, goal, gmail, calorie_norm FROM users WHERE " + nameField + " = ?")) {
+
+            // Устанавливаем значение параметра
+            statement.setString(1, value);
+
+            try (ResultSet resultSet = statement.executeQuery()) {
+                if (resultSet.next()) {
+                    result = true;
+                } else {
+                    System.out.println("Данные не найдены");
+                }
+            }
+        } catch (SQLException e) {
+            throw new SQLException("Ошибка подключения: " + e.getMessage(), e);
+        } finally {
+            closeConnection(); // Закрываем соединение в блоке finally
+        }
+
+        return result;
+    }
+
     public static LocalDate toLocalDate(Date date) {
         if (date == null) {
             return null; // Обработка случая, когда дата равна null
@@ -178,6 +205,7 @@ public class UserRepositoryCrud{
                 calendar.get(Calendar.MONTH) + 1,
                 calendar.get(Calendar.DAY_OF_MONTH));
     }
+
 
 
 

@@ -2,14 +2,23 @@ package com.example.activities;
 
 import static org.junit.Assert.assertEquals;
 
+import android.widget.AutoCompleteTextView;
+import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.TextView;
+
 import org.junit.Assert;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.sql.SQLException;
+import java.time.LocalDate;
 
 import classes.DatabaseParams;
+import classes.Goals;
+import classes.PhysicalActivityLevel;
+import classes.Sex;
 import classes.User;
 import classes.UserRepositoryCrud;
 import classes.VariableGenerator;
@@ -82,7 +91,7 @@ public class unitTestForClasses {
     }
 
     @Test
-    @DisplayName("Тестирование создания кортежа пользователя в табл. users в БД")
+    @DisplayName("Тестирование создания записи пользователя в табл. users в БД")
     public void testCreateUserInBD() throws SQLException, ClassNotFoundException {
         User user = new User();
         System.out.println(user.toString());
@@ -100,7 +109,7 @@ public class unitTestForClasses {
     }
 
     @Test
-    @DisplayName("Тестирование нахождения пользователя по логину в табл. user_se в БД")
+    @DisplayName("Тестирование нахождения пользователя по логину в табл. users в БД")
     public void testSelectByLoginNegative() throws SQLException, ClassNotFoundException {
         String login = "k9Ba0G000000";;
         User user = userRepositoryCrud.selectByLogin(login);
@@ -131,6 +140,38 @@ public class unitTestForClasses {
 
         boolean isMatchAfter = VariableGenerator.checkPassword(originalPassword, originalPasswordHashAfter);
         Assert.assertTrue(isMatchAfter);
+    }
+
+    @Test
+    @DisplayName("Тестирование нахождения записи по определённому уникальному полю в БД (логин)")
+    public void checkByOneField_Login_Positive() throws SQLException, ClassNotFoundException {
+        String login = "1234";;
+        boolean result = userRepositoryCrud.checkByOneField(login, "login");
+        Assert.assertTrue(result);
+    }
+
+    @Test
+    @DisplayName("Тестирование нахождения записи по определённому уникальному полю в БД (логин)")
+    public void checkByOneField_Login_Negative() throws SQLException, ClassNotFoundException {
+        String login = "1234000+1";;
+        boolean result = userRepositoryCrud.checkByOneField(login, "login");
+        Assert.assertFalse(result);
+    }
+
+    @Test
+    @DisplayName("Тестирование нахождения записи по определённому уникальному полю в БД (email)")
+    public void checkByOneField_Email_Positive() throws SQLException, ClassNotFoundException {
+        String email = "kivanov032@gmail.com";
+        boolean result = userRepositoryCrud.checkByOneField(email, "gmail");
+        Assert.assertTrue(result);
+    }
+
+    @Test
+    @DisplayName("Тестирование нахождения записи по определённому уникальному полю в БД (email)")
+    public void checkByOneField_Email_Negative() throws SQLException, ClassNotFoundException {
+        String email = "pivanov032@gmail.com";
+        boolean result = userRepositoryCrud.checkByOneField(email, "gmail");
+        Assert.assertFalse(result);
     }
 
 

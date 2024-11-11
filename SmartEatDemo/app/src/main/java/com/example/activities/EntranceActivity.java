@@ -17,11 +17,13 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 
+import java.nio.charset.StandardCharsets;
 import java.sql.SQLException;
 
 import classes.DatabaseParams;
 import classes.User;
 import classes.UserRepositoryCrud;
+import classes.VariableGenerator;
 
 public class EntranceActivity extends AppCompatActivity {
 
@@ -32,23 +34,16 @@ public class EntranceActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        System.out.println("Я в onCreate");
-        try {
-            Intent intent = getIntent();
-            user = intent.getParcelableExtra("user"); // Получаем объект User
-
-            if (user != null) {
-                System.out.println(user.toString());
-            } else {
-                System.out.println("User = null");
-            }
-        } catch (NullPointerException e) {
-            // Обработка NullPointerException
-            System.out.println("Caught NullPointerException: " + e.getMessage());
-        } catch (Exception e) {
-            // Обработка других исключений, если необходимо
-            System.out.println("Caught Exception: " + e.getMessage());
-        }
+//        System.out.println("Я в onCreate");
+//        try {
+//            User user = getIntent().getParcelableExtra("user"); // Получаем объект User
+//        } catch (NullPointerException e) {
+//            // Обработка NullPointerException
+//            System.out.println("Caught NullPointerException: " + e.getMessage());
+//        } catch (Exception e) {
+//            // Обработка других исключений, если необходимо
+//            System.out.println("Caught Exception: " + e.getMessage());
+//        }
 
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
@@ -109,7 +104,7 @@ public class EntranceActivity extends AppCompatActivity {
     }
 
     public void toRegistration(View v){
-        Intent intent = new Intent(this, RegistrationActivity.class);
+        Intent intent = new Intent(EntranceActivity.this, RegistrationActivity.class);
         startActivity(intent);
     }
 
@@ -133,70 +128,47 @@ public class EntranceActivity extends AppCompatActivity {
         new Thread(new Runnable() {
             @Override
             public void run() {
-
                 UserRepositoryCrud userRepositoryCrud = new UserRepositoryCrud();
                 userRepositoryCrud.setConnectionParameters(DatabaseParams.getUrl(), DatabaseParams.getUser(), DatabaseParams.getPassword());
 
+                try {
+                    user = userRepositoryCrud.selectByLogin(login);
+                } catch (SQLException e) {
+                    System.out.println("Ошибка подключения к базе данных: " + e.getMessage());
+                    showInfo("Ощибка соединения");
+                } catch (ClassNotFoundException e) {
+                    System.out.println("Драйвер базы данных не найден: " + e.getMessage());
+                    showInfo("Ощибка соединения");
+                }
                 if (user == null){
-                    System.out.println("Я тут!!!");
-                    try {
-                        user = userRepositoryCrud.selectByLogin(login);
-                    } catch (SQLException e) {
-                        System.out.println("Ошибка подключения к базе данных: " + e.getMessage());
-                        showError();
-                    } catch (ClassNotFoundException e) {
-                        System.out.println("Драйвер базы данных не найден: " + e.getMessage());
-                        showError();
-                    }
-                    if (user == null){
-
-                    }else{
-                        Intent intent = new Intent(EntranceActivity.this, ProfileActivity.class);
-
-                        startActivity(intent);
-                    }
+                    System.out.println("Неверный логин");
+                    showInfo("Неверный логин");
 
                 }else{
-                    System.out.println("Я тутaaaa!!!");
-                    Intent intent = new Intent(EntranceActivity.this, ProfileActivity.class);
-                    startActivity(intent);
+
+                    if (VariableGenerator.checkPassword(password, user.getPassword())){
+                        System.out.println("Неверный пароль");
+                        showInfo("Неверный пароль");
+                    }else{
+                        System.out.println("Всё хорошо");
+                        Intent intent = new Intent(EntranceActivity.this, MainActivity.class);
+                        intent.putExtra("user", user);
+                        startActivity(intent);
+                    }
                 }
-
-                Intent intent = new Intent(EntranceActivity.this, ProfileActivity.class);
-                startActivity(intent);
-
-//
-//                userRepositoryCrud.setConnection();
-//
-//                boolean connectionSuccess = userRepositoryCrud.isConnection();
-//                handleConnectionResult(connectionSuccess);
-
-
             }
         }).start();
     }
 
-    private void showError() {
+    private void showInfo(String info) {
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                Toast.makeText(EntranceActivity.this, "Ошибка соединения", Toast.LENGTH_SHORT).show();
+                Toast.makeText(EntranceActivity.this, info, Toast.LENGTH_SHORT).show();
             }
         });
     }
 
-//    private void handleConnectionResult(boolean connectionSuccess) {
-//        runOnUiThread(new Runnable() {
-//            @Override
-//            public void run() {
-//                if (connectionSuccess) {
-//                    Toast.makeText(EntranceActivity.this, "Успех: " + connectionSuccess, Toast.LENGTH_SHORT).show();
-//                } else {
-//                    Toast.makeText(EntranceActivity.this, "Ошибка соединения", Toast.LENGTH_SHORT).show();
-//                }
-//            }
-//        });
-//    }
 
     private boolean isValidLogin(String login) {
         return login.length() >= 4 && login.length() <= 16 && login.matches("[a-zA-Z0-9_]+");
