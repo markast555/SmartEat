@@ -20,7 +20,12 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.sql.SQLException;
+
+import classes.DatabaseParams;
 import classes.User;
+import classes.UserRepositoryCrud;
+import classes.VariableGenerator;
 
 public class RegistrationActivity extends AppCompatActivity {
 
@@ -116,19 +121,53 @@ public class RegistrationActivity extends AppCompatActivity {
                         if (checkBoxConditions.isChecked()) {
                             checkBoxConditions.setTextColor(getResources().getColor(R.color.dark_text,
                                     getTheme()));
-                            Toast.makeText(this, "Принято!", Toast.LENGTH_SHORT).show();
 
-                            // Переход в EmailVerificationActivity с передачей email
-                            try {
-                                Intent intent = new Intent(this, EmailVerificationActivity.class);
-                                User user = new User(null, editTextLogin.getText().toString(), editTextPassword.getText().toString(), null, null, 0, 0, null, null, editTextEmail.getText().toString(), 0);
-                                intent.putExtra("user", user);
-                                intent.putExtra("userEmail", emailInput); // Передача email
-                                startActivity(intent);
-                            } catch (Exception e) {
-                                e.printStackTrace();
-                                Toast.makeText(this, "Ошибка при переходе в EmailVerificationActivity", Toast.LENGTH_LONG).show();
-                            }
+                            new Thread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    UserRepositoryCrud userRepositoryCrud = new UserRepositoryCrud();
+                                    userRepositoryCrud.setConnectionParameters(DatabaseParams.getUrl(), DatabaseParams.getUser(), DatabaseParams.getPassword());
+
+                                    boolean loginExist = false;
+                                    boolean emailExist = false;
+
+                                    try {
+                                        loginExist = userRepositoryCrud.checkByOneField(editTextLogin.getText().toString(), "login");
+                                        emailExist = userRepositoryCrud.checkByOneField(editTextEmail.getText().toString(), "gmail");
+                                    } catch (SQLException e) {
+                                        System.out.println("Ошибка подключения к базе данных: " + e.getMessage());
+                                        showInfo("Ощибка соединения");
+                                    } catch (ClassNotFoundException e) {
+                                        System.out.println("Драйвер базы данных не найден: " + e.getMessage());
+                                        showInfo("Ощибка соединения");
+                                    }
+                                    if (loginExist){
+                                        System.out.println("Такой логин уже существует");
+                                        showInfo("Такой логин уже существует");
+
+                                    }else{
+                                        if(emailExist){
+                                            System.out.println("Такой email уже существует");
+                                            showInfo("Такой email уже существует");
+                                        }else{
+                                            showInfo("Принято!");
+                                            // Переход в EmailVerificationActivity с передачей email и user
+                                            try {
+                                                Intent intent = new Intent(RegistrationActivity.this, EmailVerificationActivity.class);
+                                                User user = new User(null, editTextLogin.getText().toString(), editTextPassword.getText().toString(), null, null, 0, 0, null, null, editTextEmail.getText().toString(), 0);
+                                                intent.putExtra("user", user); // Передача user
+                                                intent.putExtra("userEmail", emailInput); // Передача email
+                                                startActivity(intent);
+                                            } catch (Exception e) {
+                                                e.printStackTrace();
+                                                showInfo("Ошибка при переходе в EmailVerificationActivity");
+                                            }
+                                        }
+                                    }
+                                }
+                            }).start();
+
+
                         } else {
                             checkBoxConditions.setTextColor(getResources().getColor(R.color.red,
                                     getTheme()));
@@ -156,6 +195,15 @@ public class RegistrationActivity extends AppCompatActivity {
             Toast.makeText(this, "Логин: длина (4-16), символы (a-zA-Z0-9_)",
                     Toast.LENGTH_LONG).show();
         }
+    }
+
+    private void showInfo(String info) {
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                Toast.makeText(RegistrationActivity.this, info, Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     private boolean isValidLogin(String login) {

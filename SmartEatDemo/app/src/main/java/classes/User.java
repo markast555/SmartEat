@@ -3,9 +3,6 @@ package classes;
 import android.os.Build;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.text.Editable;
-
-import androidx.annotation.NonNull;
 
 import java.time.LocalDate;
 import java.util.UUID;
@@ -24,28 +21,9 @@ public class User implements Parcelable {
     private String gmail; //Уникальное значение
     private int calorieNorm;
 
-    public User(String login, String password, String gmail) {
-        this.login = login;
-        this.password = VariableGenerator.hashPassword(password);
-        this.gmail = gmail;
-    }
-
 
     public User(UUID idUser, String login, String password, Sex sex, LocalDate dateOfBirth, int height, float weight, PhysicalActivityLevel levelOfPhysicalActivity, Goals goals, String gmail, int calorieNorm) {
         this.idUser = idUser;
-        this.login = login;
-        this.password = VariableGenerator.hashPassword(password);
-        this.sex = sex;
-        this.dateOfBirth = dateOfBirth;
-        this.height = height;
-        this.weight = weight;
-        this.levelOfPhysicalActivity = levelOfPhysicalActivity;
-        this.goals = goals;
-        this.gmail = gmail;
-        this.calorieNorm = calorieNorm;
-    }
-
-    public User(String login, String password, Sex sex, LocalDate dateOfBirth, int height, float weight, PhysicalActivityLevel levelOfPhysicalActivity, Goals goals, String gmail, int calorieNorm) {
         this.login = login;
         this.password = VariableGenerator.hashPassword(password);
         this.sex = sex;
@@ -62,8 +40,7 @@ public class User implements Parcelable {
     public User(){
         this.idUser = VariableGenerator.getUid();
         this.login = VariableGenerator.generateRandomLogin();
-        this.password = "";
-        //this.password = VariableGenerator.hashPassword("password");
+        this.password = VariableGenerator.hashPassword("password");
         this.sex = Sex.MALE;
         this.dateOfBirth = LocalDate.of(1990, 5, 15);;
         this.height = 180;

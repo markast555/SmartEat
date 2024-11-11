@@ -31,6 +31,7 @@ import java.util.Calendar;
 import classes.DatabaseParams;
 import classes.Goals;
 import classes.PhysicalActivityLevel;
+import classes.User;
 
 public class ProfileActivity extends AppCompatActivity {
 
@@ -45,11 +46,12 @@ public class ProfileActivity extends AppCompatActivity {
     private AutoCompleteTextView autoCompleteTextViewLevelOfPhysicalActivity;
     private AutoCompleteTextView autoCompleteTextViewGoal;
     private ImageButton imageButtonQuestion;
+    private User user = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        System.out.println(DatabaseParams.getUser_se());
+        user = getIntent().getParcelableExtra("user");
 
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
