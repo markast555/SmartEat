@@ -105,12 +105,28 @@
         app:layout_constraintWidth_percent="1">
 
         <ImageButton
+            android:id="@+id/imageButtonDiary"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/diary_icon"
+            android:background="@color/main"
+            android:contentDescription="@string/logo_description"
+            app:layout_constraintEnd_toStartOf="@+id/imageButtonHome"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <ImageButton
             android:id="@+id/imageButtonHome"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:src="@drawable/home_icon"
             android:background="@color/main_dark"
-            app:layout_constraintStart_toStartOf="parent"
+            android:contentDescription="@string/logo_description"
+            app:layout_constraintStart_toEndOf="@+id/imageButtonDiary"
             app:layout_constraintEnd_toStartOf="@+id/imageButtonProfile"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -119,12 +135,15 @@
             android:id="@+id/imageButtonProfile"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:src="@drawable/profile_icon"
             android:background="@color/main"
+            android:contentDescription="@string/logo_description"
             app:layout_constraintStart_toEndOf="@+id/imageButtonHome"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

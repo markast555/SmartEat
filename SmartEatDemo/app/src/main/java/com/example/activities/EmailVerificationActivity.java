@@ -11,7 +11,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.Random;
 
 import classes.MailRuEmailService;
-import classes.User;
 
 public class EmailVerificationActivity extends AppCompatActivity {
 
@@ -21,7 +20,6 @@ public class EmailVerificationActivity extends AppCompatActivity {
     private EditText emailCodeInput;
     private Button verifyEmailButton, resendCodeButton;
     private CountDownTimer timer;
-    private User user = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,10 +29,6 @@ public class EmailVerificationActivity extends AppCompatActivity {
         emailCodeInput = findViewById(R.id.email_code_input);
         verifyEmailButton = findViewById(R.id.verify_email_button);
         resendCodeButton = findViewById(R.id.resend_code_button);
-
-        Intent intent = getIntent();
-        user = intent.getParcelableExtra("user"); // Получаем объект User
-        System.out.println(user.toString());
 
         userEmail = getIntent().getStringExtra("userEmail");
         emailService = new MailRuEmailService("smarteat@mail.ru", "rX9XvCHCumaYbL0C4vsJ");
@@ -71,10 +65,9 @@ public class EmailVerificationActivity extends AppCompatActivity {
 
     private void verifyCode() {
         String enteredCode = emailCodeInput.getText().toString();
-        if (true) { //if (enteredCode.equals(verificationCode)) {
+        if (enteredCode.equals(verificationCode)) {
             Toast.makeText(this, "Регистрация успешна!", Toast.LENGTH_LONG).show();
-            Intent intent = new Intent(EmailVerificationActivity.this, EntranceActivity.class);
-            intent.putExtra("user", user);
+            Intent intent = new Intent(EmailVerificationActivity.this, ProfileAfterRegistrationActivity.class);
             startActivity(intent);
             finish();
         } else {
