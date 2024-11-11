@@ -28,6 +28,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialog;
 
 import java.util.Calendar;
 
+import classes.DatabaseParams;
 import classes.Goals;
 import classes.PhysicalActivityLevel;
 
@@ -47,6 +48,9 @@ public class ProfileActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        System.out.println(DatabaseParams.getUser_se());
+
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.profile_frame);
@@ -108,9 +112,7 @@ public class ProfileActivity extends AppCompatActivity {
 
         imageButtonQuestion.setOnClickListener(v -> showPhysicalActivityInfoDialog());
 
-
     }
-
 
 
     // Метод для добавления TextWatcher

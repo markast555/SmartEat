@@ -53,7 +53,7 @@ public class UserRepositoryCrud{
      */
 
 
-    public void setConnection() {
+    public void setConnection() throws SQLException, ClassNotFoundException {
         if (connection == null) {
             try {
                 Class.forName("com.mysql.jdbc.Driver");
@@ -61,9 +61,9 @@ public class UserRepositoryCrud{
                 System.out.println("Соединение установлено успешно!");
                 isConnection = true;
             } catch (SQLException e) {
-                System.out.println("Ошибка подключения: " + e.getMessage());
+                throw new SQLException("Ошибка подключения: " + e.getMessage(), e);
             } catch (ClassNotFoundException e) {
-                System.out.println("Драйвер не найден: " + e.getMessage());
+                throw new ClassNotFoundException("Драйвер не найден: " + e.getMessage(), e);
             }
         } else {
             System.out.println("Соединение уже установлено.");
@@ -73,14 +73,14 @@ public class UserRepositoryCrud{
     /**
      * Закрывает соединение с БД.
      */
-    public void closeConnection() {
+    public void closeConnection() throws SQLException {
         if (connection != null) {
             try {
                 connection.close();
                 connection = null;
                 System.out.println("Соединение прервано успешно!");
             } catch (SQLException e) {
-                System.out.println("Ошибка: Соединение с БД не закрыто");
+                throw new SQLException("Ошибка подключения: " + e.getMessage(), e);
             }
         }
     }
@@ -94,7 +94,7 @@ public class UserRepositoryCrud{
     }
 
 
-    public boolean create(User user) {
+    public boolean create(User user) throws SQLException, ClassNotFoundException {
         boolean result = false;
 
         setConnection();
@@ -119,7 +119,7 @@ public class UserRepositoryCrud{
                 result = true;
             }
         } catch (SQLException e) {
-            System.out.println("Ошибка выполнения: " + e.getMessage());
+            throw new SQLException("Ошибка подключения: " + e.getMessage(), e);
         } finally {
             closeConnection(); // Закрываем соединение в блоке finally
         }
@@ -129,7 +129,7 @@ public class UserRepositoryCrud{
 
 
 
-    public User selectByLogin(String login) {
+    public User selectByLogin(String login) throws SQLException, ClassNotFoundException {
         User user = null;
 
         setConnection(); // Установите соединение с базой данных
@@ -141,27 +141,24 @@ public class UserRepositoryCrud{
             statement.setString(1, login);
 
             try (ResultSet resultSet = statement.executeQuery()) {
-                System.out.println("Я тута!!!");
                 if (resultSet.next()) {
-                    System.out.println("Я тутаАААА!!!");
-                    System.out.println("Нашёл!!!");
                     user = new User(UUID.fromString(resultSet.getString("id_user")),
-                        resultSet.getString("login"),
-                        resultSet.getString("password"),
-                        Sex.fromType(resultSet.getString("sex")),
+                            resultSet.getString("login"),
+                            resultSet.getString("password"),
+                            Sex.fromType(resultSet.getString("sex")),
                             toLocalDate(resultSet.getDate("date_of_birth")),
-                        resultSet.getInt("height"),
-                        resultSet.getFloat("weight"),
-                        PhysicalActivityLevel.fromType(resultSet.getString("level_of_physical_activity")),
-                        Goals.fromType(resultSet.getString("goal")),
-                        resultSet.getString("gmail"),
-                        resultSet.getInt("calorie_norm"));
+                            resultSet.getInt("height"),
+                            resultSet.getFloat("weight"),
+                            PhysicalActivityLevel.fromType(resultSet.getString("level_of_physical_activity")),
+                            Goals.fromType(resultSet.getString("goal")),
+                            resultSet.getString("gmail"),
+                            resultSet.getInt("calorie_norm"));
                 } else {
                     System.out.println("Данные не найдены");
                 }
             }
         } catch (SQLException e) {
-            System.out.println("Ошибка выполнения: " + e.getMessage());
+            throw new SQLException("Ошибка подключения: " + e.getMessage(), e);
         } finally {
             closeConnection(); // Закрываем соединение в блоке finally
         }
