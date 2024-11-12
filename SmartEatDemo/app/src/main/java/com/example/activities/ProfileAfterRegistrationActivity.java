@@ -262,7 +262,7 @@ public class ProfileAfterRegistrationActivity extends AppCompatActivity {
         System.out.println("autoCompleteTextViewLevelOfPhysicalActivityAfter = " + autoCompleteTextViewLevelOfPhysicalActivityAfter.getText());
         System.out.println("autoCompleteTextViewGoalAfter = " + autoCompleteTextViewGoalAfter.getText());
 
-        if (sex != null && !editTextDateOfBirthAfter.getText().toString().equals("") &&  !editTextHeight.getText().toString().equals("") && !editTextWeight.getText().toString().equals("") && !autoCompleteTextViewLevelOfPhysicalActivityAfter.getText().toString().equals("")) {
+        if (sex != null && !editTextDateOfBirthAfter.getText().toString().equals("") &&  !editTextHeight.getText().toString().equals("") && !editTextWeight.getText().toString().equals("") && !autoCompleteTextViewLevelOfPhysicalActivityAfter.getText().toString().equals("") && !autoCompleteTextViewGoalAfter.getText().toString().equals("")) {
 
             try {
                 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
@@ -277,12 +277,7 @@ public class ProfileAfterRegistrationActivity extends AppCompatActivity {
                 user.setHeight(Integer.parseInt(editTextHeight.getText().toString()));
                 user.setWeight(Integer.parseInt(editTextWeight.getText().toString()));
                 user.setLevelOfPhysicalActivity(PhysicalActivityLevel.fromType(autoCompleteTextViewLevelOfPhysicalActivityAfter.getText().toString()));
-
-                if (!autoCompleteTextViewGoalAfter.getText().toString().equals("")) {
-                    user.setGoals(Goals.fromType(autoCompleteTextViewGoalAfter.getText().toString()));
-                }else{
-                    user.setGoals(null);
-                }
+                user.setGoals(Goals.fromType(autoCompleteTextViewGoalAfter.getText().toString()));
 
                 System.out.println("Готово!!!!");
                 System.out.println(user.toString());
@@ -317,7 +312,7 @@ public class ProfileAfterRegistrationActivity extends AppCompatActivity {
             }).start();
 
         } else{
-            Toast.makeText(ProfileAfterRegistrationActivity.this, "Не все обязательные поля заполнены", Toast.LENGTH_SHORT).show();
+            Toast.makeText(ProfileAfterRegistrationActivity.this, "Не все поля заполнены", Toast.LENGTH_SHORT).show();
         }
     }
 
