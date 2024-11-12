@@ -193,6 +193,56 @@ public class UserRepositoryCrud{
         return result;
     }
 
+    public int update(User user) throws SQLException, ClassNotFoundException {
+        int result = 0;
+
+        setConnection();
+        try (PreparedStatement statement = connection.prepareStatement(
+                "UPDATE users SET login = ?, password = ?, sex = ?, date_of_birth = ?, height = ?, weight = ?, level_of_physical_activity = ?, goal = ?, gmail = ? WHERE users.id_user = ?")) {
+
+            statement.setString(1, user.getLogin());
+            statement.setString(2, user.getPassword());
+            statement.setString(3, Sex.TranslateFromRusToEng(user.getSex().getType()));
+            statement.setDate(4, dateToSqlDate(user.getDateOfBirth()));
+            statement.setInt(5, user.getHeight());
+            statement.setFloat(6, user.getWeight());
+            statement.setString(7, PhysicalActivityLevel.TranslateFromRusToEng(user.getLevelOfPhysicalActivity().getType()));
+            statement.setString(8, Goals.TranslateFromRusToEng(user.getGoals().getType()));
+            statement.setString(9, user.getGmail());
+            statement.setString(10, user.getIdUser().toString()); // Используем setString для id_user
+
+            result = statement.executeUpdate();
+        } catch (SQLException e) {
+            throw new SQLException("Ошибка выполнения: " + e.getMessage(), e);
+        } finally {
+            closeConnection(); // Закрываем соединение в блоке finally
+        }
+
+        return result;
+    }
+
+    public int update1(String id, int height, float weight) throws SQLException, ClassNotFoundException {
+        int result = 0;
+
+        setConnection();
+        try (PreparedStatement statement = connection.prepareStatement(
+                "UPDATE users SET height = ?, weight = ? WHERE users.id_user = ?")) {
+
+            statement.setInt(1, height);
+            statement.setFloat(2, weight);
+            statement.setString(3, id);
+            result = statement.executeUpdate();
+        } catch (SQLException e) {
+            throw new SQLException("Ошибка выполнения: " + e.getMessage(), e);
+        } finally {
+            closeConnection(); // Закрываем соединение в блоке finally
+        }
+
+        return result;
+    }
+
+
+
     public static LocalDate toLocalDate(Date date) {
         if (date == null) {
             return null; // Обработка случая, когда дата равна null
@@ -206,107 +256,4 @@ public class UserRepositoryCrud{
                 calendar.get(Calendar.DAY_OF_MONTH));
     }
 
-
-
-
-//    // Метод для конвертации java.sql.Date в LocalDate
-//    private LocalDate convertSqlDateToLocalDate(Date sqlDate) {
-//        String dateString = "02/11/2024"; // Пример даты в формате dd/MM/yyyy
-//        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-//
-//        try {
-//            // Преобразование строки в Date
-//            Date date = (Date) formatter.parse(dateString);
-//            System.out.println("Преобразованная дата: " + date);
-//        } catch (ParseException e) {
-//            System.out.println("Ошибка преобразования даты: " + e.getMessage());
-//        }
-//    }
-
-//
-//    //@Override
-//    public List<User> selectAll() {
-//        List<User> userList = new ArrayList<>();
-//
-//        setConnection();
-//        try (PreparedStatement statement = connection.prepareStatement(
-//                "select id, firstname, lastname, birthdate, isgraduated from public.user_se")) {
-//            try (ResultSet resultSet = statement.executeQuery()) {
-//                while (resultSet.next()) {
-//                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-//                        userList.add(new User((UUID) resultSet.getObject("id_user"),
-//                                resultSet.getString("login"),
-//                                resultSet.getString("password"),
-//                                resultSet.getString("name"),
-//                                Sex.fromType(resultSet.getString("sex")),
-//                                resultSet.getDate("date_of_birth").toInstant()
-//                                        .atZone(ZoneId.systemDefault())
-//                                        .toLocalDate(),
-//                                resultSet.getInt("height"),
-//                                resultSet.getFloat("weight"),
-//                                resultSet.getString("phone_number"),
-//                                PhysicalActivityLevel.fromType(resultSet.getString("level_of_physical_activity")),
-//                                Goals.fromType(resultSet.getString("goals")),
-//                                resultSet.getString("individual_characters")));
-//                    }
-//                }
-//            }
-//        } catch (SQLException e) {
-//            System.out.println("Ошибка выполнения: " + e.getMessage());
-//        }
-//        closeConnection();
-//
-//        return userList;
-//    }
-//
-//    //@Override
-//    public int update(User user) {
-//        int result = 0;
-//
-//        setConnection();
-//        try (PreparedStatement statement = connection.prepareStatement(
-//                "update public.user_se set login = ?, password = ?, name = ?, sex = ?, date_of_birth = ?, height = ?, weight = ?, level_of_physical_activity = ?, goals = ?, individual_characters = ?, phone_number = ?, isgraduated = ? where id = ?")) {
-//
-//            statement.setString(1, user.getLogin());
-//            statement.setString(2, user.getPassword());
-//            statement.setString(3, user.getName());
-//            statement.setString(4, user.getSex().getType());
-//            statement.setDate(5, dateToSqlDate(user.getDateOfBirth()));
-//            statement.setInt(6, user.getHeight());
-//            statement.setFloat(7, user.getWeight());
-//            statement.setString(8, user.getPhysicalActivityLevel().getType());
-//            statement.setString(9, user.getGoals().getType());
-//            statement.setString(10, user.getIndividualCharacteristics());
-//            statement.setString(11, user.getPhoneNumber());
-//
-//            statement.setObject(12, user.getId(), java.sql.Types.OTHER);
-//
-//            result = statement.executeUpdate();
-//        } catch (SQLException e) {
-//            System.out.println("Ошибка выполнения: " + e.getMessage());
-//        }
-//        closeConnection();
-//
-//        return result;
-//    }
-//
-//    //@Override
-//    public int remove(List<UUID> idList) {
-//        int result = 0;
-//
-//        String listId = idList.stream()
-//                .map(Object::toString)
-//                .collect(Collectors.joining("', '", "'", "'"));
-//
-//        setConnection();
-//        try (PreparedStatement statement = connection.prepareStatement(
-//                "delete from public.person where id in (" + listId + ")")) {
-//            result = statement.executeUpdate();
-//        } catch (SQLException e) {
-//            System.out.println("Ошибка выполнения: " + e.getMessage());
-//        }
-//        closeConnection();
-//
-//        return result;
-//    }
 }

@@ -32,10 +32,6 @@
         "source": "C:\\Users\\kivan\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\drawable\\custom_progress_drawable.xml"
     },
     {
-        "merged": "com.example.activities.app-debug-31:/layout_profile_after_registration_frame.xml.flat",
-        "source": "com.example.activities.app-main-33:/layout/profile_after_registration_frame.xml"
-    },
-    {
         "merged": "C:\\Users\\kivan\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\xml_data_extraction_rules.xml.flat",
         "source": "C:\\Users\\kivan\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\xml\\data_extraction_rules.xml"
     },
@@ -102,6 +98,10 @@
     {
         "merged": "C:\\Users\\kivan\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\font_bagel_fat_one.xml.flat",
         "source": "C:\\Users\\kivan\\.gradle\\daemon\\8.7\\com.example.activities.app-main-33:\\font\\bagel_fat_one.xml"
+    },
+    {
+        "merged": "com.example.activities.app-debug-31:/layout_profile_frame.xml.flat",
+        "source": "com.example.activities.app-main-33:/layout/profile_frame.xml"
     },
     {
         "merged": "C:\\Users\\kivan\\.gradle\\daemon\\8.7\\com.example.activities.app-debug-31:\\mipmap-hdpi_ic_launcher_round.webp.flat",

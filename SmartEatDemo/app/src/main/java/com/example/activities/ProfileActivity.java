@@ -16,6 +16,7 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,19 +27,25 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 
+import java.sql.SQLException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
+import java.util.Objects;
 
 import classes.DatabaseParams;
 import classes.Goals;
 import classes.PhysicalActivityLevel;
 import classes.User;
+import classes.UserRepositoryCrud;
+import classes.VariableGenerator;
 
 public class ProfileActivity extends AppCompatActivity {
 
     private TextView textViewLogin;
     private EditText editTextLogin;
-    private TextView textViewSex;
-    private EditText editTextDateOfBirth;
+
+    private EditText editTextEmail;
     private TextView textViewHeight;
     private EditText editTextHeight;
     private TextView textViewWeight;
@@ -79,8 +86,8 @@ public class ProfileActivity extends AppCompatActivity {
 
         textViewLogin = findViewById(R.id.textViewLogin);
         editTextLogin = findViewById(R.id.editTextLogin);
-        textViewSex = findViewById(R.id.textViewSex);
-        editTextDateOfBirth = findViewById(R.id.editTextDateOfBirth);
+
+        editTextEmail = findViewById(R.id.editTextEmail);
         textViewHeight = findViewById(R.id.textViewHeight);
         editTextHeight = findViewById(R.id.editTextHeight);
         textViewWeight = findViewById(R.id.textViewWeight);
@@ -93,21 +100,29 @@ public class ProfileActivity extends AppCompatActivity {
         ImageButton imageButtonHome = findViewById(R.id.imageButtonHome);
         imageButtonHome.setOnClickListener(v -> {
             Intent intent = new Intent(ProfileActivity.this, MainActivity.class);
+            intent.putExtra("user", user);
             startActivity(intent);
             overridePendingTransition(0, 0); // Отключает анимацию перехода
             finish(); // Завершает ProfileActivity
         });
 
+
+
+        editTextLogin.setText(user.getLogin());
+        editTextEmail.setText(user.getGmail());
+        editTextHeight.setText(String.valueOf(user.getHeight()));
+        editTextWeight.setText(String.valueOf(user.getWeight()));
+        autoCompleteTextViewLevelOfPhysicalActivity.setText(user.getLevelOfPhysicalActivity().getType(), false);
+        autoCompleteTextViewGoal.setText(user.getGoals().getType(), false);
+
         addTextWatcherTextView(textViewLogin);
         addTextWatcherEditText(editTextLogin);
-        addTextWatcherTextView(textViewSex);
-        addTextWatcherEditText(editTextDateOfBirth);
+
+        addTextWatcherEditText(editTextEmail);
         addTextWatcherTextView(textViewHeight);
         addTextWatcherEditText(editTextHeight);
         addTextWatcherTextView(textViewWeight);
         addTextWatcherEditText(editTextWeight);
-
-        editTextDateOfBirth.setOnClickListener(v -> showDatePicker());
 
         setupPhysicalActivityLevelDropdown();
         setupGoalDropdown();
@@ -167,20 +182,6 @@ public class ProfileActivity extends AppCompatActivity {
             float textSize = height / 10f; // Измените делитель по необходимости
             textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, textSize);
         }
-    }
-
-    private void showDatePicker() {
-        final Calendar calendar = Calendar.getInstance();
-        int year = calendar.get(Calendar.YEAR);
-        int month = calendar.get(Calendar.MONTH);
-        int day = calendar.get(Calendar.DAY_OF_MONTH);
-
-        DatePickerDialog datePickerDialog = new DatePickerDialog(this,
-                (DatePicker view, int selectedYear, int selectedMonth, int selectedDay) -> {
-                    // Установить выбранную дату в EditText
-                    editTextDateOfBirth.setText(selectedDay + "." + (selectedMonth + 1) + "." + selectedYear);
-                }, year, month, day);
-        datePickerDialog.show();
     }
 
 
@@ -245,6 +246,101 @@ public class ProfileActivity extends AppCompatActivity {
         dialog.show();
     }
 
+    public void toMainFromProfile(View v) throws CloneNotSupportedException {
 
+        System.out.println(user.toString());
+        System.out.println("editTextLogin = " + editTextLogin.getText());
+        System.out.println("editTextEmail = " + editTextEmail.getText());
+        System.out.println("editTextHeight = " + editTextHeight.getText());
+        System.out.println("editTextWeight = " + editTextWeight.getText());
+        System.out.println("autoCompleteTextViewLevelOfPhysicalActivity = " + autoCompleteTextViewLevelOfPhysicalActivity.getText());
+        System.out.println("autoCompleteTextViewGoal = " + autoCompleteTextViewGoal.getText());
 
+        User newUser = (User) user.clone();
+        newUser.setLogin(editTextLogin.getText().toString());
+        newUser.setGmail(editTextEmail.getText().toString());
+        newUser.setHeight(Integer.parseInt(editTextHeight.getText().toString()));
+        newUser.setWeight(Float.parseFloat(editTextWeight.getText().toString()));
+        newUser.setLevelOfPhysicalActivity(PhysicalActivityLevel.fromType(autoCompleteTextViewLevelOfPhysicalActivity.getText().toString()));
+        newUser.setGoals(Goals.fromType(autoCompleteTextViewGoal.getText().toString()));
+
+        if (newUser.hashCode() != user.hashCode()){
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    UserRepositoryCrud userRepositoryCrud = new UserRepositoryCrud();
+                    userRepositoryCrud.setConnectionParameters(DatabaseParams.getUrl(), DatabaseParams.getUser(), DatabaseParams.getPassword());
+
+                    boolean loginExist = false;
+                    boolean emailExist = false;
+                    if (!Objects.equals(newUser.getLogin(), user.getLogin())){
+                        try {
+                            loginExist = userRepositoryCrud.checkByOneField(newUser.getLogin(), "login");
+                        } catch (SQLException e) {
+                            System.out.println("Ошибка подключения к базе данных: " + e.getMessage());
+                            showInfo("Ошибка соединения");
+                        } catch (ClassNotFoundException e) {
+                            System.out.println("Драйвер базы данных не найден: " + e.getMessage());
+                            showInfo("Ошибка соединения");
+                        }
+                        if (loginExist){
+                            System.out.println("Такой логин уже существует");
+                            showInfo("Такой логин уже существует");
+                        }
+                    }
+                    if (!Objects.equals(newUser.getGmail(), user.getGmail())){
+                        try {
+                            emailExist = userRepositoryCrud.checkByOneField(newUser.getGmail(), "gmail");
+                        } catch (SQLException e) {
+                            System.out.println("Ошибка подключения к базе данных: " + e.getMessage());
+                            showInfo("Ошибка соединения");
+                        } catch (ClassNotFoundException e) {
+                            System.out.println("Драйвер базы данных не найден: " + e.getMessage());
+                            showInfo("Ошибка соединения");
+                        }
+                        if (emailExist){
+                            System.out.println("Такой email уже существует");
+                            showInfo("Такой email уже существует");
+                        }
+                    }
+                    if (!loginExist && !emailExist){
+                        int result = 0;
+                        try {
+                            result = userRepositoryCrud.update(newUser);
+                        } catch (SQLException e) {
+                            System.out.println("Ошибка подключения к базе данных: " + e.getMessage());
+                            showInfo("Ошибка соединения");
+                        } catch (ClassNotFoundException e) {
+                            System.out.println("Драйвер базы данных не найден: " + e.getMessage());
+                            showInfo("Ошибка соединения");
+                        }
+                        if (result != 0){
+                            try {
+                                user = (User) newUser.clone();
+                                System.out.println("Данные изменены");
+                                showInfo("Данные изменены");
+                            } catch (CloneNotSupportedException e) {
+                                System.out.println("Данные не перенеслись в основной экземпляр класса User: " + e.getMessage());
+                                showInfo("Ошибка соединения");
+                            }
+                        }else{
+                            System.out.println("Ошибка подключения к базе данных");
+                            showInfo("Ошибка соединения");
+                        }
+                    }
+                }
+            }).start();
+        }else{
+            System.out.println("Изменений не найдено");
+        }
+    }
+
+    private void showInfo(String info) {
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                Toast.makeText(ProfileActivity.this, info, Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
 }

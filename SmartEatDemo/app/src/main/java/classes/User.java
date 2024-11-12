@@ -5,9 +5,10 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 import java.time.LocalDate;
+import java.util.Objects;
 import java.util.UUID;
 
-public class User implements Parcelable {
+public class User implements Parcelable, Cloneable {
 
     private UUID idUser; //Первичный ключ, уникальное значение
     private String login; //Уникальное значение
@@ -48,6 +49,11 @@ public class User implements Parcelable {
         this.gmail = VariableGenerator.generateRandomGmail();
         this.levelOfPhysicalActivity = PhysicalActivityLevel.ModerateActivity;
         this.goals = Goals.ImprovingHealth;
+    }
+
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+        return super.clone();
     }
 
     public UUID getIdUser() {
@@ -204,5 +210,18 @@ public class User implements Parcelable {
         dest.writeSerializable(goals); // Предполагается, что Goals реализует Serializable
         dest.writeString(gmail);
         dest.writeInt(calorieNorm);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return height == user.height && Float.compare(weight, user.weight) == 0 && calorieNorm == user.calorieNorm && Objects.equals(idUser, user.idUser) && Objects.equals(login, user.login) && Objects.equals(password, user.password) && sex == user.sex && Objects.equals(dateOfBirth, user.dateOfBirth) && levelOfPhysicalActivity == user.levelOfPhysicalActivity && goals == user.goals && Objects.equals(gmail, user.gmail);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(idUser, login, password, sex, dateOfBirth, height, weight, levelOfPhysicalActivity, goals, gmail, calorieNorm);
     }
 }

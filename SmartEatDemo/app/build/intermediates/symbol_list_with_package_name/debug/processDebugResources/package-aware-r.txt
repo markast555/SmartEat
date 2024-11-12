@@ -3327,7 +3327,6 @@ id easeInOut
 id easeOut
 id east
 id edge
-id editTextDateOfBirth
 id editTextDateOfBirthAfter
 id editTextEmail
 id editTextHeight
@@ -3541,11 +3540,8 @@ id pressed
 id progress_circular
 id progress_horizontal
 id radio
-id radioButtonFemale
 id radioButtonFemaleAfter
-id radioButtonMale
 id radioButtonMaleAfter
-id radioGroupGender
 id radioGroupGenderAfter
 id ratio
 id rectangles
@@ -3641,6 +3637,7 @@ id text2
 id textEnd
 id textInputEmailLayout
 id textInputLayoutDateOfBirth
+id textInputLayoutEmail
 id textInputLayoutGoal
 id textInputLayoutHeight
 id textInputLayoutLevelOfPhysicalActivity
@@ -3652,8 +3649,8 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textTop
-id textViewDateOfBirth
 id textViewDateOfBirthAfter
+id textViewEmail
 id textViewEntrance
 id textViewEntranceToRegistration
 id textViewFillOutProfile
@@ -3668,7 +3665,6 @@ id textViewNoAccount
 id textViewProfile
 id textViewRegistration
 id textViewRegistrationToEntrance
-id textViewSex
 id textViewSexAfter
 id textViewWeight
 id text_input_end_icon
@@ -4130,6 +4126,7 @@ string status_bar_notification_info_overflow
 string telephone_number
 string verify_email_button_text
 string weight
+string your_email_field
 string your_height
 string your_login_field
 string your_weight
