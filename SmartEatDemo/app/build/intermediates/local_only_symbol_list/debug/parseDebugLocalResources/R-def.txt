@@ -64,7 +64,6 @@ id checkBoxConditions
 id constraintLayout
 id constraintLayoutButton
 id constraintLayoutProfile
-id editTextDateOfBirth
 id editTextDateOfBirthAfter
 id editTextEmail
 id editTextHeight
@@ -92,11 +91,8 @@ id logo2
 id main
 id main2_frame_layout
 id main_frame_layout
-id radioButtonFemale
 id radioButtonFemaleAfter
-id radioButtonMale
 id radioButtonMaleAfter
-id radioGroupGender
 id radioGroupGenderAfter
 id resend_code_button
 id seekBar
@@ -104,6 +100,7 @@ id sliderSwitch
 id startButton
 id textInputEmailLayout
 id textInputLayoutDateOfBirth
+id textInputLayoutEmail
 id textInputLayoutGoal
 id textInputLayoutHeight
 id textInputLayoutLevelOfPhysicalActivity
@@ -111,8 +108,8 @@ id textInputLayoutLogin
 id textInputLayoutPassword
 id textInputLayoutPassword2
 id textInputLayoutWeight
-id textViewDateOfBirth
 id textViewDateOfBirthAfter
+id textViewEmail
 id textViewEntrance
 id textViewEntranceToRegistration
 id textViewFillOutProfile
@@ -127,7 +124,6 @@ id textViewNoAccount
 id textViewProfile
 id textViewRegistration
 id textViewRegistrationToEntrance
-id textViewSex
 id textViewSexAfter
 id textViewWeight
 id verify_email_button
@@ -178,6 +174,7 @@ string sex
 string telephone_number
 string verify_email_button_text
 string weight
+string your_email_field
 string your_height
 string your_login_field
 string your_weight

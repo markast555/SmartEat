@@ -144,15 +144,15 @@ public class unitTestForClasses {
 
     @Test
     @DisplayName("Тестирование нахождения записи по определённому уникальному полю в БД (логин)")
-    public void checkByOneField_Login_Positive() throws SQLException, ClassNotFoundException {
-        String login = "1234";;
+    public void testCheckByOneField_Login_Positive() throws SQLException, ClassNotFoundException {
+        String login = "12345";;
         boolean result = userRepositoryCrud.checkByOneField(login, "login");
         Assert.assertTrue(result);
     }
 
     @Test
     @DisplayName("Тестирование нахождения записи по определённому уникальному полю в БД (логин)")
-    public void checkByOneField_Login_Negative() throws SQLException, ClassNotFoundException {
+    public void testCheckByOneField_Login_Negative() throws SQLException, ClassNotFoundException {
         String login = "1234000+1";;
         boolean result = userRepositoryCrud.checkByOneField(login, "login");
         Assert.assertFalse(result);
@@ -160,7 +160,7 @@ public class unitTestForClasses {
 
     @Test
     @DisplayName("Тестирование нахождения записи по определённому уникальному полю в БД (email)")
-    public void checkByOneField_Email_Positive() throws SQLException, ClassNotFoundException {
+    public void testCheckByOneField_Email_Positive() throws SQLException, ClassNotFoundException {
         String email = "kivanov032@gmail.com";
         boolean result = userRepositoryCrud.checkByOneField(email, "gmail");
         Assert.assertTrue(result);
@@ -168,22 +168,58 @@ public class unitTestForClasses {
 
     @Test
     @DisplayName("Тестирование нахождения записи по определённому уникальному полю в БД (email)")
-    public void checkByOneField_Email_Negative() throws SQLException, ClassNotFoundException {
+    public void testCheckByOneField_Email_Negative() throws SQLException, ClassNotFoundException {
         String email = "pivanov032@gmail.com";
         boolean result = userRepositoryCrud.checkByOneField(email, "gmail");
         Assert.assertFalse(result);
     }
 
+    @Test
+    @DisplayName("Тестирование изменения данных по пользователю в табл. users в БД")
+    public void testUpdate() throws SQLException, ClassNotFoundException {
 
+        String login = "12345";
+        User user = userRepositoryCrud.selectByLogin(login);
+        System.out.println(user.toString());
+        Assert.assertNotNull(user);
 
-//    @Test
-//    @DisplayName("Тестирование хеширования пароля (негативный тест)")
-//    public void testHashPasswordNegative(){
-//        String originalPassword = "AnyPassword";
-//        String hashedPassword = VariableGenerator.hashPassword(originalPassword);
-//        boolean isMatch = VariableGenerator.checkPassword("wrongPassword", hashedPassword);
-//        Assert.assertFalse(isMatch);
-//    }
+        user.setHeight(45);
+        user.setWeight(35);
+        user.setGoals(Goals.ImprovingHealth);
+        //user.setLogin("8d8dd8d");
 
+        int result = userRepositoryCrud.update(user);
+
+        Assert.assertNotEquals(0, result);
+    }
+
+    @Test
+    @DisplayName("Тестирование изменения данных по пользователю в табл. users в БД")
+    public void testUpdate1() throws SQLException, ClassNotFoundException {
+
+        int result = userRepositoryCrud.update1("f44b817e-9735-4fd2-b821-85838cb15ed6", 68, 77.5F);
+
+        Assert.assertNotEquals(0, result);
+    }
+
+    @Test
+    @DisplayName("Тестирование изменения данных в User")
+    public void testNewUser() throws CloneNotSupportedException {
+
+        User user = new User();
+        User newUser = (User) user.clone();
+
+        System.out.println(user.getHeight()); // User{height=0}
+        System.out.println(newUser.getHeight()); // User{height=0}
+        Assert.assertEquals(user.getHeight(), newUser.getHeight());
+        Assert.assertEquals(user.hashCode(), newUser.hashCode());
+
+        newUser.setHeight(181);
+
+        System.out.println(user.getHeight()); // User{height=0}
+        System.out.println(newUser.getHeight()); // User{height=181}
+        Assert.assertNotEquals(user.getHeight(), newUser.getHeight());
+        Assert.assertNotEquals(user.hashCode(), newUser.hashCode());
+    }
 
 }

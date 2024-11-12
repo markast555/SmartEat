@@ -83,6 +83,7 @@
     <string name="telephone_number">Номер телефона</string>
     <string name="verify_email_button_text">Подтвердить</string>
     <string name="weight">Вес (кг)</string>
+    <string name="your_email_field">Ваш Email</string>
     <string name="your_height">Ваш рост</string>
     <string name="your_login_field">Ваш логин</string>
     <string name="your_weight">Ваш вес</string>
