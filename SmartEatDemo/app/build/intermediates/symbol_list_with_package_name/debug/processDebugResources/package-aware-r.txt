@@ -3012,6 +3012,7 @@ drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable avd_hide_password
 drawable avd_show_password
+drawable back_icon
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -3021,6 +3022,7 @@ drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
 drawable close_icon
+drawable constraint_layout_for_main
 drawable custom_progress_drawable
 drawable design_fab_background
 drawable design_ic_visibility
@@ -3330,6 +3332,7 @@ id edge
 id editTextDateOfBirth
 id editTextDateOfBirthAfter
 id editTextEmail
+id editTextEntranceNameOfDish
 id editTextHeight
 id editTextLogin
 id editTextPassword
@@ -3393,8 +3396,10 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
+id imageButtonBack
 id imageButtonClose
 id imageButtonDiary
+id imageButtonExit
 id imageButtonHome
 id imageButtonProfile
 id imageButtonQuestion
@@ -3417,9 +3422,13 @@ id legacy
 id line1
 id line3
 id linear
+id linearLayoutLeft
+id linearLayoutMain
+id linearLayoutRight
 id linerLayoutEntrance
 id linerLayoutToRegistration
 id listMode
+id listViewDishes
 id list_item
 id logo2
 id m3_side_sheet
@@ -3641,6 +3650,7 @@ id text2
 id textEnd
 id textInputEmailLayout
 id textInputLayoutDateOfBirth
+id textInputLayoutEntranceNameOfDish
 id textInputLayoutGoal
 id textInputLayoutHeight
 id textInputLayoutLevelOfPhysicalActivity
@@ -3652,8 +3662,12 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textTop
+id textViewCalories
 id textViewDateOfBirth
 id textViewDateOfBirthAfter
+id textViewDishName
+id textViewEating
+id textViewEatingName
 id textViewEntrance
 id textViewEntranceToRegistration
 id textViewFillOutProfile
@@ -3664,6 +3678,7 @@ id textViewHeight
 id textViewLevelOfPhysicalActivity
 id textViewLogin
 id textViewMainTitle
+id textViewNameDish
 id textViewNoAccount
 id textViewProfile
 id textViewRegistration
@@ -3853,6 +3868,8 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout dish
+layout dish_frame
 layout email_verification_frame
 layout entrance_frame
 layout ime_base_split_test_activity
@@ -3864,6 +3881,7 @@ layout m3_auto_complete_simple_item
 layout m3_side_sheet_dialog
 layout main2_frame
 layout main_frame
+layout manual_search_results_frame
 layout material_chip_input_combo
 layout material_clock_display
 layout material_clock_display_divider
@@ -3954,10 +3972,12 @@ string abc_searchview_description_voice
 string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
+string add
 string agreeing_terms
 string androidx_startup
 string app_name
 string appbar_scrolling_view_behavior
+string begin
 string bottom_sheet_behavior
 string bottomsheet_action_collapse
 string bottomsheet_action_expand
@@ -3973,6 +3993,7 @@ string call_notification_hang_up_action
 string call_notification_incoming_text
 string call_notification_ongoing_text
 string call_notification_screening_text
+string calories
 string character_counter_content_description
 string character_counter_overflowed_content_description
 string character_counter_pattern
@@ -3982,9 +4003,13 @@ string clear_text_end_icon_content_description
 string continue_text
 string date
 string date_of_birth
+string dish_name
+string eating
+string eating_name
 string email_code_hint
 string email_field
 string email_verification_title
+string enter_name_of_dish
 string entrance_text
 string error_a11y_label
 string error_icon_content_description
@@ -4019,6 +4044,7 @@ string m3_sys_motion_easing_linear
 string m3_sys_motion_easing_standard
 string m3_sys_motion_easing_standard_accelerate
 string m3_sys_motion_easing_standard_decelerate
+string main
 string male
 string material_clock_display_divider
 string material_clock_toggle_content_description

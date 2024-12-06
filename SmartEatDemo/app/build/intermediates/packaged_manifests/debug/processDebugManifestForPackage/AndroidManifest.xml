@@ -32,6 +32,12 @@
         android:testOnly="true"
         android:theme="@style/Theme.SmartEatDemo" >
         <activity
+            android:name="com.example.activities.DishActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.activities.ManualSearchResultsActivity"
+            android:exported="true" />
+        <activity
             android:name="com.example.activities.ProfileAfterRegistrationActivity"
             android:exported="true" />
         <activity

@@ -3011,6 +3011,7 @@ int drawable abc_textfield_search_material 0x7f080076
 int drawable abc_vector_test 0x7f080077
 int drawable avd_hide_password 0x7f080078
 int drawable avd_show_password 0x7f080079
+int drawable back_icon 0x7f0800f7
 int drawable btn_checkbox_checked_mtrl 0x7f08007a
 int drawable btn_checkbox_checked_to_unchecked_mtrl_animation 0x7f08007b
 int drawable btn_checkbox_unchecked_mtrl 0x7f08007c
@@ -3020,6 +3021,7 @@ int drawable btn_radio_off_to_on_mtrl_animation 0x7f08007f
 int drawable btn_radio_on_mtrl 0x7f080080
 int drawable btn_radio_on_to_off_mtrl_animation 0x7f080081
 int drawable close_icon 0x7f080082
+int drawable constraint_layout_for_main 0x7f0800f6
 int drawable custom_progress_drawable 0x7f080083
 int drawable design_fab_background 0x7f080084
 int drawable design_ic_visibility 0x7f080085
@@ -3329,6 +3331,7 @@ int id edge 0x7f0a00b7
 int id editTextDateOfBirth 0x7f0a00b8
 int id editTextDateOfBirthAfter 0x7f0a00b9
 int id editTextEmail 0x7f0a00ba
+int id editTextEntranceNameOfDish 0x7f0a0244
 int id editTextHeight 0x7f0a00bb
 int id editTextLogin 0x7f0a00bc
 int id editTextPassword 0x7f0a00bd
@@ -3392,8 +3395,10 @@ int id ifRoom 0x7f0a00f6
 int id ignore 0x7f0a00f7
 int id ignoreRequest 0x7f0a00f8
 int id image 0x7f0a00f9
+int id imageButtonBack 0x7f0a024e
 int id imageButtonClose 0x7f0a00fa
 int id imageButtonDiary 0x7f0a00fb
+int id imageButtonExit 0x7f0a024f
 int id imageButtonHome 0x7f0a00fc
 int id imageButtonProfile 0x7f0a00fd
 int id imageButtonQuestion 0x7f0a00fe
@@ -3416,9 +3421,13 @@ int id legacy 0x7f0a010e
 int id line1 0x7f0a010f
 int id line3 0x7f0a0110
 int id linear 0x7f0a0111
+int id linearLayoutLeft 0x7f0a0247
+int id linearLayoutMain 0x7f0a0248
+int id linearLayoutRight 0x7f0a0249
 int id linerLayoutEntrance 0x7f0a0112
 int id linerLayoutToRegistration 0x7f0a0113
 int id listMode 0x7f0a0114
+int id listViewDishes 0x7f0a0245
 int id list_item 0x7f0a0115
 int id logo2 0x7f0a0116
 int id m3_side_sheet 0x7f0a0117
@@ -3640,6 +3649,7 @@ int id text2 0x7f0a01ee
 int id textEnd 0x7f0a01ef
 int id textInputEmailLayout 0x7f0a01f0
 int id textInputLayoutDateOfBirth 0x7f0a01f1
+int id textInputLayoutEntranceNameOfDish 0x7f0a0246
 int id textInputLayoutGoal 0x7f0a01f2
 int id textInputLayoutHeight 0x7f0a01f3
 int id textInputLayoutLevelOfPhysicalActivity 0x7f0a01f4
@@ -3651,8 +3661,12 @@ int id textSpacerNoButtons 0x7f0a01f9
 int id textSpacerNoTitle 0x7f0a01fa
 int id textStart 0x7f0a01fb
 int id textTop 0x7f0a01fc
+int id textViewCalories 0x7f0a024a
 int id textViewDateOfBirth 0x7f0a01fd
 int id textViewDateOfBirthAfter 0x7f0a01fe
+int id textViewDishName 0x7f0a0250
+int id textViewEating 0x7f0a024b
+int id textViewEatingName 0x7f0a024c
 int id textViewEntrance 0x7f0a01ff
 int id textViewEntranceToRegistration 0x7f0a0200
 int id textViewFillOutProfile 0x7f0a0201
@@ -3663,6 +3677,7 @@ int id textViewHeight 0x7f0a0205
 int id textViewLevelOfPhysicalActivity 0x7f0a0206
 int id textViewLogin 0x7f0a0207
 int id textViewMainTitle 0x7f0a0208
+int id textViewNameDish 0x7f0a024d
 int id textViewNoAccount 0x7f0a0209
 int id textViewProfile 0x7f0a020a
 int id textViewRegistration 0x7f0a020b
@@ -3852,6 +3867,8 @@ int layout design_navigation_menu 0x7f0d0028
 int layout design_navigation_menu_item 0x7f0d0029
 int layout design_text_input_end_icon 0x7f0d002a
 int layout design_text_input_start_icon 0x7f0d002b
+int layout dish 0x7f0d0074
+int layout dish_frame 0x7f0d0075
 int layout email_verification_frame 0x7f0d002c
 int layout entrance_frame 0x7f0d002d
 int layout ime_base_split_test_activity 0x7f0d002e
@@ -3863,6 +3880,7 @@ int layout m3_auto_complete_simple_item 0x7f0d0033
 int layout m3_side_sheet_dialog 0x7f0d0034
 int layout main2_frame 0x7f0d0035
 int layout main_frame 0x7f0d0036
+int layout manual_search_results_frame 0x7f0d0073
 int layout material_chip_input_combo 0x7f0d0037
 int layout material_clock_display 0x7f0d0038
 int layout material_clock_display_divider 0x7f0d0039
@@ -3953,10 +3971,12 @@ int string abc_searchview_description_voice 0x7f110017
 int string abc_shareactionprovider_share_with 0x7f110018
 int string abc_shareactionprovider_share_with_application 0x7f110019
 int string abc_toolbar_collapse_description 0x7f11001a
+int string add 0x7f1100d5
 int string agreeing_terms 0x7f11001b
 int string androidx_startup 0x7f11001c
 int string app_name 0x7f11001d
 int string appbar_scrolling_view_behavior 0x7f11001e
+int string begin 0x7f1100ce
 int string bottom_sheet_behavior 0x7f11001f
 int string bottomsheet_action_collapse 0x7f110020
 int string bottomsheet_action_expand 0x7f110021
@@ -3972,6 +3992,7 @@ int string call_notification_hang_up_action 0x7f11002a
 int string call_notification_incoming_text 0x7f11002b
 int string call_notification_ongoing_text 0x7f11002c
 int string call_notification_screening_text 0x7f11002d
+int string calories 0x7f1100d1
 int string character_counter_content_description 0x7f11002e
 int string character_counter_overflowed_content_description 0x7f11002f
 int string character_counter_pattern 0x7f110030
@@ -3981,9 +4002,13 @@ int string clear_text_end_icon_content_description 0x7f110033
 int string continue_text 0x7f110034
 int string date 0x7f110035
 int string date_of_birth 0x7f110036
+int string dish_name 0x7f1100d2
+int string eating 0x7f1100d3
+int string eating_name 0x7f1100d4
 int string email_code_hint 0x7f110037
 int string email_field 0x7f110038
 int string email_verification_title 0x7f110039
+int string enter_name_of_dish 0x7f1100d0
 int string entrance_text 0x7f11003a
 int string error_a11y_label 0x7f11003b
 int string error_icon_content_description 0x7f11003c
@@ -4018,6 +4043,7 @@ int string m3_sys_motion_easing_linear 0x7f110058
 int string m3_sys_motion_easing_standard 0x7f110059
 int string m3_sys_motion_easing_standard_accelerate 0x7f11005a
 int string m3_sys_motion_easing_standard_decelerate 0x7f11005b
+int string main 0x7f1100cf
 int string male 0x7f11005c
 int string material_clock_display_divider 0x7f11005d
 int string material_clock_toggle_content_description 0x7f11005e

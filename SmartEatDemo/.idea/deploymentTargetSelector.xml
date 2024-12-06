@@ -30,6 +30,9 @@
       <SelectionState runConfigName="ProfileAfterRegistrationActivity">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
+      <SelectionState runConfigName="ManualSearchResults">
+        <option name="selectionMode" value="DROPDOWN" />
+      </SelectionState>
     </selectionStates>
   </component>
 </project>

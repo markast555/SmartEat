@@ -46,6 +46,22 @@
     <string name="choose_level_of_physical_activity">Выберите уровень активности</string>
     <string name="choose_goal">Выберите цель</string>
 
+    <!--main_frame-->
+    <string name="main">Главная</string>
+    <string name="begin">Начать</string>
+
+    <!--manual_search_results-->
+    <string name="enter_name_of_dish">Введите название блюда</string>
+
+    <!--dish-->
+    <string name="dish_name">Название блюда</string>
+    <string name="calories">Калории</string>
+    <string name="eating">Приём пищи</string>
+    <string name="eating_name">Название приёма пищи</string>
+
+    <!--dish_frame-->
+    <string name="add">Добавить</string>
+
     <!--profile_after_registration_frame-->
     <string name="fill_out_profile">Заполните профиль</string>
 
