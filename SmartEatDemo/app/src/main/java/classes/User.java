@@ -5,22 +5,24 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 import java.time.LocalDate;
+import java.time.Period;
+import java.util.Objects;
 import java.util.UUID;
 
-public class User implements Parcelable {
+public class User implements Parcelable, Cloneable {
 
     private UUID idUser; //Первичный ключ, уникальное значение
     private String login; //Уникальное значение
     private String password;
-    private Sex sex;
-    private LocalDate dateOfBirth;
-    private int height;
-    private float weight;
-    private PhysicalActivityLevel levelOfPhysicalActivity;
-    private Goals goals;
+    private Sex sex = null;
+    private LocalDate dateOfBirth = null;
+    private int height = 0;
+    private float weight = 0;
+    private PhysicalActivityLevel levelOfPhysicalActivity = null;
+    private Goals goals = null;
     private String gmail; //Уникальное значение
-    private int calorieNorm;
-
+    private int calorieNorm = 0;
+    private int age = 0;
 
     public User(UUID idUser, String login, String password, Sex sex, LocalDate dateOfBirth, int height, float weight, PhysicalActivityLevel levelOfPhysicalActivity, Goals goals, String gmail, int calorieNorm) {
         this.idUser = idUser;
@@ -42,12 +44,17 @@ public class User implements Parcelable {
         this.login = VariableGenerator.generateRandomLogin();
         this.password = VariableGenerator.hashPassword("password");
         this.sex = Sex.MALE;
-        this.dateOfBirth = LocalDate.of(1990, 5, 15);;
+        this.dateOfBirth = LocalDate.of(1990, 5, 15);
         this.height = 180;
         this.weight = 70.5F;
         this.gmail = VariableGenerator.generateRandomGmail();
         this.levelOfPhysicalActivity = PhysicalActivityLevel.ModerateActivity;
         this.goals = Goals.ImprovingHealth;
+    }
+
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+        return super.clone();
     }
 
     public UUID getIdUser() {
@@ -204,5 +211,62 @@ public class User implements Parcelable {
         dest.writeSerializable(goals); // Предполагается, что Goals реализует Serializable
         dest.writeString(gmail);
         dest.writeInt(calorieNorm);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return height == user.height && Float.compare(weight, user.weight) == 0 && calorieNorm == user.calorieNorm && Objects.equals(idUser, user.idUser) && Objects.equals(login, user.login) && Objects.equals(password, user.password) && sex == user.sex && Objects.equals(dateOfBirth, user.dateOfBirth) && levelOfPhysicalActivity == user.levelOfPhysicalActivity && goals == user.goals && Objects.equals(gmail, user.gmail);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(idUser, login, password, sex, dateOfBirth, height, weight, levelOfPhysicalActivity, goals, gmail, calorieNorm);
+    }
+
+    public int countAge() {
+        if (dateOfBirth == null){
+            return 0;
+        }
+        LocalDate today = LocalDate.now();
+        Period period = Period.between(dateOfBirth, today);
+        this.age = period.getYears();
+        return this.age;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+
+    public int countCalorieNorm(){
+        countAge();
+        if (sex == null || weight == 0 || height == 0 || age == 0 || levelOfPhysicalActivity == null){
+            return 0;
+        }
+        double BMR = 0;
+        System.out.println(sex.getType());
+        if (Objects.equals(sex.getType(), "м")){
+            BMR = 66 + (13.7 * weight) + (5 * height) - (6.8 * age);
+        } else{
+            BMR = 655 + (9.6 * weight) + (1.8 * height) - (4.7 * age);
+        }
+
+        double result = 0;
+        if (Objects.equals(levelOfPhysicalActivity.getType(), "Очень низкий")){
+            result = BMR * 1.0;
+        } else if(Objects.equals(levelOfPhysicalActivity.getType(), "Низкий")){
+            result = BMR * 1.2;
+        } else if(Objects.equals(levelOfPhysicalActivity.getType(), "Умеренный")){
+            result = BMR * 1.55;
+        } else if(Objects.equals(levelOfPhysicalActivity.getType(), "Высокий")){
+            result = BMR * 1.725;
+        } else{
+            result = BMR * 1.9;
+        }
+
+        return (int) result;
     }
 }

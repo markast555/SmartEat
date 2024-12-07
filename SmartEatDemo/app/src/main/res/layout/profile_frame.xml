@@ -36,7 +36,6 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
-            android:id="@+id/imageButtonExit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/exit_icon"
@@ -96,11 +95,12 @@
         <!--        android:hint="@string/login_field"-->
     </com.google.android.material.textfield.TextInputLayout>
 
+
     <TextView
-        android:id="@+id/textViewSex"
+        android:id="@+id/textViewEmail"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/sex"
+        android:text="@string/email_field"
         android:textColor="@color/dark_text"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -110,80 +110,38 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintHeight_percent="0.145"
         app:layout_constraintVertical_bias="0.26"
-        app:layout_constraintHorizontal_bias="0.15"
-        app:layout_constraintWidth_percent="0.41"/>
-
-
-    <RadioGroup
-        android:id="@+id/radioGroupGender"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintHeight_percent="0.08"
-        app:layout_constraintVertical_bias="0.31"
-        app:layout_constraintHorizontal_bias="0.15"
-        app:layout_constraintWidth_percent="0.41"
-        android:orientation="horizontal">
-
-        <RadioButton
-            android:id="@+id/radioButtonMale"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/male" />
-
-        <RadioButton
-            android:id="@+id/radioButtonFemale"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/female" />
-    </RadioGroup>
-
-    <TextView
-        android:id="@+id/textViewDateOfBirth"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/date_of_birth"
-        android:textColor="@color/dark_text"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintHeight_percent="0.145"
-        app:layout_constraintVertical_bias="0.26"
-        app:layout_constraintHorizontal_bias="0.86"
-        app:layout_constraintWidth_percent="0.35"/>
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintWidth_percent="0.82"/>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayoutDateOfBirth"
+        android:id="@+id/textInputLayoutEmail"
         android:layout_width="0dp"
         android:layout_height="0dp"
+
         app:hintEnabled="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintVertical_bias="0.31"
-        app:layout_constraintHorizontal_bias="0.86"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintHeight_percent="0.08"
-        app:layout_constraintWidth_percent="0.35"
+        app:layout_constraintWidth_percent="0.82"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <EditText
-            android:id="@+id/editTextDateOfBirth"
+            android:id="@+id/editTextEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:focusable="false"
+            android:focusable="true"
+            android:inputType="text"
             android:textColor="@color/dark_text"
-            android:hint="@string/date"/>
-        <!--            android:hint="@string/date_of_birth"-->
+            android:hint="@string/your_email_field"
+            app:hintAnimationEnabled="false"/>
+        <!--        android:hint="@string/login_field"-->
     </com.google.android.material.textfield.TextInputLayout>
+
+
 
 
     <!--    <TableLayout-->
@@ -487,6 +445,7 @@
         android:layout_height="wrap_content"
         android:text="@string/save"
         android:textSize="20sp"
+        android:onClick="toMainFromProfile"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -494,7 +453,7 @@
         app:layout_constraintVertical_bias="0.85"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintHeight_percent="0.08"
-        app:layout_constraintWidth_percent="0.82"/>
+        app:layout_constraintWidth_percent="0.82" />
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -552,3 +511,4 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+

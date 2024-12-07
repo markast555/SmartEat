@@ -30,6 +30,7 @@
 
     <!--profile_frame-->
     <string name="profile">Профиль</string>
+    <string name="your_email_field">Ваш Email</string>
     <string name="sex">Пол</string>
     <string name="male">М</string>
     <string name="female">Ж</string>

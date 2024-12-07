@@ -32,6 +32,9 @@
         android:testOnly="true"
         android:theme="@style/Theme.SmartEatDemo" >
         <activity
+            android:name="com.example.activities.DiaryActivity"
+            android:exported="false" />
+        <activity
             android:name="com.example.activities.DishActivity"
             android:exported="false" />
         <activity

@@ -26,21 +26,4 @@ public enum Sex {
         throw new IllegalArgumentException("Нет такого пола: " + type);
     }
 
-    public static String TranslateFromRusToEng(String type) {
-        if (Objects.equals(type, "м")){
-            return "m";
-        }
-        else {
-            return "f";
-        }
-    }
-
-    public static String TranslateFromEngToRus(String type) {
-        if (Objects.equals(type, "m")){
-            return "м";
-        }
-        else {
-            return "ж";
-        }
-    }
 }

@@ -29,39 +29,4 @@ public enum Goals {
         throw new IllegalArgumentException("Нет такой цели: " + type);
     }
 
-    public static String TranslateFromRusToEng(String type) {
-        if (Objects.equals(type, "Снижение веса")){
-            return "Weight loss";
-        }
-        if (Objects.equals(type, "Набор веса")){
-            return "Weight gain";
-        }
-        if (Objects.equals(type, "Набор мышечной массы")){
-            return "Muscle mass gain";
-        }
-        if (Objects.equals(type, "Поддержание текущего веса")){
-            return "Maintaining current weight";
-        }
-        else {
-            return "Improving health";
-        }
-    }
-
-    public static String TranslateFromEngToRus(String type) {
-        if (Objects.equals(type, "Weight loss")) {
-            return "Снижение веса";
-        }
-        if (Objects.equals(type, "Weight gain")) {
-            return "Набор веса";
-        }
-        if (Objects.equals(type, "Muscle mass gain")) {
-            return "Набор мышечной массы";
-        }
-        if (Objects.equals(type, "Maintaining current weight")) {
-            return "Поддержание текущего веса";
-        } else {
-            return "Улучшение здоровья";
-        }
-    }
-
 }

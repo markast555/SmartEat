@@ -3,8 +3,14 @@ package classes;
 //import java.sql.SQType;
 
 import java.sql.*;
+import java.time.Instant;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 import java.util.UUID;
 
 import java.sql.Connection;
@@ -96,7 +102,7 @@ public class UserRepositoryCrud{
 
     public boolean create(User user) throws SQLException, ClassNotFoundException {
         boolean result = false;
-
+        user.setCalorieNorm(user.countCalorieNorm());
         setConnection();
         try {
             try (PreparedStatement statement = connection.prepareStatement(
@@ -106,12 +112,12 @@ public class UserRepositoryCrud{
                 statement.setObject(1, user.getIdUser().toString());
                 statement.setString(2, user.getLogin());
                 statement.setString(3, user.getPassword());
-                statement.setString(4, Sex.TranslateFromRusToEng(user.getSex().getType()));
+                statement.setString(4, user.getSex().getType());
                 statement.setDate(5, dateToSqlDate(user.getDateOfBirth()));
                 statement.setInt(6, user.getHeight());
                 statement.setFloat(7, user.getWeight());
-                statement.setString(8, PhysicalActivityLevel.TranslateFromRusToEng(user.getLevelOfPhysicalActivity().getType()));
-                statement.setString(9, Goals.TranslateFromRusToEng(user.getGoals().getType()));
+                statement.setString(8, user.getLevelOfPhysicalActivity().getType());
+                statement.setString(9, user.getGoals().getType());
                 statement.setString(10, user.getGmail());
                 statement.setInt(11, user.getCalorieNorm());
 
@@ -127,44 +133,6 @@ public class UserRepositoryCrud{
         return result;
     }
 
-
-
-    public User selectByLogin(String login) throws SQLException, ClassNotFoundException {
-        User user = null;
-
-        setConnection(); // Установите соединение с базой данных
-
-        try (PreparedStatement statement = connection.prepareStatement(
-                "SELECT id_user, login, password, sex, date_of_birth, height, weight, level_of_physical_activity, goal, gmail, calorie_norm FROM users WHERE login = ?")) {
-
-            // Устанавливаем значение параметра
-            statement.setString(1, login);
-
-            try (ResultSet resultSet = statement.executeQuery()) {
-                if (resultSet.next()) {
-                    user = new User(UUID.fromString(resultSet.getString("id_user")),
-                            resultSet.getString("login"),
-                            resultSet.getString("password"),
-                            Sex.fromType(Sex.TranslateFromEngToRus(resultSet.getString("sex"))),
-                            toLocalDate(resultSet.getDate("date_of_birth")),
-                            resultSet.getInt("height"),
-                            resultSet.getFloat("weight"),
-                            PhysicalActivityLevel.fromType(PhysicalActivityLevel.TranslateFromEngToRus(resultSet.getString("level_of_physical_activity"))),
-                            Goals.fromType(Goals.TranslateFromEngToRus(resultSet.getString("goal"))),
-                            resultSet.getString("gmail"),
-                            resultSet.getInt("calorie_norm"));
-                } else {
-                    System.out.println("Данные не найдены");
-                }
-            }
-        } catch (SQLException e) {
-            throw new SQLException("Ошибка подключения: " + e.getMessage(), e);
-        } finally {
-            closeConnection(); // Закрываем соединение в блоке finally
-        }
-
-        return user;
-    }
 
     public boolean checkByOneField(String value, String nameField) throws SQLException, ClassNotFoundException {
         boolean result = false;
@@ -193,6 +161,229 @@ public class UserRepositoryCrud{
         return result;
     }
 
+    public int update(User user) throws SQLException, ClassNotFoundException {
+        int result = 0;
+        user.setCalorieNorm(user.countCalorieNorm());
+        setConnection();
+        try (PreparedStatement statement = connection.prepareStatement(
+                "UPDATE users SET login = ?, password = ?, sex = ?, date_of_birth = ?, height = ?, weight = ?, level_of_physical_activity = ?, goal = ?, gmail = ?, colorie_norm = ? WHERE users.id_user = ?")) {
+
+            statement.setString(1, user.getLogin());
+            statement.setString(2, user.getPassword());
+            statement.setString(3, user.getSex().getType());
+            statement.setDate(4, dateToSqlDate(user.getDateOfBirth()));
+            statement.setInt(5, user.getHeight());
+            statement.setFloat(6, user.getWeight());
+            statement.setString(7, user.getLevelOfPhysicalActivity().getType());
+            statement.setString(8, user.getGoals().getType());
+            statement.setString(9, user.getGmail());
+            statement.setInt(10, user.getCalorieNorm());
+            statement.setString(11, user.getIdUser().toString());
+
+            result = statement.executeUpdate();
+        } catch (SQLException e) {
+            throw new SQLException("Ошибка выполнения: " + e.getMessage(), e);
+        } finally {
+            closeConnection(); // Закрываем соединение в блоке finally
+        }
+
+        return result;
+    }
+
+
+    public boolean createDish(Dish dish) throws SQLException, ClassNotFoundException {
+        boolean result = false;
+
+        setConnection();
+        try {
+            try (PreparedStatement statement = connection.prepareStatement(
+                    "INSERT INTO dishes (id_dish, name, calorie_content, meal_type, description) VALUES (?,?,?,?,?)")) {
+
+                statement.setString(1, dish.getIdDish().toString());
+                statement.setString(2, dish.getName());
+                statement.setInt(3, dish.getCalorieContent());
+                statement.setString(4, dish.getMealType().getType());
+                statement.setString(5, dish.getDescription());
+
+                statement.execute();
+                result = true;
+            }
+        } catch (SQLException e) {
+            throw new SQLException("Ошибка подключения: " + e.getMessage(), e);
+        } finally {
+            closeConnection(); // Закрываем соединение в блоке finally
+        }
+
+        return result;
+    }
+
+    public Dish findDishByName(String name) throws SQLException, ClassNotFoundException {
+        Dish dish = null;
+
+        setConnection(); // Установите соединение с базой данных
+
+        try (PreparedStatement statement = connection.prepareStatement(
+                "SELECT id_dish, name, meal_type, calorie_content, description FROM dishes WHERE name = ?")) {
+
+            // Устанавливаем значение параметра
+            statement.setString(1, name);
+
+            try (ResultSet resultSet = statement.executeQuery()) {
+                if (resultSet.next()) {
+                    dish = new Dish(UUID.fromString(resultSet.getString("id_dish")),
+                            resultSet.getString("name"),
+                            MealType.fromType(resultSet.getString("meal_type")),
+                            resultSet.getInt("calorie_content"),
+                            resultSet.getString("description"));
+                } else {
+                    System.out.println("Данные не найдены");
+                }
+            }
+        } catch (SQLException e) {
+            throw new SQLException("Ошибка подключения: " + e.getMessage(), e);
+        } finally {
+            closeConnection(); // Закрываем соединение в блоке finally
+        }
+
+        return dish;
+    }
+
+    public Dish findDishByID(UUID dishId) throws SQLException, ClassNotFoundException {
+        Dish dish = null;
+
+        setConnection(); // Установите соединение с базой данных
+
+        try (PreparedStatement statement = connection.prepareStatement(
+                "SELECT id_dish, name, meal_type, calorie_content, description FROM dishes WHERE id_dish = ?")) {
+
+            // Устанавливаем значение параметра
+            statement.setString(1, dishId.toString());
+
+            try (ResultSet resultSet = statement.executeQuery()) {
+                if (resultSet.next()) {
+                    dish = new Dish(UUID.fromString(resultSet.getString("id_dish")),
+                            resultSet.getString("name"),
+                            MealType.fromType(resultSet.getString("meal_type")),
+                            resultSet.getInt("calorie_content"),
+                            resultSet.getString("description"));
+                } else {
+                    System.out.println("Данные не найдены");
+                }
+            }
+        } catch (SQLException e) {
+            throw new SQLException("Ошибка подключения: " + e.getMessage(), e);
+        } finally {
+            closeConnection(); // Закрываем соединение в блоке finally
+        }
+
+        return dish;
+    }
+
+    public boolean createRecordingInDiary(Diary diary) throws SQLException, ClassNotFoundException {
+        boolean result = false;
+
+        setConnection();
+        try {
+            try (PreparedStatement statement = connection.prepareStatement(
+                    "INSERT INTO diary (id_diary, id_user, id_dish, eating_time) VALUES (?,?,?,?)")) {
+
+                statement.setString(1, diary.getIdDiary().toString());
+                statement.setString(2, diary.getIdUser().toString());
+                statement.setString(3, diary.getIdDish().toString());
+                statement.setTimestamp(4, toSqlTimestamp(diary.getEatingTime()));
+
+                statement.execute();
+                result = true;
+            }
+        } catch (SQLException e) {
+            throw new SQLException("Ошибка подключения: " + e.getMessage(), e);
+        } finally {
+            closeConnection(); // Закрываем соединение в блоке finally
+        }
+
+        return result;
+    }
+
+    public User selectByLogin(String login) throws SQLException, ClassNotFoundException {
+        User user = null;
+
+        setConnection(); // Установите соединение с базой данных
+
+        try (PreparedStatement statement = connection.prepareStatement(
+                "SELECT id_user, login, password, sex, date_of_birth, height, weight, level_of_physical_activity, goal, gmail, calorie_norm FROM users WHERE login = ?")) {
+
+            // Устанавливаем значение параметра
+            statement.setString(1, login);
+
+            try (ResultSet resultSet = statement.executeQuery()) {
+                if (resultSet.next()) {
+                    user = new User(UUID.fromString(resultSet.getString("id_user")),
+                            resultSet.getString("login"),
+                            resultSet.getString("password"),
+                            Sex.fromType(resultSet.getString("sex")),
+                            toLocalDate(resultSet.getDate("date_of_birth")),
+                            resultSet.getInt("height"),
+                            resultSet.getFloat("weight"),
+                            PhysicalActivityLevel.fromType(resultSet.getString("level_of_physical_activity")),
+                            Goals.fromType(resultSet.getString("goal")),
+                            resultSet.getString("gmail"),
+                            resultSet.getInt("calorie_norm"));
+                } else {
+                    System.out.println("Данные не найдены");
+                }
+            }
+        } catch (SQLException e) {
+            throw new SQLException("Ошибка подключения: " + e.getMessage(), e);
+        } finally {
+            closeConnection(); // Закрываем соединение в блоке finally
+        }
+
+        return user;
+    }
+
+    public List<Diary> findRecordingsInDiaryByUserId(UUID userId) throws SQLException, ClassNotFoundException {
+        List<Diary> diaries = new ArrayList<>();
+
+        setConnection(); // Установите соединение с базой данных
+
+        try (PreparedStatement statement = connection.prepareStatement(
+                "SELECT id_diary, id_user, id_dish, eating_time FROM diary WHERE id_user = ?")) {
+
+            // Устанавливаем значение параметра
+            statement.setString(1, userId.toString());
+
+            try (ResultSet resultSet = statement.executeQuery()) {
+                while (resultSet.next()) {
+                    Timestamp eatingTime = resultSet.getTimestamp("eating_time");
+                    LocalDateTime localDateTime = toLocalDateTime(eatingTime);
+
+                    Diary diary = new Diary(UUID.fromString(resultSet.getString("id_diary")),
+                            UUID.fromString(resultSet.getString("id_user")),
+                            UUID.fromString(resultSet.getString("id_dish")),
+                            localDateTime);
+                    diaries.add(diary);
+                }
+            }
+        } catch (SQLException e) {
+            throw new SQLException("Ошибка подключения: " + e.getMessage(), e);
+        } finally {
+            closeConnection(); // Закрываем соединение в блоке finally
+        }
+
+        return diaries;
+    }
+
+
+    private static LocalDateTime toLocalDateTime(Timestamp timestamp) {
+        if (timestamp == null) {
+            return null; // Обработка случая, когда timestamp равен null
+        }
+
+        Instant instant = Instant.ofEpochMilli(timestamp.getTime());
+        ZonedDateTime zonedDateTime = instant.atZone(ZoneId.systemDefault());
+        return zonedDateTime.toLocalDateTime();
+    }
+
     public static LocalDate toLocalDate(Date date) {
         if (date == null) {
             return null; // Обработка случая, когда дата равна null
@@ -206,107 +397,12 @@ public class UserRepositoryCrud{
                 calendar.get(Calendar.DAY_OF_MONTH));
     }
 
+    public static Timestamp toSqlTimestamp(LocalDateTime localDateTime) {
+        if (localDateTime == null) {
+            return null; // Обработка случая, когда дата равна null
+        }
 
+        return new java.sql.Timestamp(localDateTime.atZone(ZoneId.systemDefault()).toInstant().toEpochMilli());
+    }
 
-
-//    // Метод для конвертации java.sql.Date в LocalDate
-//    private LocalDate convertSqlDateToLocalDate(Date sqlDate) {
-//        String dateString = "02/11/2024"; // Пример даты в формате dd/MM/yyyy
-//        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-//
-//        try {
-//            // Преобразование строки в Date
-//            Date date = (Date) formatter.parse(dateString);
-//            System.out.println("Преобразованная дата: " + date);
-//        } catch (ParseException e) {
-//            System.out.println("Ошибка преобразования даты: " + e.getMessage());
-//        }
-//    }
-
-//
-//    //@Override
-//    public List<User> selectAll() {
-//        List<User> userList = new ArrayList<>();
-//
-//        setConnection();
-//        try (PreparedStatement statement = connection.prepareStatement(
-//                "select id, firstname, lastname, birthdate, isgraduated from public.user_se")) {
-//            try (ResultSet resultSet = statement.executeQuery()) {
-//                while (resultSet.next()) {
-//                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-//                        userList.add(new User((UUID) resultSet.getObject("id_user"),
-//                                resultSet.getString("login"),
-//                                resultSet.getString("password"),
-//                                resultSet.getString("name"),
-//                                Sex.fromType(resultSet.getString("sex")),
-//                                resultSet.getDate("date_of_birth").toInstant()
-//                                        .atZone(ZoneId.systemDefault())
-//                                        .toLocalDate(),
-//                                resultSet.getInt("height"),
-//                                resultSet.getFloat("weight"),
-//                                resultSet.getString("phone_number"),
-//                                PhysicalActivityLevel.fromType(resultSet.getString("level_of_physical_activity")),
-//                                Goals.fromType(resultSet.getString("goals")),
-//                                resultSet.getString("individual_characters")));
-//                    }
-//                }
-//            }
-//        } catch (SQLException e) {
-//            System.out.println("Ошибка выполнения: " + e.getMessage());
-//        }
-//        closeConnection();
-//
-//        return userList;
-//    }
-//
-//    //@Override
-//    public int update(User user) {
-//        int result = 0;
-//
-//        setConnection();
-//        try (PreparedStatement statement = connection.prepareStatement(
-//                "update public.user_se set login = ?, password = ?, name = ?, sex = ?, date_of_birth = ?, height = ?, weight = ?, level_of_physical_activity = ?, goals = ?, individual_characters = ?, phone_number = ?, isgraduated = ? where id = ?")) {
-//
-//            statement.setString(1, user.getLogin());
-//            statement.setString(2, user.getPassword());
-//            statement.setString(3, user.getName());
-//            statement.setString(4, user.getSex().getType());
-//            statement.setDate(5, dateToSqlDate(user.getDateOfBirth()));
-//            statement.setInt(6, user.getHeight());
-//            statement.setFloat(7, user.getWeight());
-//            statement.setString(8, user.getPhysicalActivityLevel().getType());
-//            statement.setString(9, user.getGoals().getType());
-//            statement.setString(10, user.getIndividualCharacteristics());
-//            statement.setString(11, user.getPhoneNumber());
-//
-//            statement.setObject(12, user.getId(), java.sql.Types.OTHER);
-//
-//            result = statement.executeUpdate();
-//        } catch (SQLException e) {
-//            System.out.println("Ошибка выполнения: " + e.getMessage());
-//        }
-//        closeConnection();
-//
-//        return result;
-//    }
-//
-//    //@Override
-//    public int remove(List<UUID> idList) {
-//        int result = 0;
-//
-//        String listId = idList.stream()
-//                .map(Object::toString)
-//                .collect(Collectors.joining("', '", "'", "'"));
-//
-//        setConnection();
-//        try (PreparedStatement statement = connection.prepareStatement(
-//                "delete from public.person where id in (" + listId + ")")) {
-//            result = statement.executeUpdate();
-//        } catch (SQLException e) {
-//            System.out.println("Ошибка выполнения: " + e.getMessage());
-//        }
-//        closeConnection();
-//
-//        return result;
-//    }
 }
