@@ -146,7 +146,16 @@ public class Main2Activity extends AppCompatActivity {
             overridePendingTransition(0, 0); // Отключает анимацию перехода
             finish(); // Завершает ProfileActivity
         });
+
+        ImageButton imageButtonDiary = findViewById(R.id.imageButtonDiary);
+        imageButtonDiary.setOnClickListener(v -> {
+            Intent intent = new Intent(Main2Activity.this, DiaryActivity.class);
+            startActivity(intent);
+            overridePendingTransition(0, 0); // Отключает анимацию перехода
+            finish(); // Завершает ProfileActivity
+        });
     }
+
 
     private void openProfileActivity() {
         Intent intent = new Intent(Main2Activity.this, ProfileActivity.class);

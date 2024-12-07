@@ -98,6 +98,14 @@ public class ProfileActivity extends AppCompatActivity {
             finish(); // Завершает ProfileActivity
         });
 
+        ImageButton imageButtonDiary = findViewById(R.id.imageButtonDiary);
+        imageButtonDiary.setOnClickListener(v -> {
+            Intent intent = new Intent(ProfileActivity.this, DiaryActivity.class);
+            startActivity(intent);
+            overridePendingTransition(0, 0); // Отключает анимацию перехода
+            finish(); // Завершает ProfileActivity
+        });
+
         addTextWatcherTextView(textViewLogin);
         addTextWatcherEditText(editTextLogin);
         addTextWatcherTextView(textViewSex);

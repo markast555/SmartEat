@@ -17,6 +17,9 @@
         android:theme="@style/Theme.SmartEatDemo"
         tools:targetApi="31">
         <activity
+            android:name=".DiaryActivity"
+            android:exported="false" />
+        <activity
             android:name=".DishActivity"
             android:exported="false" />
         <activity

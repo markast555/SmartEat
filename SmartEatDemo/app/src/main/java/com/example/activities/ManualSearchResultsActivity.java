@@ -70,7 +70,7 @@ public class ManualSearchResultsActivity extends AppCompatActivity {
 
         ImageButton imageButtonHome = findViewById(R.id.imageButtonHome);
         imageButtonHome.setOnClickListener(v -> {
-            Intent intent = new Intent(ManualSearchResultsActivity.this, MainActivity.class);
+            Intent intent = new Intent(ManualSearchResultsActivity.this, Main2Activity.class);
             startActivity(intent);
             overridePendingTransition(0, 0); // Отключает анимацию перехода
             finish(); // Завершает ProfileActivity
@@ -79,6 +79,22 @@ public class ManualSearchResultsActivity extends AppCompatActivity {
         ImageButton imageButtonBack = findViewById(R.id.imageButtonBack);
         imageButtonBack.setOnClickListener(v -> {
             Intent intent = new Intent(ManualSearchResultsActivity.this, Main2Activity.class);
+            startActivity(intent);
+            overridePendingTransition(0, 0); // Отключает анимацию перехода
+            finish(); // Завершает ProfileActivity
+        });
+
+        ImageButton imageButtonDiary = findViewById(R.id.imageButtonDiary);
+        imageButtonDiary.setOnClickListener(v -> {
+            Intent intent = new Intent(ManualSearchResultsActivity.this, DiaryActivity.class);
+            startActivity(intent);
+            overridePendingTransition(0, 0); // Отключает анимацию перехода
+            finish(); // Завершает ProfileActivity
+        });
+
+        ImageButton imageButtonProfile = findViewById(R.id.imageButtonProfile);
+        imageButtonProfile.setOnClickListener(v -> {
+            Intent intent = new Intent(ManualSearchResultsActivity.this, ProfileActivity.class);
             startActivity(intent);
             overridePendingTransition(0, 0); // Отключает анимацию перехода
             finish(); // Завершает ProfileActivity

@@ -8,10 +8,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="com.example.activities" />
-                  <option name="mobileSdkAppId" value="1:1032221884664:android:bd942acd52fce3274d3b0d" />
-                  <option name="projectId" value="smarteat-e4491" />
-                  <option name="projectNumber" value="1032221884664" />
+                  <option name="appId" value="PLACEHOLDER" />
+                  <option name="mobileSdkAppId" value="" />
+                  <option name="projectId" value="" />
+                  <option name="projectNumber" value="" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />
