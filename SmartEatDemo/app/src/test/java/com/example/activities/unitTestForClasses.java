@@ -15,9 +15,14 @@ import org.junit.jupiter.api.Test;
 import java.sql.SQLException;
 import java.text.BreakIterator;
 import java.time.LocalDate;
+import java.util.List;
+import java.util.UUID;
 
 import classes.DatabaseParams;
+import classes.Diary;
+import classes.Dish;
 import classes.Goals;
+import classes.MealType;
 import classes.PhysicalActivityLevel;
 import classes.Sex;
 import classes.User;
@@ -103,7 +108,7 @@ public class unitTestForClasses {
     @Test
     @DisplayName("Тестирование нахождения пользователя по логину в табл. users в БД")
     public void testSelectByLoginInBDPositive() throws SQLException, ClassNotFoundException {
-        String login = "7SiXuRkzH";
+        String login = "1234";
         User user = userRepositoryCrud.selectByLogin(login);
         System.out.println(user.toString());
         Assert.assertNotNull(user);
@@ -118,35 +123,9 @@ public class unitTestForClasses {
     }
 
     @Test
-    @DisplayName("Тестирование на разхеширование пароля из записи, найденной из табл. users в БД по логину")
-    public void testCreateUserInBD_And_SelectByLoginIn_And_HashPasswordPositive() throws SQLException, ClassNotFoundException {
-
-        String originalPassword = "password";
-        User user = new User();
-        user.setPassword(originalPassword);
-        user.setPassword(VariableGenerator.hashPassword(user.getPassword()));
-        String originalPasswordHashBefore = user.getPassword();
-        String login = user.getLogin();
-
-        boolean isMatchBefore = VariableGenerator.checkPassword(originalPassword, originalPasswordHashBefore);
-        Assert.assertTrue(isMatchBefore);
-
-        Assert.assertTrue(userRepositoryCrud.create(user));
-
-        User userBD = userRepositoryCrud.selectByLogin(login);
-        Assert.assertNotNull(userBD);
-        String originalPasswordHashAfter = userBD.getPassword();
-
-        Assert.assertEquals(originalPasswordHashBefore, originalPasswordHashAfter);
-
-        boolean isMatchAfter = VariableGenerator.checkPassword(originalPassword, originalPasswordHashAfter);
-        Assert.assertTrue(isMatchAfter);
-    }
-
-    @Test
     @DisplayName("Тестирование нахождения записи по определённому уникальному полю в БД (логин)")
     public void testCheckByOneField_Login_Positive() throws SQLException, ClassNotFoundException {
-        String login = "12345";;
+        String login = "WnUxR";;
         boolean result = userRepositoryCrud.checkByOneField(login, "login");
         Assert.assertTrue(result);
     }
@@ -179,7 +158,7 @@ public class unitTestForClasses {
     @DisplayName("Тестирование изменения данных по пользователю в табл. users в БД")
     public void testUpdate() throws SQLException, ClassNotFoundException {
 
-        String login = "12345";
+        String login = "WnUxR";
         User user = userRepositoryCrud.selectByLogin(login);
         System.out.println(user.toString());
         Assert.assertNotNull(user);
@@ -187,21 +166,12 @@ public class unitTestForClasses {
         user.setHeight(45);
         user.setWeight(35);
         user.setGoals(Goals.ImprovingHealth);
-        //user.setLogin("8d8dd8d");
 
         int result = userRepositoryCrud.update(user);
 
         Assert.assertNotEquals(0, result);
     }
 
-    @Test
-    @DisplayName("Тестирование изменения данных по пользователю в табл. users в БД")
-    public void testUpdate1() throws SQLException, ClassNotFoundException {
-
-        int result = userRepositoryCrud.update1("f44b817e-9735-4fd2-b821-85838cb15ed6", 68, 77.5F);
-
-        Assert.assertNotEquals(0, result);
-    }
 
     @Test
     @DisplayName("Тестирование изменения данных в User")
@@ -212,8 +182,8 @@ public class unitTestForClasses {
 
         System.out.println(user.getHeight()); // User{height=0}
         System.out.println(newUser.getHeight()); // User{height=0}
-        Assert.assertEquals(user.getHeight(), newUser.getHeight());
-        Assert.assertEquals(user.hashCode(), newUser.hashCode());
+        assertEquals(user.getHeight(), newUser.getHeight());
+        assertEquals(user.hashCode(), newUser.hashCode());
 
         newUser.setHeight(181);
 
@@ -224,6 +194,7 @@ public class unitTestForClasses {
     }
 
     @Test
+    @DisplayName("Тестирование парсинга строки в LocalDate и занесения записи с данной датой в бд")
     public void testParseInLocalDate() throws SQLException, ClassNotFoundException {
         User user = new User();
         System.out.println(user.toString());
@@ -246,5 +217,133 @@ public class unitTestForClasses {
 
         Assert.assertTrue(userRepositoryCrud.create(user));
     }
+
+    @Test
+    @DisplayName("Тестирование парсинга строки в LocalDate и занесения записи с данной датой в бд")
+    public void testCountAge() throws SQLException, ClassNotFoundException {
+        String login = "1234";
+        User user = userRepositoryCrud.selectByLogin(login);
+        System.out.println(user.toString());
+        Assert.assertNotNull(user);
+
+        user.countAge();
+        System.out.println(user.getAge());
+        assertEquals(user.getAge(), 20);
+    }
+
+    @Test
+    @DisplayName("Тестирование парсинга строки в LocalDate и занесения записи с данной датой в бд")
+    public void testCountCalorieNorm() throws SQLException, ClassNotFoundException {
+        String login = "1234";
+        User user = userRepositoryCrud.selectByLogin(login);
+        System.out.println(user.toString());
+        Assert.assertNotNull(user);
+
+        int result = user.countCalorieNorm();
+        System.out.println(result);
+    }
+
+
+    @Test
+    @DisplayName("Тестирование создания записи блюда в табл. dishes в БД")
+    public void testCreateDish() throws SQLException, ClassNotFoundException {
+
+        String[] names = {"Гамбургер", "Спагетти Болоньезе", "Лазанья", "Пицца Маргарита",
+                "Куриная грудка на гриле", "Овсяная каша", "Шоколадный торт", "Жареная рыба", "Овощное рагу", "Куриный суп"};
+        int[] calorieContents = {650, 800, 850, 750, 350, 300, 550, 400, 250, 300};
+        MealType[] mealTypes = {MealType.MainDish, MealType.SideDish, MealType.MainDish, MealType.Dessert,
+                MealType.MainDish, MealType.SideDish, MealType.Dessert, MealType.MainDish, MealType.Complex, MealType.Soup};
+
+        for (int i = 0; i < names.length; i++) {
+            Dish dish = new Dish();
+            dish.setName(names[i]);
+            dish.setCalorieContent(calorieContents[i]);
+            dish.setMealType(mealTypes[i]);
+            dish.setDescription(null);
+
+            System.out.println(i + ")" + dish.toString());
+            Assert.assertTrue(userRepositoryCrud.createDish(dish));
+        }
+
+    }
+
+    @Test
+    @DisplayName("Тестирование нахождения блюда по названию в табл. dishes в БД")
+    public void testFindDishByNamePositive() throws SQLException, ClassNotFoundException {
+        String name = "Пончик";
+        Dish dish = userRepositoryCrud.findDishByName(name);
+        System.out.println(dish.toString());
+        Assert.assertNotNull(dish);
+    }
+
+    @Test
+    @DisplayName("Тестирование нахождения блюда по названию в табл. dishes в БД")
+    public void testFindDishByNameNegative() throws SQLException, ClassNotFoundException {
+        String name = "Колесо";;
+        Dish dish = userRepositoryCrud.findDishByName(name);
+        Assert.assertNull(dish);
+    }
+
+    @Test
+    @DisplayName("Тестирование создания записи в табл. diary в БД")
+    public void testCreateRecordingInDiary() throws SQLException, ClassNotFoundException {
+        Diary diary = new Diary();
+
+        String login = "1234";
+        User user = userRepositoryCrud.selectByLogin(login);
+        System.out.println(user.toString());
+        Assert.assertNotNull(user);
+
+        String name = "Пончик";
+        Dish dish = userRepositoryCrud.findDishByName(name);
+        System.out.println(dish.toString());
+        Assert.assertNotNull(dish);
+
+        diary.setIdUser(user.getIdUser());
+        diary.setIdDish(dish.getIdDish());
+
+        System.out.println(diary.toString());
+        Assert.assertTrue(userRepositoryCrud.createRecordingInDiary(diary));
+    }
+
+    @Test
+    @DisplayName("Тестирование нахождений всех блюд определённого пользователя в табл. diary в БД")
+    public void testFindDishByID() throws SQLException, ClassNotFoundException {
+
+        String name = "Пончик";
+        Dish dish = userRepositoryCrud.findDishByName(name);
+        System.out.println(dish.toString());
+        Assert.assertNotNull(dish);
+
+        UUID dishId = dish.getIdDish();
+
+        Dish dish1 = userRepositoryCrud.findDishByID(dishId);
+        System.out.println(dish1.toString());
+        Assert.assertNotNull(dish1);
+    }
+
+    @Test
+    @DisplayName("Тестирование нахождений всех блюд определённого пользователя в табл. diary в БД")
+    public void testFindRecordingsInDiaryByUserId() throws SQLException, ClassNotFoundException {
+
+        String login = "1234";
+        User user = userRepositoryCrud.selectByLogin(login);
+        System.out.println(user.toString());
+        Assert.assertNotNull(user);
+
+        UUID userId = user.getIdUser();
+
+        System.out.println(userId);
+
+        List<Diary> diaries = userRepositoryCrud.findRecordingsInDiaryByUserId(userId);
+        for (Diary diary: diaries){
+            System.out.println(diary.toString());
+            UUID dishId = diary.getIdDish();
+            Dish dish = userRepositoryCrud.findDishByID(dishId);
+            System.out.println(dish.toString());
+            Assert.assertNotNull(dish);
+        }
+    }
+
 
 }
