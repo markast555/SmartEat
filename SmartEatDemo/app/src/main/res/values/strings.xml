@@ -40,12 +40,31 @@
     <string name="goal">Цель</string>
     <string name="save">Сохранить</string>
     <string name="your_login_field">Ваш логин</string>
-    <string name="your_email_field">Ваш Email</string>
     <string name="date">ДД.ММ.ГГГГ</string>
     <string name="your_height">Ваш рост</string>
     <string name="your_weight">Ваш вес</string>
     <string name="choose_level_of_physical_activity">Выберите уровень активности</string>
     <string name="choose_goal">Выберите цель</string>
+
+    <!--main_frame-->
+    <string name="main">Главная</string>
+    <string name="begin">Начать</string>
+
+    <!--manual_search_results-->
+    <string name="enter_name_of_dish">Введите название блюда</string>
+
+    <!--dish-->
+    <string name="dish_name">Название блюда</string>
+    <string name="calories">Калории</string>
+    <string name="eating">Тип пищи</string>
+    <string name="eating_name">Название типа пищи</string>
+
+    <!--dish_frame-->
+    <string name="add">Добавить</string>
+    <string name="calories_colon">Калории:</string>
+    <string name="eating_colon">Тип пищи:</string>
+    <string name="description_colon">Описание:</string>
+    <string name="description">Описание</string>
 
     <!--profile_after_registration_frame-->
     <string name="fill_out_profile">Заполните профиль</string>
@@ -54,5 +73,13 @@
     <string name="levels_of_physical_activity">Уровни физической активности</string>
     <string name="physical_activity_info">- Сидячий (малоподвижный)\n\n- Небольшая активность (легкие упражнения 1-3 дня в неделю)\n\n- Умеренная активность (умеренные упражнения 3-5 дней в неделю)\n\n- Высокая активность (интенсивные упражнения 6-7 дней в неделю)\n\n- Очень высокая активность (физическая работа или тренировки дважды в день)</string>
 
+
+    <!--diary-->
+    <string name="date_of_addition">Дата добавления</string>
+    <string name="time_of_addition">Время добавления</string>
+
+    <!--diary_frame-->
+    <string name="diary">Дневник</string>
+    <string name="daily_calorie_intake">Ежедневная норма калорий:</string>
 
 </resources>

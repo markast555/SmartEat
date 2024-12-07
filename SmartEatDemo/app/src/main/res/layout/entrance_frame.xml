@@ -125,7 +125,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <EditText
-                android:id="@+id/editTextLogin"
+                android:id="@+id/entranceEditTextLogin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
@@ -152,7 +152,7 @@
             app:passwordToggleEnabled="true">
 
             <EditText
-                android:id="@+id/editTextPassword"
+                android:id="@+id/entranceEditTextPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"

@@ -138,8 +138,17 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
-        // Остальной код вашей активности
+        ImageButton imageButtonDiary = findViewById(R.id.imageButtonDiary);
+        imageButtonDiary.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, DiaryActivity.class);
+            startActivity(intent);
+            overridePendingTransition(0, 0); // Отключает анимацию перехода
+            finish(); // Завершает ProfileActivity
+        });
+
+
     }
+
 
     private void openProfileActivity() {
         Intent intent = new Intent(MainActivity.this, ProfileActivity.class);

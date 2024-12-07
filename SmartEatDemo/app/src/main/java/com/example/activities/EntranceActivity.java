@@ -135,10 +135,10 @@ public class EntranceActivity extends AppCompatActivity {
                     user = userRepositoryCrud.selectByLogin(login);
                 } catch (SQLException e) {
                     System.out.println("Ошибка подключения к базе данных: " + e.getMessage());
-                    showInfo("Ошибка соединения");
+                    showInfo("Ощибка соединения");
                 } catch (ClassNotFoundException e) {
                     System.out.println("Драйвер базы данных не найден: " + e.getMessage());
-                    showInfo("Ошибка соединения");
+                    showInfo("Ощибка соединения");
                 }
                 if (user == null){
                     System.out.println("Неверный логин");
@@ -151,7 +151,6 @@ public class EntranceActivity extends AppCompatActivity {
                         showInfo("Неверный пароль");
                     }else{
                         System.out.println("Всё хорошо");
-                        showInfo("Вход выполнен");
                         Intent intent = new Intent(EntranceActivity.this, MainActivity.class);
                         intent.putExtra("user", user);
                         startActivity(intent);
@@ -180,4 +179,3 @@ public class EntranceActivity extends AppCompatActivity {
     }
 
 }
-

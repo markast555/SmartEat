@@ -10,6 +10,7 @@ import android.graphics.drawable.shapes.RoundRectShape;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.SeekBar;
 
@@ -137,7 +138,24 @@ public class Main2Activity extends AppCompatActivity {
             }
 
         });
+
+        Button buttonProceedToSelection = findViewById(R.id.buttonProceedToSelection);
+        buttonProceedToSelection.setOnClickListener(v -> {
+            Intent intent = new Intent(Main2Activity.this, ManualSearchResultsActivity.class);
+            startActivity(intent);
+            overridePendingTransition(0, 0); // Отключает анимацию перехода
+            finish(); // Завершает ProfileActivity
+        });
+
+        ImageButton imageButtonDiary = findViewById(R.id.imageButtonDiary);
+        imageButtonDiary.setOnClickListener(v -> {
+            Intent intent = new Intent(Main2Activity.this, DiaryActivity.class);
+            startActivity(intent);
+            overridePendingTransition(0, 0); // Отключает анимацию перехода
+            finish(); // Завершает ProfileActivity
+        });
     }
+
 
     private void openProfileActivity() {
         Intent intent = new Intent(Main2Activity.this, ProfileActivity.class);
