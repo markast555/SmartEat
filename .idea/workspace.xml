@@ -92,20 +92,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8cbab7f8-b0cf-4368-a8c7-8af141c8f540" name="Changes" comment="Добавил классы, отвечающих за бд: Diary, Dish, User, Goals, PhysicalActivityLevel, UserRepositoryCrud, Sex; Переименовал пакет com.example.smarteatdemo на com.example.activity; Добавил пакет classes для новых классов; Переименовал id у логина и пароля во фрейме Входа; Поставил активность на кнопку Войти во фрейме Входа; Добавил немного кода в MainActivity; Начал работу ClassesUnitTests">
-      <change beforePath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/apk/debug/app-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/apk/debug/app-debug.apk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/dex/debug/mergeProjectDexDebug/10/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/dex/debug/mergeProjectDexDebug/10/classes.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/tmp/compileDebugJavaWithJavac/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/tmp/compileDebugJavaWithJavac/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/src/main/java/classes/Diary.java" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/src/main/java/classes/Diary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/src/main/java/classes/Dish.java" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/src/main/java/classes/Dish.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/src/main/java/classes/MealType.java" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/src/main/java/classes/MealType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/src/main/java/classes/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/src/main/java/classes/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/src/main/java/classes/UserRepositoryCrud.java" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/src/main/java/classes/UserRepositoryCrud.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/src/test/java/com/example/activities/unitTestForClasses.java" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/src/test/java/com/example/activities/unitTestForClasses.java" afterDir="false" />
-    </list>
+    <list default="true" id="8cbab7f8-b0cf-4368-a8c7-8af141c8f540" name="Changes" comment="Добавил классы, отвечающих за бд: Diary, Dish, User, Goals, PhysicalActivityLevel, UserRepositoryCrud, Sex; Переименовал пакет com.example.smarteatdemo на com.example.activity; Добавил пакет classes для новых классов; Переименовал id у логина и пароля во фрейме Входа; Поставил активность на кнопку Войти во фрейме Входа; Добавил немного кода в MainActivity; Начал работу ClassesUnitTests" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
