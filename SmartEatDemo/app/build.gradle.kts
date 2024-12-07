@@ -27,13 +27,11 @@ android {
     }
 
     compileOptions {
-        compileOptions {
-            sourceCompatibility = JavaVersion.VERSION_1_8 // или VERSION_23
-            targetCompatibility = JavaVersion.VERSION_1_8 // или VERSION_23
-        }
+        // Установка кодировки
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+        encoding = "UTF-8"
     }
-
-
 
     packaging {
         resources {
@@ -53,7 +51,6 @@ android {
 }
 
 dependencies {
-
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.activity)
@@ -86,7 +83,7 @@ dependencies {
     implementation("org.mindrot:jbcrypt:0.4")
     implementation("com.fasterxml.jackson.core:jackson-databind:2.14.0")
 
-    implementation("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.14.0") //Обеспечивает поддержку некоторых типов в jackson (например, LocalDate)  .
+    implementation("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.14.0") // Обеспечивает поддержку некоторых типов в jackson (например, LocalDate).
 }
 
 tasks.withType<Test> {

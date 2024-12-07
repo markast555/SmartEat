@@ -13,6 +13,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.sql.SQLException;
+import java.text.BreakIterator;
 import java.time.LocalDate;
 
 import classes.DatabaseParams;
@@ -102,7 +103,7 @@ public class unitTestForClasses {
     @Test
     @DisplayName("Тестирование нахождения пользователя по логину в табл. users в БД")
     public void testSelectByLoginInBDPositive() throws SQLException, ClassNotFoundException {
-        String login = "k9Ba0G";
+        String login = "7SiXuRkzH";
         User user = userRepositoryCrud.selectByLogin(login);
         System.out.println(user.toString());
         Assert.assertNotNull(user);
@@ -220,6 +221,30 @@ public class unitTestForClasses {
         System.out.println(newUser.getHeight()); // User{height=181}
         Assert.assertNotEquals(user.getHeight(), newUser.getHeight());
         Assert.assertNotEquals(user.hashCode(), newUser.hashCode());
+    }
+
+    @Test
+    public void testParseInLocalDate() throws SQLException, ClassNotFoundException {
+        User user = new User();
+        System.out.println(user.toString());
+
+        String str = "7.12.2024";
+
+        String[] parts = str.split("\\.");
+
+        int dayOfMonth = Integer.parseInt(parts[0]);
+        int month = Integer.parseInt(parts[1]);
+        int year = Integer.parseInt(parts[2]);
+
+        System.out.println("Day: " + dayOfMonth);
+        System.out.println("Month: " + month);
+        System.out.println("Year: " + year);
+
+        user.setDateOfBirth(LocalDate.of(year, month, dayOfMonth));
+
+        System.out.println(user.toString());
+
+        Assert.assertTrue(userRepositoryCrud.create(user));
     }
 
 }
