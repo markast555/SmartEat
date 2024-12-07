@@ -40,6 +40,7 @@
     <string name="goal">Цель</string>
     <string name="save">Сохранить</string>
     <string name="your_login_field">Ваш логин</string>
+    <string name="your_email_field">Ваш Email</string>
     <string name="date">ДД.ММ.ГГГГ</string>
     <string name="your_height">Ваш рост</string>
     <string name="your_weight">Ваш вес</string>

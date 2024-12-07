@@ -136,7 +136,7 @@
             android:focusable="true"
             android:inputType="text"
             android:textColor="@color/dark_text"
-            android:hint="@string/email_field"
+            android:hint="@string/your_email_field"
             app:hintAnimationEnabled="false"/>
         <!--        android:hint="@string/login_field"-->
     </com.google.android.material.textfield.TextInputLayout>
