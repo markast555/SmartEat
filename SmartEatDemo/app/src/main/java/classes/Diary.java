@@ -1,36 +1,27 @@
 package classes;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.UUID;
 
 public class Diary {
 
     private UUID idDiary; //Первичный ключ, уникальное значение
+    private UUID idUser;
+    private UUID idDish;
     private LocalDateTime eatingTime;
-    private Category category;
-    private ArrayList<Dish> dishes = new ArrayList<Dish>();
 
-    public Diary(UUID idDiary, LocalDateTime eatingTime, Category category, ArrayList<Dish> dishes) {
+    public Diary(UUID idDiary, UUID idUser, UUID idDish, LocalDateTime eatingTime) {
         this.idDiary = idDiary;
+        this.idUser = idUser;
+        this.idDish = idDish;
         this.eatingTime = eatingTime;
-        this.category = category;
-        this.dishes = dishes;
-    }
-
-    public Diary(LocalDateTime eatingTime, Category category, ArrayList<Dish> dishes) {
-        this.idDiary = VariableGenerator.getUid();
-        this.eatingTime = eatingTime;
-        this.category = category;
-        this.dishes = dishes;
     }
 
     public Diary(){
         this.idDiary = VariableGenerator.getUid();
+        this.idUser = VariableGenerator.getUid();
+        this.idDish = VariableGenerator.getUid();
         this.eatingTime = LocalDateTime.now();
-        this.category = Category.Lunch;
-        this.dishes.add(new Dish());
     }
 
     public UUID getIdDiary() {
@@ -41,6 +32,22 @@ public class Diary {
         this.idDiary = idDiary;
     }
 
+    public UUID getIdUser() {
+        return idUser;
+    }
+
+    public void setIdUser(UUID idUser) {
+        this.idUser = idUser;
+    }
+
+    public UUID getIdDish() {
+        return idDish;
+    }
+
+    public void setIdDish(UUID idDish) {
+        this.idDish = idDish;
+    }
+
     public LocalDateTime getEatingTime() {
         return eatingTime;
     }
@@ -49,29 +56,13 @@ public class Diary {
         this.eatingTime = eatingTime;
     }
 
-    public Category getCategory() {
-        return category;
-    }
-
-    public void setCategory(Category category) {
-        this.category = category;
-    }
-
-    public ArrayList<Dish> getDishes() {
-        return dishes;
-    }
-
-    public void setDishes(ArrayList<Dish> dishes) {
-        this.dishes = dishes;
-    }
-
     @Override
     public String toString() {
         return "Diary{" +
                 "idDiary=" + idDiary +
+                ", idUser=" + idUser +
+                ", idDish=" + idDish +
                 ", eatingTime=" + eatingTime +
-                ", category=" + category +
-                ", dishes=" + dishes +
                 '}';
     }
 }

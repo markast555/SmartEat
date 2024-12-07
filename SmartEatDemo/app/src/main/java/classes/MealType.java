@@ -5,7 +5,7 @@ public enum MealType {
     Soup("Суп"),
     Drink("Напиток"),
     SideDish("Гарнир"),
-    MainCourse("Основное блюдо"),
+    MainDish("Основное блюдо"),
     Salad("Салат"),
     Dessert("Десерт");
 
