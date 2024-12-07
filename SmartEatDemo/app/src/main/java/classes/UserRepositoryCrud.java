@@ -102,7 +102,7 @@ public class UserRepositoryCrud{
 
     public boolean create(User user) throws SQLException, ClassNotFoundException {
         boolean result = false;
-
+        user.setCalorieNorm(user.countCalorieNorm());
         setConnection();
         try {
             try (PreparedStatement statement = connection.prepareStatement(
@@ -134,9 +134,6 @@ public class UserRepositoryCrud{
     }
 
 
-
-    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
     public boolean checkByOneField(String value, String nameField) throws SQLException, ClassNotFoundException {
         boolean result = false;
 
@@ -166,7 +163,7 @@ public class UserRepositoryCrud{
 
     public int update(User user) throws SQLException, ClassNotFoundException {
         int result = 0;
-
+        user.setCalorieNorm(user.countCalorieNorm());
         setConnection();
         try (PreparedStatement statement = connection.prepareStatement(
                 "UPDATE users SET login = ?, password = ?, sex = ?, date_of_birth = ?, height = ?, weight = ?, level_of_physical_activity = ?, goal = ?, gmail = ?, colorie_norm = ? WHERE users.id_user = ?")) {
