@@ -43,7 +43,7 @@ public class User implements Parcelable, Cloneable {
         this.login = VariableGenerator.generateRandomLogin();
         this.password = VariableGenerator.hashPassword("password");
         this.sex = Sex.MALE;
-        this.dateOfBirth = LocalDate.of(1990, 5, 15);;
+        this.dateOfBirth = LocalDate.of(1990, 5, 15);
         this.height = 180;
         this.weight = 70.5F;
         this.gmail = VariableGenerator.generateRandomGmail();

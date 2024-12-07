@@ -58,6 +58,7 @@ public class UserRepositoryCrud{
             try {
                 Class.forName("com.mysql.jdbc.Driver");
                 connection = DriverManager.getConnection(url, user, password);
+
                 System.out.println("Соединение установлено успешно!");
                 isConnection = true;
             } catch (SQLException e) {
@@ -69,6 +70,7 @@ public class UserRepositoryCrud{
             System.out.println("Соединение уже установлено.");
         }
     }
+
 
     /**
      * Закрывает соединение с БД.
@@ -106,12 +108,12 @@ public class UserRepositoryCrud{
                 statement.setObject(1, user.getIdUser().toString());
                 statement.setString(2, user.getLogin());
                 statement.setString(3, user.getPassword());
-                statement.setString(4, Sex.TranslateFromRusToEng(user.getSex().getType()));
+                statement.setString(4, "m");
                 statement.setDate(5, dateToSqlDate(user.getDateOfBirth()));
                 statement.setInt(6, user.getHeight());
                 statement.setFloat(7, user.getWeight());
-                statement.setString(8, PhysicalActivityLevel.TranslateFromRusToEng(user.getLevelOfPhysicalActivity().getType()));
-                statement.setString(9, Goals.TranslateFromRusToEng(user.getGoals().getType()));
+                statement.setString(8, user.getLevelOfPhysicalActivity().getType());
+                statement.setString(9, user.getGoals().getType());
                 statement.setString(10, user.getGmail());
                 statement.setInt(11, user.getCalorieNorm());
 
@@ -145,12 +147,12 @@ public class UserRepositoryCrud{
                     user = new User(UUID.fromString(resultSet.getString("id_user")),
                             resultSet.getString("login"),
                             resultSet.getString("password"),
-                            Sex.fromType(Sex.TranslateFromEngToRus(resultSet.getString("sex"))),
+                            Sex.fromType(resultSet.getString("sex")),
                             toLocalDate(resultSet.getDate("date_of_birth")),
                             resultSet.getInt("height"),
                             resultSet.getFloat("weight"),
-                            PhysicalActivityLevel.fromType(PhysicalActivityLevel.TranslateFromEngToRus(resultSet.getString("level_of_physical_activity"))),
-                            Goals.fromType(Goals.TranslateFromEngToRus(resultSet.getString("goal"))),
+                            PhysicalActivityLevel.fromType(resultSet.getString("level_of_physical_activity")),
+                            Goals.fromType(resultSet.getString("goal")),
                             resultSet.getString("gmail"),
                             resultSet.getInt("calorie_norm"));
                 } else {
@@ -202,12 +204,12 @@ public class UserRepositoryCrud{
 
             statement.setString(1, user.getLogin());
             statement.setString(2, user.getPassword());
-            statement.setString(3, Sex.TranslateFromRusToEng(user.getSex().getType()));
+            statement.setString(3, user.getSex().getType());
             statement.setDate(4, dateToSqlDate(user.getDateOfBirth()));
             statement.setInt(5, user.getHeight());
             statement.setFloat(6, user.getWeight());
-            statement.setString(7, PhysicalActivityLevel.TranslateFromRusToEng(user.getLevelOfPhysicalActivity().getType()));
-            statement.setString(8, Goals.TranslateFromRusToEng(user.getGoals().getType()));
+            statement.setString(7, user.getLevelOfPhysicalActivity().getType());
+            statement.setString(8, user.getGoals().getType());
             statement.setString(9, user.getGmail());
             statement.setString(10, user.getIdUser().toString()); // Используем setString для id_user
 

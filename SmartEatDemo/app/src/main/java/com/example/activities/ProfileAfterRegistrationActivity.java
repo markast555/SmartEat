@@ -31,6 +31,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialog;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.time.format.ResolverStyle;
 import java.util.Calendar;
 
 import classes.DatabaseParams;
@@ -252,7 +253,6 @@ public class ProfileAfterRegistrationActivity extends AppCompatActivity {
     }
 
     public void toMain(View v){
-
         System.out.println(user.toString());
 
         System.out.println("sex = " + sex);
@@ -263,17 +263,18 @@ public class ProfileAfterRegistrationActivity extends AppCompatActivity {
         System.out.println("autoCompleteTextViewGoalAfter = " + autoCompleteTextViewGoalAfter.getText());
 
         if (sex != null && !editTextDateOfBirthAfter.getText().toString().equals("") &&  !editTextHeight.getText().toString().equals("") && !editTextWeight.getText().toString().equals("") && !autoCompleteTextViewLevelOfPhysicalActivityAfter.getText().toString().equals("") && !autoCompleteTextViewGoalAfter.getText().toString().equals("")) {
-
             try {
-                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
+
+                String str = String.valueOf(editTextDateOfBirthAfter.getText());
+                String[] parts = str.split("\\.");
+                int dayOfMonth = Integer.parseInt(parts[0]);
+                int month = Integer.parseInt(parts[1]);
+                int year = Integer.parseInt(parts[2]);
+                user.setDateOfBirth(LocalDate.of(year, month, dayOfMonth));
+
 
                 user.setIdUser(VariableGenerator.getUid());
                 user.setSex(sex);
-
-                String dateString = editTextDateOfBirthAfter.getText().toString();
-                LocalDate dateOfBirth = LocalDate.parse(dateString, formatter);
-                user.setDateOfBirth(dateOfBirth);
-
                 user.setHeight(Integer.parseInt(editTextHeight.getText().toString()));
                 user.setWeight(Float.parseFloat(editTextWeight.getText().toString()));
                 user.setLevelOfPhysicalActivity(PhysicalActivityLevel.fromType(autoCompleteTextViewLevelOfPhysicalActivityAfter.getText().toString()));
@@ -293,6 +294,7 @@ public class ProfileAfterRegistrationActivity extends AppCompatActivity {
                     userRepositoryCrud.setConnectionParameters(DatabaseParams.getUrl(), DatabaseParams.getUser(), DatabaseParams.getPassword());
                     boolean isCreate = false;
                     try {
+                        System.out.println(user.toString());
                         isCreate = userRepositoryCrud.create(user);
                     } catch (SQLException e) {
                         System.out.println("Ошибка подключения к базе данных: " + e.getMessage());
