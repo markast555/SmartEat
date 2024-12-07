@@ -58,7 +58,6 @@ public class UserRepositoryCrud{
             try {
                 Class.forName("com.mysql.jdbc.Driver");
                 connection = DriverManager.getConnection(url, user, password);
-
                 System.out.println("Соединение установлено успешно!");
                 isConnection = true;
             } catch (SQLException e) {
@@ -70,7 +69,6 @@ public class UserRepositoryCrud{
             System.out.println("Соединение уже установлено.");
         }
     }
-
 
     /**
      * Закрывает соединение с БД.
@@ -108,7 +106,7 @@ public class UserRepositoryCrud{
                 statement.setObject(1, user.getIdUser().toString());
                 statement.setString(2, user.getLogin());
                 statement.setString(3, user.getPassword());
-                statement.setString(4, "m");
+                statement.setString(4, user.getSex().getType());
                 statement.setDate(5, dateToSqlDate(user.getDateOfBirth()));
                 statement.setInt(6, user.getHeight());
                 statement.setFloat(7, user.getWeight());
