@@ -1,8 +1,10 @@
 package classes;
 
+import android.os.Parcel;
+import android.os.Parcelable;
 import java.util.UUID;
 
-public class Dish {
+public class Dish implements Parcelable {
 
     private UUID idDish; //Первичный ключ, уникальное значение
     private String name; //Уникальное значение
@@ -10,19 +12,19 @@ public class Dish {
     private MealType mealType;
     private String description;
 
-    public Dish( UUID idDish, String name, MealType mealType, int calorieContent,  String description) {
+    public Dish( UUID idDish, String name, int calorieContent, MealType mealType,  String description) {
         this.idDish = idDish;
         this.name = name;
-        this.mealType = mealType;
         this.calorieContent = calorieContent;
+        this.mealType = mealType;
         this.description = description;
     }
 
     public Dish() {
         this.idDish = VariableGenerator.getUid();
         this.name = "Цезарь";
-        this.mealType = MealType.Salad;
         this.calorieContent = 350;
+        this.mealType = MealType.Salad;
         this.description = "Салат с курицей и пармезаном";
     }
 
@@ -76,5 +78,40 @@ public class Dish {
                 ", mealType=" + mealType +
                 ", description='" + description + '\'' +
                 '}';
+    }
+
+    // Parcelable реализация
+    protected Dish(Parcel in) {
+        idDish = (UUID) in.readSerializable();
+        name = in.readString();
+        calorieContent = in.readInt();
+        mealType = (MealType) in.readSerializable();
+        description = in.readString();
+    }
+
+    public static final Creator<Dish> CREATOR = new Creator<Dish>() {
+        @Override
+        public Dish createFromParcel(Parcel in) {
+            return new Dish(in);
+        }
+
+        @Override
+        public Dish[] newArray(int size) {
+            return new Dish[size];
+        }
+    };
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeSerializable(idDish);
+        dest.writeString(name);
+        dest.writeInt(calorieContent);
+        dest.writeSerializable(mealType);
+        dest.writeString(description);
     }
 }

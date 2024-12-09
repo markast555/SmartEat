@@ -1,7 +1,5 @@
 package classes;
 
-//import java.sql.SQType;
-
 import java.sql.*;
 import java.time.Instant;
 import java.time.LocalDate;
@@ -10,7 +8,8 @@ import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.List;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.UUID;
 
 import java.sql.Connection;
@@ -103,6 +102,7 @@ public class UserRepositoryCrud{
     public boolean create(User user) throws SQLException, ClassNotFoundException {
         boolean result = false;
         user.setCalorieNorm(user.countCalorieNorm());
+        System.out.println(user.getCalorieNorm());
         setConnection();
         try {
             try (PreparedStatement statement = connection.prepareStatement(
@@ -164,9 +164,12 @@ public class UserRepositoryCrud{
     public int update(User user) throws SQLException, ClassNotFoundException {
         int result = 0;
         user.setCalorieNorm(user.countCalorieNorm());
+
+        System.out.println(user.toString());
+
         setConnection();
         try (PreparedStatement statement = connection.prepareStatement(
-                "UPDATE users SET login = ?, password = ?, sex = ?, date_of_birth = ?, height = ?, weight = ?, level_of_physical_activity = ?, goal = ?, gmail = ?, colorie_norm = ? WHERE users.id_user = ?")) {
+                "UPDATE users SET login = ?, password = ?, sex = ?, date_of_birth = ?, height = ?, weight = ?, level_of_physical_activity = ?, goal = ?, gmail = ?, calorie_norm = ? WHERE users.id_user = ?")) {
 
             statement.setString(1, user.getLogin());
             statement.setString(2, user.getPassword());
@@ -232,8 +235,8 @@ public class UserRepositoryCrud{
                 if (resultSet.next()) {
                     dish = new Dish(UUID.fromString(resultSet.getString("id_dish")),
                             resultSet.getString("name"),
-                            MealType.fromType(resultSet.getString("meal_type")),
                             resultSet.getInt("calorie_content"),
+                            MealType.fromType(resultSet.getString("meal_type")),
                             resultSet.getString("description"));
                 } else {
                     System.out.println("Данные не найдены");
@@ -263,8 +266,8 @@ public class UserRepositoryCrud{
                 if (resultSet.next()) {
                     dish = new Dish(UUID.fromString(resultSet.getString("id_dish")),
                             resultSet.getString("name"),
-                            MealType.fromType(resultSet.getString("meal_type")),
                             resultSet.getInt("calorie_content"),
+                            MealType.fromType(resultSet.getString("meal_type")),
                             resultSet.getString("description"));
                 } else {
                     System.out.println("Данные не найдены");
@@ -285,12 +288,16 @@ public class UserRepositoryCrud{
         setConnection();
         try {
             try (PreparedStatement statement = connection.prepareStatement(
-                    "INSERT INTO diary (id_diary, id_user, id_dish, eating_time) VALUES (?,?,?,?)")) {
+                    "INSERT INTO diary (id_diary, id_user, eating_time, name, calorie_content, meal_type, description) VALUES (?,?,?,?,?,?,?)")) {
 
                 statement.setString(1, diary.getIdDiary().toString());
                 statement.setString(2, diary.getIdUser().toString());
-                statement.setString(3, diary.getIdDish().toString());
-                statement.setTimestamp(4, toSqlTimestamp(diary.getEatingTime()));
+                statement.setTimestamp(3, toSqlTimestamp(diary.getEatingTime()));
+                statement.setString(4, diary.getDish().getName());
+                statement.setInt(5, diary.getDish().getCalorieContent());
+                statement.setString(6, diary.getDish().getMealType().getType());
+                statement.setString(7, diary.getDish().getDescription());
+
 
                 statement.execute();
                 result = true;
@@ -341,13 +348,14 @@ public class UserRepositoryCrud{
         return user;
     }
 
-    public List<Diary> findRecordingsInDiaryByUserId(UUID userId) throws SQLException, ClassNotFoundException {
-        List<Diary> diaries = new ArrayList<>();
+
+    public ArrayList<Diary> findRecordingsInDiaryByUserId(UUID userId) throws SQLException, ClassNotFoundException {
+        ArrayList<Diary> recordings = new ArrayList<>();
 
         setConnection(); // Установите соединение с базой данных
 
         try (PreparedStatement statement = connection.prepareStatement(
-                "SELECT id_diary, id_user, id_dish, eating_time FROM diary WHERE id_user = ?")) {
+                "SELECT id_diary, id_user, eating_time, name, calorie_content, meal_type, description FROM diary WHERE id_user = ?")) {
 
             // Устанавливаем значение параметра
             statement.setString(1, userId.toString());
@@ -359,9 +367,11 @@ public class UserRepositoryCrud{
 
                     Diary diary = new Diary(UUID.fromString(resultSet.getString("id_diary")),
                             UUID.fromString(resultSet.getString("id_user")),
-                            UUID.fromString(resultSet.getString("id_dish")),
-                            localDateTime);
-                    diaries.add(diary);
+                            localDateTime,
+                            new Dish(null,
+                                    resultSet.getString("name"), resultSet.getInt("calorie_content"),
+                                    MealType.fromType(resultSet.getString("meal_type")), resultSet.getString("description")));
+                    recordings.add(diary);
                 }
             }
         } catch (SQLException e) {
@@ -370,9 +380,18 @@ public class UserRepositoryCrud{
             closeConnection(); // Закрываем соединение в блоке finally
         }
 
-        return diaries;
-    }
+        if (recordings.size() > 1){
+            // Сортировка по полю eatingTime
+            Collections.sort(recordings, new Comparator<Diary>() {
+                @Override
+                public int compare(Diary d1, Diary d2) {
+                    return d2.getEatingTime().compareTo(d1.getEatingTime()); // Изменено на d2 и d1
+                }
+            });
+        }
 
+        return recordings;
+    }
 
     private static LocalDateTime toLocalDateTime(Timestamp timestamp) {
         if (timestamp == null) {

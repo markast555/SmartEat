@@ -15,9 +15,6 @@ import androidx.core.view.WindowInsetsCompat;
 
 import android.widget.EditText;
 import android.widget.Toast;
-
-
-import java.nio.charset.StandardCharsets;
 import java.sql.SQLException;
 
 import classes.DatabaseParams;
@@ -33,17 +30,6 @@ public class EntranceActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-//        System.out.println("Я в onCreate");
-//        try {
-//            User user = getIntent().getParcelableExtra("user"); // Получаем объект User
-//        } catch (NullPointerException e) {
-//            // Обработка NullPointerException
-//            System.out.println("Caught NullPointerException: " + e.getMessage());
-//        } catch (Exception e) {
-//            // Обработка других исключений, если необходимо
-//            System.out.println("Caught Exception: " + e.getMessage());
-//        }
 
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);

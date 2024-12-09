@@ -1,7 +1,5 @@
 package classes;
 
-import java.util.Objects;
-
 public enum Goals {
     WeightLoss("Снижение веса"),
     WeightGain("Набор веса"),

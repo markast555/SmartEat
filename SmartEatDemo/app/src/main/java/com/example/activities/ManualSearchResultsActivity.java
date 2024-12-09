@@ -2,6 +2,9 @@ package com.example.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.util.TypedValue;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -16,14 +19,27 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+import classes.DatabaseParams;
+import classes.Dish;
 import classes.DishAdapter;
+import classes.User;
+import classes.UserRepositoryCrud;
 
 public class ManualSearchResultsActivity extends AppCompatActivity {
 
+    private EditText editTextEntranceNameOfDish;
     private ListView dishesList;
+    private User user = null;
+    private ArrayList<Dish> dishes = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        user = getIntent().getParcelableExtra("user");
+
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.manual_search_results_frame);
@@ -33,30 +49,14 @@ public class ManualSearchResultsActivity extends AppCompatActivity {
             return insets;
         });
         dishesList = findViewById(R.id.listViewDishes);
-        //ListView dishesList = (ListView) findViewById(R.id.listViewDishes);
-
-        String[] dishes = {"Буду быть v2", "Пёс v2", "Ёк Ёк v2", "В полупустой хате v2",
-                "Лавина v2", "Свиноферма v2", "Из говна и палок v2", "Метамарфоза v2",
-                "Стая 1993 v2", "Королева v2", "Живой v2", "Зомби надо хоронить v2",
-                "Удочка для охоты v2", "Двойной агент v2", "Спасибо за опыт", "Гибрид",
-                "Как у людей"};
-
-        String[] masses = {"300г", "150г", "250г", "100г", "300г", "300г", "50кг", "100г",
-                "100г", "450г", "150г", "250г", "100г", "250г", "150г", "250г", "300г"};
-
-        DishAdapter dishAdapter = new DishAdapter(this, dishes);
-        dishesList.setAdapter(dishAdapter);
 
         dishesList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getApplicationContext(), masses[position], Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Вы выбрали: " + dishes.get(position).getName(), Toast.LENGTH_SHORT).show();
             }
-
-
-
-
         });
+
 
         setupUI();
     }
@@ -68,25 +68,19 @@ public class ManualSearchResultsActivity extends AppCompatActivity {
             return insets;
         });
 
+        editTextEntranceNameOfDish = findViewById(R.id.editTextEntranceNameOfDish);
+        addTextWatcherEditText(editTextEntranceNameOfDish);
+
         ImageButton imageButtonHome = findViewById(R.id.imageButtonHome);
-        imageButtonHome.setOnClickListener(v -> {
-            Intent intent = new Intent(ManualSearchResultsActivity.this, Main2Activity.class);
-            startActivity(intent);
-            overridePendingTransition(0, 0); // Отключает анимацию перехода
-            finish(); // Завершает ProfileActivity
-        });
+        imageButtonHome.setOnClickListener(v -> navigateToMainActivity());
 
         ImageButton imageButtonBack = findViewById(R.id.imageButtonBack);
-        imageButtonBack.setOnClickListener(v -> {
-            Intent intent = new Intent(ManualSearchResultsActivity.this, Main2Activity.class);
-            startActivity(intent);
-            overridePendingTransition(0, 0); // Отключает анимацию перехода
-            finish(); // Завершает ProfileActivity
-        });
+        imageButtonBack.setOnClickListener(v -> navigateToMainActivity());
 
         ImageButton imageButtonDiary = findViewById(R.id.imageButtonDiary);
         imageButtonDiary.setOnClickListener(v -> {
             Intent intent = new Intent(ManualSearchResultsActivity.this, DiaryActivity.class);
+            intent.putExtra("user", user);
             startActivity(intent);
             overridePendingTransition(0, 0); // Отключает анимацию перехода
             finish(); // Завершает ProfileActivity
@@ -95,9 +89,93 @@ public class ManualSearchResultsActivity extends AppCompatActivity {
         ImageButton imageButtonProfile = findViewById(R.id.imageButtonProfile);
         imageButtonProfile.setOnClickListener(v -> {
             Intent intent = new Intent(ManualSearchResultsActivity.this, ProfileActivity.class);
+            intent.putExtra("user", user);
             startActivity(intent);
             overridePendingTransition(0, 0); // Отключает анимацию перехода
             finish(); // Завершает ProfileActivity
+        });
+    }
+
+    private void navigateToMainActivity() {
+        Intent intent = new Intent(ManualSearchResultsActivity.this, Main2Activity.class);
+        intent.putExtra("user", user);
+        startActivity(intent);
+        overridePendingTransition(0, 0); // Отключает анимацию перехода
+        finish(); // Завершает ProfileActivity
+    }
+
+    // Метод для добавления TextWatcher
+    private void addTextWatcherEditText(EditText editText) {
+        editText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                adjustTextSizeEditText(editText);
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {}
+        });
+    }
+
+    // Метод для изменения размера текста
+    private void adjustTextSizeEditText(EditText editText) {
+        int height = editText.getHeight();
+        if (height > 0) {
+            // Пример вычисления размера шрифта
+            float textSize = height / 10f; // Измените делитель по необходимости
+            editText.setTextSize(TypedValue.COMPLEX_UNIT_SP, textSize);
+        }
+    }
+
+    public void clickOnSearch(View v){
+        System.out.println("editTextEntranceNameOfDish = " + editTextEntranceNameOfDish.getText());
+
+        String name = editTextEntranceNameOfDish.getText().toString();
+        dishes.clear();
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                UserRepositoryCrud userRepositoryCrud = new UserRepositoryCrud();
+                userRepositoryCrud.setConnectionParameters(DatabaseParams.getUrl(), DatabaseParams.getUser(), DatabaseParams.getPassword());
+                Dish dish = null;
+                try {
+                    dish = userRepositoryCrud.findDishByName(name);
+                } catch (SQLException e) {
+                    System.out.println("Ошибка подключения к базе данных: " + e.getMessage());
+                    showInfo("Ощибка соединения");
+                } catch (ClassNotFoundException e) {
+                    System.out.println("Драйвер базы данных не найден: " + e.getMessage());
+                    showInfo("Ощибка соединения");
+                }
+
+                if (dish != null) {
+                    System.out.println("Блюдо нашлось");
+                    System.out.println(dish.toString());
+                    dishes.add(dish);
+
+                    // Инициализация адаптера и установка его в ListView
+                    runOnUiThread(() -> {
+                        DishAdapter dishAdapter = new DishAdapter(ManualSearchResultsActivity.this, dishes, user);
+                        dishesList.setAdapter(dishAdapter); // Устанавливаем адаптер
+                    });
+                }else{
+                    System.out.println("Блюдо не найдено");
+                    showInfo("Блюдо не найдено");
+                }
+            }
+        }).start();
+    }
+
+    private void showInfo(String info) {
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                Toast.makeText(ManualSearchResultsActivity.this, info, Toast.LENGTH_SHORT).show();
+            }
         });
     }
 }

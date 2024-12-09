@@ -68,7 +68,7 @@ public class EmailVerificationActivity extends AppCompatActivity {
 
     private void verifyCode() {
         String enteredCode = emailCodeInput.getText().toString();
-        if (true) { //if (enteredCode.equals(verificationCode)) {
+        if (enteredCode.equals(verificationCode)) {
             Toast.makeText(this, "Регистрация успешна!", Toast.LENGTH_LONG).show();
             Intent intent = new Intent(EmailVerificationActivity.this, ProfileAfterRegistrationActivity.class);
             intent.putExtra("user", user);

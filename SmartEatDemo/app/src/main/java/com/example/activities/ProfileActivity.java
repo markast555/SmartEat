@@ -1,7 +1,6 @@
 package com.example.activities;
 
 import android.app.AlertDialog;
-import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
@@ -12,7 +11,6 @@ import android.view.View;
 import android.view.Window;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
-import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -25,12 +23,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.google.android.material.bottomsheet.BottomSheetDialog;
-
 import java.sql.SQLException;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.Calendar;
 import java.util.Objects;
 
 import classes.DatabaseParams;
@@ -38,7 +31,6 @@ import classes.Goals;
 import classes.PhysicalActivityLevel;
 import classes.User;
 import classes.UserRepositoryCrud;
-import classes.VariableGenerator;
 
 public class ProfileActivity extends AppCompatActivity {
 
@@ -59,6 +51,7 @@ public class ProfileActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         user = getIntent().getParcelableExtra("user");
+        System.out.println(user.toString());
 
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
@@ -98,22 +91,26 @@ public class ProfileActivity extends AppCompatActivity {
         imageButtonQuestion = findViewById(R.id.imageButtonQuestion);
 
         ImageButton imageButtonHome = findViewById(R.id.imageButtonHome);
-        imageButtonHome.setOnClickListener(v -> {
-            Intent intent = new Intent(ProfileActivity.this, MainActivity.class);
+        imageButtonHome.setOnClickListener(v -> navigateToMainActivity());
+
+        ImageButton imageButtonBack = findViewById(R.id.imageButtonBack);
+        imageButtonBack.setOnClickListener(v -> navigateToMainActivity());
+
+        ImageButton imageButtonDiary = findViewById(R.id.imageButtonDiary);
+        imageButtonDiary.setOnClickListener(v -> {
+            Intent intent = new Intent(ProfileActivity.this, DiaryActivity.class);
             intent.putExtra("user", user);
             startActivity(intent);
             overridePendingTransition(0, 0); // Отключает анимацию перехода
             finish(); // Завершает ProfileActivity
         });
 
-
-
-//        editTextLogin.setText(user.getLogin());
-//        editTextEmail.setText(user.getGmail());
-//        editTextHeight.setText(String.valueOf(user.getHeight()));
-//        editTextWeight.setText(String.valueOf(user.getWeight()));
-//        autoCompleteTextViewLevelOfPhysicalActivity.setText(user.getLevelOfPhysicalActivity().getType(), false);
-//        autoCompleteTextViewGoal.setText(user.getGoals().getType(), false);
+        editTextLogin.setText(user.getLogin());
+        editTextEmail.setText(user.getGmail());
+        editTextHeight.setText(String.valueOf(user.getHeight()));
+        editTextWeight.setText(String.valueOf(user.getWeight()));
+        autoCompleteTextViewLevelOfPhysicalActivity.setText(user.getLevelOfPhysicalActivity().getType(), false);
+        autoCompleteTextViewGoal.setText(user.getGoals().getType(), false);
 
         addTextWatcherTextView(textViewLogin);
         addTextWatcherEditText(editTextLogin);
@@ -129,6 +126,14 @@ public class ProfileActivity extends AppCompatActivity {
 
         imageButtonQuestion.setOnClickListener(v -> showPhysicalActivityInfoDialog());
 
+    }
+
+    private void navigateToMainActivity() {
+        Intent intent = new Intent(ProfileActivity.this, MainActivity.class);
+        intent.putExtra("user", user);
+        startActivity(intent);
+        overridePendingTransition(0, 0); // Отключает анимацию перехода
+        finish(); // Завершает ProfileActivity
     }
 
 

@@ -66,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         user = getIntent().getParcelableExtra("user"); // Получаем объект User
+        System.out.println(user.toString());
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_frame); // Замените на ваш файл макета
 
@@ -141,6 +142,7 @@ public class MainActivity extends AppCompatActivity {
         ImageButton imageButtonDiary = findViewById(R.id.imageButtonDiary);
         imageButtonDiary.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, DiaryActivity.class);
+            intent.putExtra("user", user);
             startActivity(intent);
             overridePendingTransition(0, 0); // Отключает анимацию перехода
             finish(); // Завершает ProfileActivity

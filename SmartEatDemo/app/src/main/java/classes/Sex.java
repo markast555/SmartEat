@@ -1,7 +1,5 @@
 package classes;
 
-import java.util.Objects;
-
 public enum Sex {
     MALE("м"),
     FEMALE("ж");

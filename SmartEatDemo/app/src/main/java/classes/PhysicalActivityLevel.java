@@ -1,7 +1,5 @@
 package classes;
 
-import java.util.Objects;
-
 public enum PhysicalActivityLevel {
     SedentaryLifeStyle("Очень низкий"),
     LightActivity("Низкий"),

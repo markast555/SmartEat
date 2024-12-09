@@ -86,6 +86,7 @@
         android:layout_height="match_parent"
         android:src="@drawable/magnifier_icon"
         android:background="@color/main"
+        android:onClick="clickOnSearch"
         android:layout_weight="0.3"
         android:layout_gravity="center"
         android:layout_marginStart="10dp"

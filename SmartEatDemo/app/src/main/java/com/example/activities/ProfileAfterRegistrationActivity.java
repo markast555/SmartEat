@@ -30,7 +30,6 @@ import com.google.android.material.bottomsheet.BottomSheetDialog;
 
 import java.sql.SQLException;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 
 import classes.DatabaseParams;
@@ -262,27 +261,31 @@ public class ProfileAfterRegistrationActivity extends AppCompatActivity {
         System.out.println("autoCompleteTextViewLevelOfPhysicalActivityAfter = " + autoCompleteTextViewLevelOfPhysicalActivityAfter.getText());
         System.out.println("autoCompleteTextViewGoalAfter = " + autoCompleteTextViewGoalAfter.getText());
 
-        if (sex != null && !editTextDateOfBirthAfter.getText().toString().equals("") &&  !editTextHeight.getText().toString().equals("") && !editTextWeight.getText().toString().equals("") && !autoCompleteTextViewLevelOfPhysicalActivityAfter.getText().toString().equals("")) {
+        if (sex != null && !editTextDateOfBirthAfter.getText().toString().equals("") &&  !editTextHeight.getText().toString().equals("") && !editTextWeight.getText().toString().equals("") && !autoCompleteTextViewLevelOfPhysicalActivityAfter.getText().toString().equals("") && !autoCompleteTextViewGoalAfter.getText().toString().equals("")) {
 
             try {
-                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
+
+                String str = editTextDateOfBirthAfter.getText().toString();;
+
+                String[] parts = str.split("\\.");
+
+                int dayOfMonth = Integer.parseInt(parts[0]);
+                int month = Integer.parseInt(parts[1]);
+                int year = Integer.parseInt(parts[2]);
+
+                System.out.println("Day: " + dayOfMonth);
+                System.out.println("Month: " + month);
+                System.out.println("Year: " + year);
 
                 user.setIdUser(VariableGenerator.getUid());
                 user.setSex(sex);
 
-                String dateString = editTextDateOfBirthAfter.getText().toString();
-                LocalDate dateOfBirth = LocalDate.parse(dateString, formatter);
-                user.setDateOfBirth(dateOfBirth);
+                user.setDateOfBirth(LocalDate.of(year, month, dayOfMonth));
 
                 user.setHeight(Integer.parseInt(editTextHeight.getText().toString()));
                 user.setWeight(Integer.parseInt(editTextWeight.getText().toString()));
                 user.setLevelOfPhysicalActivity(PhysicalActivityLevel.fromType(autoCompleteTextViewLevelOfPhysicalActivityAfter.getText().toString()));
-
-                if (!autoCompleteTextViewGoalAfter.getText().toString().equals("")) {
-                    user.setGoals(Goals.fromType(autoCompleteTextViewGoalAfter.getText().toString()));
-                }else{
-                    user.setGoals(null);
-                }
+                user.setGoals(Goals.fromType(autoCompleteTextViewGoalAfter.getText().toString()));
 
                 System.out.println("Готово!!!!");
                 System.out.println(user.toString());

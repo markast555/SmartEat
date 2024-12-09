@@ -2,20 +2,18 @@ package com.example.activities;
 
 import static org.junit.Assert.assertEquals;
 
-import android.widget.AutoCompleteTextView;
-import android.widget.EditText;
-import android.widget.ImageButton;
-import android.widget.TextView;
-
 import org.junit.Assert;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.sql.SQLException;
-import java.text.BreakIterator;
 import java.time.LocalDate;
-import java.util.List;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.UUID;
 
 import classes.DatabaseParams;
@@ -23,8 +21,6 @@ import classes.Diary;
 import classes.Dish;
 import classes.Goals;
 import classes.MealType;
-import classes.PhysicalActivityLevel;
-import classes.Sex;
 import classes.User;
 import classes.UserRepositoryCrud;
 import classes.VariableGenerator;
@@ -154,24 +150,6 @@ public class unitTestForClasses {
         Assert.assertFalse(result);
     }
 
-    @Test
-    @DisplayName("Тестирование изменения данных по пользователю в табл. users в БД")
-    public void testUpdate() throws SQLException, ClassNotFoundException {
-
-        String login = "WnUxR";
-        User user = userRepositoryCrud.selectByLogin(login);
-        System.out.println(user.toString());
-        Assert.assertNotNull(user);
-
-        user.setHeight(45);
-        user.setWeight(35);
-        user.setGoals(Goals.ImprovingHealth);
-
-        int result = userRepositoryCrud.update(user);
-
-        Assert.assertNotEquals(0, result);
-    }
-
 
     @Test
     @DisplayName("Тестирование изменения данных в User")
@@ -294,13 +272,13 @@ public class unitTestForClasses {
         System.out.println(user.toString());
         Assert.assertNotNull(user);
 
-        String name = "Пончик";
+        String name = "Спагетти Болоньезе";
         Dish dish = userRepositoryCrud.findDishByName(name);
         System.out.println(dish.toString());
         Assert.assertNotNull(dish);
 
         diary.setIdUser(user.getIdUser());
-        diary.setIdDish(dish.getIdDish());
+        diary.setDish(dish);
 
         System.out.println(diary.toString());
         Assert.assertTrue(userRepositoryCrud.createRecordingInDiary(diary));
@@ -323,6 +301,26 @@ public class unitTestForClasses {
     }
 
     @Test
+    @DisplayName("Тестирование изменения данных по пользователю в табл. users в БД")
+    public void testUpdate() throws SQLException, ClassNotFoundException {
+
+        String login = "1234";
+        User user = userRepositoryCrud.selectByLogin(login);
+        System.out.println(user.toString());
+        Assert.assertNotNull(user);
+
+        user.setHeight(179);
+        user.setWeight(78.4F);
+        user.setGoals(Goals.ImprovingHealth);
+
+        System.out.println(user.toString());
+
+        int result = userRepositoryCrud.update(user);
+
+        Assert.assertNotEquals(0, result);
+    }
+
+    @Test
     @DisplayName("Тестирование нахождений всех блюд определённого пользователя в табл. diary в БД")
     public void testFindRecordingsInDiaryByUserId() throws SQLException, ClassNotFoundException {
 
@@ -331,19 +329,32 @@ public class unitTestForClasses {
         System.out.println(user.toString());
         Assert.assertNotNull(user);
 
-        UUID userId = user.getIdUser();
+        UUID userID = user.getIdUser();
 
-        System.out.println(userId);
+        ArrayList<Diary> recordings = userRepositoryCrud.findRecordingsInDiaryByUserId(userID);
+        Assert.assertTrue(!recordings.isEmpty());
 
-        List<Diary> diaries = userRepositoryCrud.findRecordingsInDiaryByUserId(userId);
-        for (Diary diary: diaries){
-            System.out.println(diary.toString());
-            UUID dishId = diary.getIdDish();
-            Dish dish = userRepositoryCrud.findDishByID(dishId);
-            System.out.println(dish.toString());
-            Assert.assertNotNull(dish);
+        for (Diary recording: recordings){
+            System.out.println(recording.toString());
         }
     }
 
+    @Test
+    @DisplayName("Тестирование на получение строчки даты из Diary")
+    public void testGetDate(){
+        Diary diary = new Diary();
+        String str = diary.getDate();
+        System.out.println(str);
+        Assert.assertNotEquals("Дата не известна", str);
+    }
+
+    @Test
+    @DisplayName("Тестирование на получение строчки времени из Diary")
+    public void testGetTime(){
+        Diary diary = new Diary();
+        String str = diary.getTime();
+        System.out.println(str);
+        Assert.assertNotEquals("Время не известно", str);
+    }
 
 }

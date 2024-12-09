@@ -142,6 +142,7 @@ public class Main2Activity extends AppCompatActivity {
         Button buttonProceedToSelection = findViewById(R.id.buttonProceedToSelection);
         buttonProceedToSelection.setOnClickListener(v -> {
             Intent intent = new Intent(Main2Activity.this, ManualSearchResultsActivity.class);
+            intent.putExtra("user", user);
             startActivity(intent);
             overridePendingTransition(0, 0); // Отключает анимацию перехода
             finish(); // Завершает ProfileActivity
@@ -150,6 +151,7 @@ public class Main2Activity extends AppCompatActivity {
         ImageButton imageButtonDiary = findViewById(R.id.imageButtonDiary);
         imageButtonDiary.setOnClickListener(v -> {
             Intent intent = new Intent(Main2Activity.this, DiaryActivity.class);
+            intent.putExtra("user", user);
             startActivity(intent);
             overridePendingTransition(0, 0); // Отключает анимацию перехода
             finish(); // Завершает ProfileActivity

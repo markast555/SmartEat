@@ -46,6 +46,31 @@
           <theme>@style/Theme.SmartEatDemo</theme>
         </config>
       </layout>
+      <layout url="file://$PROJECT_DIR$/SmartEatDemo/app/src/main/res/layout/diary.xml">
+        <config>
+          <theme>@style/Theme.SmartEatDemo</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/SmartEatDemo/app/src/main/res/layout/diary_date_header.xml">
+        <config>
+          <theme>@style/Theme.SmartEatDemo</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/SmartEatDemo/app/src/main/res/layout/diary_frame.xml">
+        <config>
+          <theme>@style/Theme.SmartEatDemo</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/SmartEatDemo/app/src/main/res/layout/dish.xml">
+        <config>
+          <theme>@style/Theme.SmartEatDemo</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/SmartEatDemo/app/src/main/res/layout/dish_frame.xml">
+        <config>
+          <theme>@style/Theme.SmartEatDemo</theme>
+        </config>
+      </layout>
       <layout url="file://$PROJECT_DIR$/SmartEatDemo/app/src/main/res/layout/email_verification_frame.xml">
         <config>
           <theme>@style/Theme.SmartEatDemo</theme>
@@ -62,6 +87,11 @@
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/SmartEatDemo/app/src/main/res/layout/main_frame.xml">
+        <config>
+          <theme>@style/Theme.SmartEatDemo</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/SmartEatDemo/app/src/main/res/layout/manual_search_results_frame.xml">
         <config>
           <theme>@style/Theme.SmartEatDemo</theme>
         </config>
@@ -93,24 +123,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8cbab7f8-b0cf-4368-a8c7-8af141c8f540" name="Changes" comment="Добавил классы, отвечающих за бд: Diary, Dish, User, Goals, PhysicalActivityLevel, UserRepositoryCrud, Sex; Переименовал пакет com.example.smarteatdemo на com.example.activity; Добавил пакет classes для новых классов; Переименовал id у логина и пароля во фрейме Входа; Поставил активность на кнопку Войти во фрейме Входа; Добавил немного кода в MainActivity; Начал работу ClassesUnitTests">
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SmartEatDemo/app/src/main/java/classes/DiaryDishAdapter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/apk/debug/app-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/apk/debug/app-debug.apk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/apk/debug/output-metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/apk/debug/output-metadata.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/app_metadata/debug/writeDebugAppMetadata/app-metadata.properties" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/app_metadata/debug/writeDebugAppMetadata/app-metadata.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/compatible_screen_manifest/debug/createDebugCompatibleScreenManifests/output-metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/compatible_screen_manifest/debug/createDebugCompatibleScreenManifests/output-metadata.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/processDebugResources/R.jar" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/processDebugResources/R.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/dex/debug/mergeProjectDexDebug/10/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/dex/debug/mergeProjectDexDebug/10/classes.dex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/dex_archive_input_jar_hashes/debug/dexBuilderDebug/out" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/dex_archive_input_jar_hashes/debug/dexBuilderDebug/out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/incremental/debug-mergeJavaRes/merge-state" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/incremental/debug-mergeJavaRes/merge-state" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/incremental/debug/mergeDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/incremental/debug/mergeDebugResources/compile-file-map.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/incremental/debug/mergeDebugResources/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/incremental/debug/mergeDebugResources/merger.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/incremental/debug/packageDebugResources/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/incremental/debug/packageDebugResources/merger.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/androidResources" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/androidResources" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/javaResources0" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/javaResources0" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/linked_resources_binary_format/debug/processDebugResources/linked-resources-binary-format-debug.ap_" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/linked_resources_binary_format/debug/processDebugResources/linked-resources-binary-format-debug.ap_" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/linked_resources_binary_format/debug/processDebugResources/output-metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/linked_resources_binary_format/debug/processDebugResources/output-metadata.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/local_only_symbol_list/debug/parseDebugLocalResources/R-def.txt" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/local_only_symbol_list/debug/parseDebugLocalResources/R-def.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/manifest_merge_blame_file/debug/processDebugMainManifest/manifest-merger-blame-debug-report.txt" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/manifest_merge_blame_file/debug/processDebugMainManifest/manifest-merger-blame-debug-report.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/merged_java_res/debug/mergeDebugJavaResource/base.jar" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/merged_java_res/debug/mergeDebugJavaResource/base.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/merged_manifest/debug/processDebugMainManifest/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/merged_manifest/debug/processDebugMainManifest/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/merged_manifests/debug/processDebugManifest/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/merged_manifests/debug/processDebugManifest/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/merged_res/debug/mergeDebugResources/layout_entrance_frame.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/merged_res/debug/mergeDebugResources/layout_entrance_frame.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/merged_manifests/debug/processDebugManifest/output-metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/merged_manifests/debug/processDebugManifest/output-metadata.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/merged_res/debug/mergeDebugResources/values_values.arsc.flat" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/merged_res/debug/mergeDebugResources/values_values.arsc.flat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/mergeDebugResources.json" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/mergeDebugResources.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-af.json" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-af.json" afterDir="false" />
@@ -235,8 +274,8 @@
       <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values.json" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/single/mergeDebugResources.json" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/single/mergeDebugResources.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/packaged_manifests/debug/processDebugManifestForPackage/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/packaged_manifests/debug/processDebugManifestForPackage/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/packaged_res/debug/packageDebugResources/drawable/rounded_constraint_layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/packaged_res/debug/packageDebugResources/drawable/rounded_constraint_layout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/packaged_res/debug/packageDebugResources/layout/entrance_frame.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/packaged_res/debug/packageDebugResources/layout/entrance_frame.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/packaged_manifests/debug/processDebugManifestForPackage/output-metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/packaged_manifests/debug/processDebugManifestForPackage/output-metadata.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/packaged_res/debug/packageDebugResources/values-night-v8/values-night-v8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/packaged_res/debug/packageDebugResources/values-night-v8/values-night-v8.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/packaged_res/debug/packageDebugResources/values/values.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/packaged_res/debug/packageDebugResources/values/values.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/runtime_symbol_list/debug/processDebugResources/R.txt" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/runtime_symbol_list/debug/processDebugResources/R.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/source_set_path_map/debug/mapDebugSourceSetPaths/file-map.txt" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/source_set_path_map/debug/mapDebugSourceSetPaths/file-map.txt" afterDir="false" />
@@ -244,19 +283,27 @@
       <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/symbol_list_with_package_name/debug/processDebugResources/package-aware-r.txt" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/intermediates/symbol_list_with_package_name/debug/processDebugResources/package-aware-r.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/outputs/logs/manifest-merger-debug-report.txt" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/outputs/logs/manifest-merger-debug-report.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/build/tmp/compileDebugJavaWithJavac/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/build/tmp/compileDebugJavaWithJavac/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/src/main/java/classes/Diary.java" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/src/main/java/classes/Diary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/src/main/java/classes/Dish.java" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/src/main/java/classes/Dish.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/src/main/java/classes/DishAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/src/main/java/classes/DishAdapter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/src/main/java/classes/Goals.java" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/src/main/java/classes/Goals.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/src/main/java/classes/PhysicalActivityLevel.java" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/src/main/java/classes/PhysicalActivityLevel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/src/main/java/classes/Sex.java" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/src/main/java/classes/Sex.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/src/main/java/classes/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/src/main/java/classes/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/src/main/java/classes/UserRepositoryCrud.java" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/src/main/java/classes/UserRepositoryCrud.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/src/main/java/com/example/activities/DiaryActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/src/main/java/com/example/activities/DiaryActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/src/main/java/com/example/activities/DishActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/src/main/java/com/example/activities/DishActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/src/main/java/com/example/activities/EmailVerificationActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/src/main/java/com/example/activities/EmailVerificationActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/src/main/java/com/example/activities/EntranceActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/src/main/java/com/example/activities/EntranceActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/src/main/java/com/example/activities/Main2Activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/src/main/java/com/example/activities/Main2Activity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/src/main/java/com/example/activities/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/src/main/java/com/example/activities/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/src/main/java/com/example/activities/ManualSearchResultsActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/src/main/java/com/example/activities/ManualSearchResultsActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/src/main/java/com/example/activities/ProfileActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/src/main/java/com/example/activities/ProfileActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/src/main/java/com/example/activities/ProfileAfterRegistrationActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/src/main/java/com/example/activities/ProfileAfterRegistrationActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/src/main/java/com/example/activities/RegistrationActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/src/main/java/com/example/activities/RegistrationActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/src/main/res/layout/profile_after_registration_frame.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/src/main/res/layout/profile_after_registration_frame.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/src/main/res/layout/diary.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/src/main/res/layout/diary.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/src/main/res/layout/dish_frame.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/src/main/res/layout/dish_frame.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/src/main/res/layout/manual_search_results_frame.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/src/main/res/layout/manual_search_results_frame.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/src/main/res/layout/profile_frame.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/src/main/res/layout/profile_frame.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SmartEatDemo/app/src/test/java/com/example/activities/unitTestForClasses.java" beforeDir="false" afterPath="$PROJECT_DIR$/SmartEatDemo/app/src/test/java/com/example/activities/unitTestForClasses.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -360,7 +407,7 @@
     </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="markast" />
+        <entry key="$PROJECT_DIR$" value="kivanov" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -408,10 +455,16 @@
     "Gradle.unitTestForClasses.checkByOneField_Login_Positive.executor": "Run",
     "Gradle.unitTestForClasses.executor": "Run",
     "Gradle.unitTestForClasses.testCloseConnection.executor": "Run",
+    "Gradle.unitTestForClasses.testCreateRecordingInDiary.executor": "Run",
     "Gradle.unitTestForClasses.testCreateUserInBD.executor": "Run",
     "Gradle.unitTestForClasses.testCreateUserInBD_And_SelectByLoginIn_And_HashPasswordPositive.executor": "Run",
+    "Gradle.unitTestForClasses.testFindRecordingsInDiaryByUserId.executor": "Run",
     "Gradle.unitTestForClasses.testGenerateRandomLogin.executor": "Run",
     "Gradle.unitTestForClasses.testGenerateRandomPhoneNumber.executor": "Run",
+    "Gradle.unitTestForClasses.testGetDataAndTime.executor": "Run",
+    "Gradle.unitTestForClasses.testGetDate.executor": "Run",
+    "Gradle.unitTestForClasses.testGetRecordingDishesOfUser.executor": "Run",
+    "Gradle.unitTestForClasses.testGetTime.executor": "Run",
     "Gradle.unitTestForClasses.testHashPassword.executor": "Run",
     "Gradle.unitTestForClasses.testHashPasswordNegative.executor": "Run",
     "Gradle.unitTestForClasses.testHashPasswordPositive.executor": "Run",
@@ -420,13 +473,15 @@
     "Gradle.unitTestForClasses.testSelectByLoginInBDPositive.executor": "Run",
     "Gradle.unitTestForClasses.testSelectByLoginNegative.executor": "Run",
     "Gradle.unitTestForClasses.testSetConnection.executor": "Run",
+    "Gradle.unitTestForClasses.testUpdate.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
     "com.google.services.firebase.aqiPopupShown": "true",
-    "git-widget-placeholder": "kivanov",
+    "git-widget-placeholder": "dev",
     "kotlin-language-version-configured": "true",
     "last_directory_selection": "D:/SmartEatDemo/SmartEatDemo/app/src/main/java",
     "last_opened_file_path": "D:/AndroidStudioProjects1",
@@ -1052,7 +1107,7 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="unitTestForClasses.checkByOneField_Email_Negative" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="unitTestForClasses.testFindRecordingsInDiaryByUserId" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/SmartEatDemo" />
@@ -1065,7 +1120,7 @@
           <list>
             <option value=":app:testDebugUnitTest" />
             <option value="--tests" />
-            <option value="&quot;com.example.activities.unitTestForClasses.checkByOneField_Email_Negative&quot;" />
+            <option value="&quot;com.example.activities.unitTestForClasses.testFindRecordingsInDiaryByUserId&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -1076,7 +1131,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="unitTestForClasses.checkByOneField_Email_Positive" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="unitTestForClasses.testGetDataAndTime" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/SmartEatDemo" />
@@ -1089,7 +1144,7 @@
           <list>
             <option value=":app:testDebugUnitTest" />
             <option value="--tests" />
-            <option value="&quot;com.example.activities.unitTestForClasses.checkByOneField_Email_Positive&quot;" />
+            <option value="&quot;com.example.activities.unitTestForClasses.testGetDataAndTime&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -1100,7 +1155,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="unitTestForClasses.checkByOneField_Login_Negative" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="unitTestForClasses.testGetDate" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/SmartEatDemo" />
@@ -1113,7 +1168,7 @@
           <list>
             <option value=":app:testDebugUnitTest" />
             <option value="--tests" />
-            <option value="&quot;com.example.activities.unitTestForClasses.checkByOneField_Login_Negative&quot;" />
+            <option value="&quot;com.example.activities.unitTestForClasses.testGetDate&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -1124,7 +1179,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="unitTestForClasses.checkByOneField_Login_Positive" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="unitTestForClasses.testGetTime" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/SmartEatDemo" />
@@ -1137,7 +1192,7 @@
           <list>
             <option value=":app:testDebugUnitTest" />
             <option value="--tests" />
-            <option value="&quot;com.example.activities.unitTestForClasses.checkByOneField_Login_Positive&quot;" />
+            <option value="&quot;com.example.activities.unitTestForClasses.testGetTime&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -1151,10 +1206,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Android App.EntranceActivity" />
-        <item itemvalue="Gradle.unitTestForClasses.checkByOneField_Email_Positive" />
-        <item itemvalue="Gradle.unitTestForClasses.checkByOneField_Email_Negative" />
-        <item itemvalue="Gradle.unitTestForClasses.checkByOneField_Login_Negative" />
-        <item itemvalue="Gradle.unitTestForClasses.checkByOneField_Login_Positive" />
+        <item itemvalue="Gradle.unitTestForClasses.testGetTime" />
+        <item itemvalue="Gradle.unitTestForClasses.testGetDate" />
+        <item itemvalue="Gradle.unitTestForClasses.testFindRecordingsInDiaryByUserId" />
+        <item itemvalue="Gradle.unitTestForClasses.testGetDataAndTime" />
       </list>
     </recent_temporary>
   </component>

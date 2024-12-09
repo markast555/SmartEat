@@ -247,7 +247,6 @@ public class User implements Parcelable, Cloneable {
             return 0;
         }
         double BMR = 0;
-        System.out.println(sex.getType());
         if (Objects.equals(sex.getType(), "м")){
             BMR = 66 + (13.7 * weight) + (5 * height) - (6.8 * age);
         } else{

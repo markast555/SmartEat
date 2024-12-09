@@ -101,6 +101,7 @@ id linearLayoutDishInfo
 id linearLayoutEating
 id linearLayoutLeft
 id linearLayoutMain
+id linearLayoutMainDiary
 id linearLayoutRight
 id linerLayoutEntrance
 id linerLayoutToRegistration
