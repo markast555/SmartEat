@@ -68,17 +68,18 @@ public class DiaryActivity extends AppCompatActivity {
                             dishesList.setOnItemClickListener((parent, view, position, id) -> {
                                 Toast.makeText(getApplicationContext(), "Даты: " + dishes[0].get(position).getEatingTime().toString(), Toast.LENGTH_SHORT).show();
                             });
-                        } else {
-                            showInfo("Ошибка получения данных");
                         }
                     });
 
                 } catch (SQLException e) {
                     System.err.println("Не удалось получить записи из базы данных: " + e.getMessage());
+                    showInfo("Ошибка получения данных");
                 } catch (ClassNotFoundException e) {
                     System.err.println("Класс не найден при получении записей: " + e.getMessage());
+                    showInfo("Ошибка получения данных");
                 } catch (Exception e) {
                     System.err.println("Произошла ошибка: " + e.getMessage());
+                    showInfo("Ошибка получения данных");
                 }
             }
         }).start();

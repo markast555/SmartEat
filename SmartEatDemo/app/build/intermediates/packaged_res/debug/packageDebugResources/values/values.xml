@@ -88,7 +88,7 @@
     <string name="password_confirmation">Подтверждение пароля</string>
     <string name="password_field">Пароль</string>
     <string name="password_forgot"><u>Забыли пароль?</u></string>
-    <string name="physical_activity_info">- Очень низки1 (малоподвижный)\n\n- Низкий (легкие упражнения 1-3 дня в неделю)\n\n- Умеренный (умеренные упражнения 3-5 дней в неделю)\n\n- Высокий (интенсивные упражнения 6-7 дней в неделю)\n\n- Очень высокий (физическая работа или тренировки дважды в день)</string>
+    <string name="physical_activity_info">- Очень низкий (малоподвижный)\n\n- Низкий (легкие упражнения 1-3 дня в неделю)\n\n- Умеренный (умеренные упражнения 3-5 дней в неделю)\n\n- Высокий (интенсивные упражнения 6-7 дней в неделю)\n\n- Очень высокий (физическая работа или тренировки дважды в день)</string>
     <string name="profile">Профиль</string>
     <string name="registration_text">Регистрация</string>
     <string name="registration_u_text"><u>Регистрация</u></string>

@@ -89,10 +89,10 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:focusable="true"
+            android:hint="@string/your_login_field"
             android:inputType="text"
             android:textColor="@color/dark_text"
-            android:hint="@string/your_login_field"
-            app:hintAnimationEnabled="false"/>
+            app:hintAnimationEnabled="false" />
         <!--        android:hint="@string/login_field"-->
     </com.google.android.material.textfield.TextInputLayout>
 
