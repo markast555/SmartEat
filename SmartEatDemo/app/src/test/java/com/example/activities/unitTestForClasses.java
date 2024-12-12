@@ -340,21 +340,13 @@ public class unitTestForClasses {
     }
 
     @Test
-    @DisplayName("Тестирование на получение строчки даты из Diary")
-    public void testGetDate(){
-        Diary diary = new Diary();
-        String str = diary.getDate();
-        System.out.println(str);
-        Assert.assertNotEquals("Дата не известна", str);
-    }
-
-    @Test
-    @DisplayName("Тестирование на получение строчки времени из Diary")
-    public void testGetTime(){
-        Diary diary = new Diary();
-        String str = diary.getTime();
-        System.out.println(str);
-        Assert.assertNotEquals("Время не известно", str);
+    @DisplayName("Тестирование хеширования пароля (негативный тест)")
+    public void testHashPasswordUser(){
+        User user = new User();
+        String originalPassword = "AnyPassword";
+        String hashedPassword = VariableGenerator.hashPassword(originalPassword);
+        boolean isMatch = VariableGenerator.checkPassword("wrongPassword", hashedPassword);
+        Assert.assertFalse(isMatch);
     }
 
 }

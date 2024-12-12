@@ -103,6 +103,7 @@ public class UserRepositoryCrud{
         boolean result = false;
         user.setCalorieNorm(user.countCalorieNorm());
         System.out.println(user.getCalorieNorm());
+        user.setPassword(VariableGenerator.hashPassword(user.getPassword()));
         setConnection();
         try {
             try (PreparedStatement statement = connection.prepareStatement(

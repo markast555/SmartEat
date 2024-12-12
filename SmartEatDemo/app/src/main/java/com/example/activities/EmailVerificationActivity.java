@@ -12,6 +12,7 @@ import java.util.Random;
 
 import classes.MailRuEmailService;
 import classes.User;
+import classes.VariableGenerator;
 
 public class EmailVerificationActivity extends AppCompatActivity {
 
@@ -33,6 +34,7 @@ public class EmailVerificationActivity extends AppCompatActivity {
         resendCodeButton = findViewById(R.id.resend_code_button);
 
         user = getIntent().getParcelableExtra("user"); // Получаем объект User
+
         userEmail = getIntent().getStringExtra("userEmail");
         emailService = new MailRuEmailService("smarteat@mail.ru", "rX9XvCHCumaYbL0C4vsJ");
 

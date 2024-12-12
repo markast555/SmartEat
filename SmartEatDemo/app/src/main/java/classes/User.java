@@ -27,7 +27,7 @@ public class User implements Parcelable, Cloneable {
     public User(UUID idUser, String login, String password, Sex sex, LocalDate dateOfBirth, int height, float weight, PhysicalActivityLevel levelOfPhysicalActivity, Goals goals, String gmail, int calorieNorm) {
         this.idUser = idUser;
         this.login = login;
-        this.password = VariableGenerator.hashPassword(password);
+        this.password = password;
         this.sex = sex;
         this.dateOfBirth = dateOfBirth;
         this.height = height;

@@ -131,8 +131,7 @@ public class EntranceActivity extends AppCompatActivity {
                     showInfo("Неверный логин");
 
                 }else{
-
-                    if (VariableGenerator.checkPassword(password, user.getPassword())){
+                    if (!VariableGenerator.checkPassword(password, user.getPassword())){
                         System.out.println("Неверный пароль");
                         showInfo("Неверный пароль");
                     }else{
