@@ -121,10 +121,10 @@ public class EntranceActivity extends AppCompatActivity {
                     user = userRepositoryCrud.selectByLogin(login);
                 } catch (SQLException e) {
                     System.out.println("Ошибка подключения к базе данных: " + e.getMessage());
-                    showInfo("Ощибка соединения");
+                    showInfo("Ошибка соединения");
                 } catch (ClassNotFoundException e) {
                     System.out.println("Драйвер базы данных не найден: " + e.getMessage());
-                    showInfo("Ощибка соединения");
+                    showInfo("Ошибка соединения");
                 }
                 if (user == null){
                     System.out.println("Неверный логин");

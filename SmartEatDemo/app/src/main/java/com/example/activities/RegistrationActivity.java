@@ -136,10 +136,10 @@ public class RegistrationActivity extends AppCompatActivity {
                                         emailExist = userRepositoryCrud.checkByOneField(editTextEmail.getText().toString(), "gmail");
                                     } catch (SQLException e) {
                                         System.out.println("Ошибка подключения к базе данных: " + e.getMessage());
-                                        showInfo("Ощибка соединения");
+                                        showInfo("Ошибка соединения");
                                     } catch (ClassNotFoundException e) {
                                         System.out.println("Драйвер базы данных не найден: " + e.getMessage());
-                                        showInfo("Ощибка соединения");
+                                        showInfo("Ошибка соединения");
                                     }
                                     if (loginExist){
                                         System.out.println("Такой логин уже существует");

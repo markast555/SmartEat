@@ -146,10 +146,10 @@ public class ManualSearchResultsActivity extends AppCompatActivity {
                     dish = userRepositoryCrud.findDishByName(name);
                 } catch (SQLException e) {
                     System.out.println("Ошибка подключения к базе данных: " + e.getMessage());
-                    showInfo("Ощибка соединения");
+                    showInfo("Ошибка соединения");
                 } catch (ClassNotFoundException e) {
                     System.out.println("Драйвер базы данных не найден: " + e.getMessage());
-                    showInfo("Ощибка соединения");
+                    showInfo("Ошибка соединения");
                 }
 
                 if (dish != null) {
