@@ -3,9 +3,9 @@ package classes;
 
 public class DatabaseParams {
 
-    static private String url = "jdbc:mysql://sql7.freesqldatabase.com:3306/sql7750349?useUnicode=true&characterEncoding=UTF-8";
-    static private String user = "sql7750349"; // Имя пользователя
-    static private String password = "ZX6VxDUCsa"; // Ваш пароль
+    static private String url = "jdbc:mysql://sql3.freesqldatabase.com:3306/sql3752472?useUnicode=true&characterEncoding=UTF-8";
+    static private String user = "sql3752472"; // Имя пользователя
+    static private String password = "Me3XJK4T2F"; // Ваш пароль
 
     public static String getUrl() {
         return url;
