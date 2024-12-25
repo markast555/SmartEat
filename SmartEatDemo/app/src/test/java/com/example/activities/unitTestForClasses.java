@@ -2,6 +2,8 @@ package com.example.activities;
 
 import static org.junit.Assert.assertEquals;
 
+import static classes.PhysicalActivityLevel.ModerateActivity;
+
 import org.junit.Assert;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -21,6 +23,8 @@ import classes.Diary;
 import classes.Dish;
 import classes.Goals;
 import classes.MealType;
+import classes.PhysicalActivityLevel;
+import classes.Sex;
 import classes.User;
 import classes.UserRepositoryCrud;
 import classes.VariableGenerator;
@@ -212,8 +216,7 @@ public class unitTestForClasses {
     @Test
     @DisplayName("Тестирование парсинга строки в LocalDate и занесения записи с данной датой в бд")
     public void testCountCalorieNorm() throws SQLException, ClassNotFoundException {
-        String login = "1234";
-        User user = userRepositoryCrud.selectByLogin(login);
+        User user = new User(VariableGenerator.getUid(), VariableGenerator.generateRandomLogin(), "password", Sex.MALE, LocalDate.of(1949,  7, 14), 190, 110, PhysicalActivityLevel.SedentaryLifeStyle, Goals.ImprovingHealth, VariableGenerator.generateRandomGmail(), 0);
         System.out.println(user.toString());
         Assert.assertNotNull(user);
 
@@ -221,6 +224,26 @@ public class unitTestForClasses {
         System.out.println(result);
     }
 
+    @Test
+    @DisplayName("Тестирование создания записи блюда в табл. dishes в БД")
+    public void testCreateDishOne() throws SQLException, ClassNotFoundException {
+
+        String[] names = {"Костя"};
+        int[] calorieContents = {22000};
+        MealType[] mealTypes = {MealType.MainDish};
+
+        for (int i = 0; i < names.length; i++) {
+            Dish dish = new Dish();
+            dish.setName(names[i]);
+            dish.setCalorieContent(calorieContents[i]);
+            dish.setMealType(mealTypes[i]);
+            dish.setDescription("Просто супер!");
+
+            System.out.println(i + ")" + dish.toString());
+            Assert.assertTrue(userRepositoryCrud.createDish(dish));
+        }
+
+    }
 
     @Test
     @DisplayName("Тестирование создания записи блюда в табл. dishes в БД")
